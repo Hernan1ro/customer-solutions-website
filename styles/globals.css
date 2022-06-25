@@ -15,13 +15,13 @@
   --darkgray: #404040;
   /* ----------------Font Sizes -----------------*/
   --sm: 1.2rem;
-  --md: 1.6rem;
-  --lg: 2rem;
-  --xl: 2.4rem;
-  --xxl: 2.8rem;
-  --xs: 3.2rem;
-  --xsl: 3.6rem;
-  --larger: 4rem;
+  --md: 1.4rem;
+  --lg: 1.6rem;
+  --xl: 1.8rem;
+  --xxl: 2rem;
+  --xs: 2.2rem;
+  --xsl: 2.4rem;
+  --larger: 2.6rem;
   /* ----------------Font Sizes -----------------*/
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
