@@ -15,7 +15,11 @@
   gap: 2rem;
   align-items: center;
 }
-
+@media (max-width: 992px) {
+  .header nav {
+    display: none;
+  }
+}
 .header nav a {
   font-size: var(--md);
   font-weight: bold;

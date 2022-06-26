@@ -11,7 +11,8 @@
   --black: #282623;
   --white: rgb(255, 255, 255);
   --gray: #bababa;
-  --ligt-gray: #e7f5ff;
+  --light-gray: #e7f5ff;
+  --light-blue: #cfe1ee;
   --darkgray: #404040;
   /* ----------------Font Sizes -----------------*/
   --sm: 1.2rem;
@@ -65,5 +66,4 @@ html {
 }
 ::-webkit-scrollbar-thumb {
   background-color: var(--primary-hover);
-  border-radius: 1rem;
 }
