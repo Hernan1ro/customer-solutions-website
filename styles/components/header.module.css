@@ -1,11 +1,13 @@
 .header {
-  max-width: 128rem;
   padding: 1rem;
+  box-shadow: 1px 1px 10px var(--gray);
+}
+.header div {
+  max-width: 128rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  border-bottom: solid 1px var(--gray);
 }
 .header img {
   width: 15rem;

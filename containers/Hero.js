@@ -5,12 +5,12 @@ export const Hero = () => {
   // Typewriter configurations
   const { text } = useTypewriter({
     words: [
-      "Somos expertos en mejorar la calidad de tu servicio",
-      "Clientes satisfechos son clientes que te recomiendan",
-      "¿Conoces el nivel de recomendación de tus clientes?",
-      "Clientes satisfechos son clientes que vuelven",
-      "Trabajamos en tu estrategia, los empleados, los procesos y los clientes",
-      "Adquirir un cliente nuevo es más costoso que mantener uno ya existente",
+      "Mejora la calidad de tu servicio",
+      "Obten recomendaciones de tus clientes",
+      "Conoce a tus clientes",
+      "Fideliza a tus clientes",
+      "Desarrolla tu estrategia",
+      "Gana más clientes",
     ],
     loop: 0,
     typeSpeed: 160,
@@ -20,10 +20,10 @@ export const Hero = () => {
     <section className={styles.hero}>
       <div>
         <h1>
-          Te <strong>ayudamos</strong> a <br />
-          <strong>potencializar</strong> la <br />
-          <strong>experiencia</strong> de tus <br />
-          <strong>clientes</strong>
+          Te ayudamos a <br />
+          potencializar la <br />
+          experiencia de tus <br />
+          clientes
         </h1>
         <h3>
           {text}

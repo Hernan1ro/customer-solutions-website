@@ -3,6 +3,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   place-items: center;
+  max-width: 128rem;
+  margin: 0 auto;
+  /* background: linear-gradient(0deg, var(--primary) 2%, transparent 53%); */
 }
 @media (max-width: 768px) {
   .hero {
@@ -25,6 +28,7 @@
   font-size: 4rem;
   color: var(--black);
   text-align: center;
+  color: var(--primary);
 }
 .hero h3 {
   background-color: var(--light-blue);
@@ -35,9 +39,7 @@
   font-weight: bold;
   width: max-content;
 }
-.hero strong {
-  color: var(--primary);
-}
+
 .hero button {
   background-color: var(--primary);
   color: var(--white);
