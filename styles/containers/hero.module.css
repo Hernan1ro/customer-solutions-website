@@ -1,3 +1,7 @@
+.hero_section {
+  background: linear-gradient(0deg, var(--primary) 2%, transparent 53%);
+}
+
 .hero {
   padding: 2rem 0;
   display: grid;
@@ -5,7 +9,6 @@
   place-items: center;
   max-width: 128rem;
   margin: 0 auto;
-  /* background: linear-gradient(0deg, var(--primary) 2%, transparent 53%); */
 }
 @media (max-width: 768px) {
   .hero {

@@ -1,0 +1,33 @@
+.servicios {
+  background-image: url(../../public/assets/imagenes/background.webp);
+  background-repeat: no-repeat;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.servicios h1 {
+  font-size: var(--larger);
+  color: var(--white);
+  font-weight: bold;
+  text-align: center;
+}
+
+.servicios button {
+  background-color: transparent;
+  border: 2px solid var(--white);
+  border-radius: 1.5rem;
+  color: var(--white);
+  font-size: var(--lg);
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+.servicios button:hover {
+  transform: scale(1.05);
+}

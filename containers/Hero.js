@@ -17,21 +17,23 @@ export const Hero = () => {
     deleteSpeed: 160,
   });
   return (
-    <section className={styles.hero}>
-      <div>
-        <h1>
-          Te ayudamos a <br />
-          potencializar la <br />
-          experiencia de tus <br />
-          clientes
-        </h1>
-        <h3>
-          {text}
-          <Cursor />
-        </h3>
-        <button>Empieza ahora</button>
+    <section className={styles.hero_section}>
+      <div className={styles.hero}>
+        <div>
+          <h1>
+            Te ayudamos a <br />
+            potencializar la <br />
+            experiencia de tus <br />
+            clientes
+          </h1>
+          <h3>
+            {text}
+            <Cursor />
+          </h3>
+          <button>Empieza ahora</button>
+        </div>
+        <img src="./assets/illustrations/hero-img.svg" alt="hero landing" />
       </div>
-      <img src="./assets/illustrations/hero-img.svg" alt="hero landing" />
     </section>
   );
 };
