@@ -58,8 +58,23 @@
 .hero img {
   width: 100%;
   margin-right: 2rem;
+  animation-name: floating;
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
 }
 
+@keyframes floating {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 3%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
 @media (max-width: 767px) {
   .hero img {
     margin-top: -5rem;

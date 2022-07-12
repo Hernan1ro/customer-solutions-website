@@ -22,7 +22,11 @@
   flex-direction: column;
   gap: 2rem;
 }
-
+@media (max-width: 768px) {
+  .container div {
+    margin-top: -6rem;
+  }
+}
 .container h2 {
   font-size: var(--large);
   color: var(--primary);
