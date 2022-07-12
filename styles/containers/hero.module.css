@@ -65,6 +65,7 @@
   animation-duration: 2.5s;
   animation-fill-mode: both;
   animation-iteration-count: infinite;
+  margin-top: -2rem;
 }
 
 @keyframes floating {
