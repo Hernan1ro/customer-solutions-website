@@ -8,12 +8,12 @@
   --secondary: #1a9af7;
   --secondary-hover: #3aa8f7;
   --warn-black: #201e1c;
-  --black: #282623;
+  --black: #201e1c;
   --white: rgb(255, 255, 255);
   --gray: #bababa;
   --light-gray: #e7f5ff;
   --light-blue: #cfe1ee;
-  --darkgray: #404040;
+  --darkgray: #282623;
   /* ----------------Font Sizes -----------------*/
   --sm: 1.2rem;
   --md: 1.4rem;
