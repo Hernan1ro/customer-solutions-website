@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Layout/Layout.module.css";
 import Image from "next/image";
 import { Header } from "../Components/Header";
+import { Footer } from "../Components/Footer";
 
 export const Layout = ({ children, page }) => {
   return (
@@ -16,6 +17,7 @@ export const Layout = ({ children, page }) => {
       </Head>
       <Header />
       <main className={styles.main_container}>{children}</main>
+      <Footer />
     </>
   );
 };

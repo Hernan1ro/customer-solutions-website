@@ -26,7 +26,7 @@
   gap: 2rem;
 }
 @media (max-width: 768px) {
-  .container div {
+  .container img {
     margin-top: -6rem;
   }
 }
