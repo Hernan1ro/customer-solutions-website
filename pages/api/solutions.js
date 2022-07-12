@@ -20,7 +20,7 @@ export const solutions = [
   {
     title: "Consultoría en gestión de proyectos",
     description:
-      "Entendemos que cada proyecto es particular. Somos un equipo de trabajo preparados para apoyarte en tus necesidades en la gestión de tus proyectos.",
+      "Somos un equipo de trabajo preparados para apoyarte en tus necesidades en la gestión de tus proyectos.",
     image: "consultoria-gestion",
   },
   {
