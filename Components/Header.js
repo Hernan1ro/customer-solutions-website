@@ -1,16 +1,25 @@
+import Link from "next/link";
 import styles from "../styles/components/header.module.css";
 
 export const Header = () => {
   return (
     <header className={styles.header}>
       <div>
-        <a href="">
-          <img src="./assets/brandlogo/logo.webp" alt="" />
-        </a>
+        <Link href="/">
+          <a>
+            <img src="./assets/brandlogo/logo.webp" alt="" />
+          </a>
+        </Link>
         <nav>
-          <a href="">Soluciones</a>
-          <a href="">Servicios</a>
-          <a href="">Contácto</a>
+          <Link href="/#soluciones">
+            <a>Soluciones</a>
+          </Link>
+          <Link href="/servicios">
+            <a>Servicios</a>
+          </Link>
+          <Link href="/contacto">
+            <a>Contácto</a>
+          </Link>
           <button>Evaluación de madurez</button>
         </nav>
       </div>

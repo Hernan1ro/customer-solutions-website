@@ -4,7 +4,7 @@ import { solutions } from "../pages/api/solutions";
 
 export const Solutions = () => {
   return (
-    <section className={styles.facts_section}>
+    <section className={styles.facts_section} id="soluciones">
       <div className={styles.facts_container}>
         <h2>Nuestras soluciones</h2>
         <div className={styles.grid}>

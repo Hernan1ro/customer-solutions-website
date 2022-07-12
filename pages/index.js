@@ -1,5 +1,4 @@
 import { Layout } from "../Layout/Layout";
-import styles from "../styles/pages/Index.module.css";
 import { Hero } from "../containers/Hero";
 import { Facts } from "../containers/Facts";
 import { Section1 } from "../containers/section1";
