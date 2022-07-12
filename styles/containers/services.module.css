@@ -53,6 +53,7 @@
   background-color: var(--darkgray);
   border-radius: 1.5rem;
   max-height: 50rem;
+  text-align: center;
 }
 .solution:hover {
   transform: scale(1.05);

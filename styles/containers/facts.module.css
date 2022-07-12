@@ -1,6 +1,6 @@
 .facts_section {
   background-color: var(--black);
-  padding: 6rem 0;
+  padding: 6rem 0 8rem 0;
 }
 .facts_container {
   max-width: 128rem;
