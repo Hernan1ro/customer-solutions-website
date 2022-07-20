@@ -20,7 +20,9 @@ export const Header = () => {
           <Link href="/contacto">
             <a>Contácto</a>
           </Link>
-          <button>Evaluación de madurez</button>
+          <Link href="/evaluacion360">
+            <button>Evaluación de madurez</button>
+          </Link>
         </nav>
       </div>
     </header>
