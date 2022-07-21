@@ -1,0 +1,68 @@
+.container {
+  max-width: 128rem;
+  margin: 3rem auto;
+  width: 95%;
+  display: grid;
+  grid-template-columns: 70% 1fr;
+  gap: 1rem;
+  place-items: center;
+}
+
+.container h2 {
+  font-size: var(--larger);
+  color: var(--primary);
+  font-weight: bold;
+}
+.container h3 {
+  font-size: var(--large);
+  color: var(--primary);
+  font-weight: normal;
+}
+
+.form {
+  font-size: var(--xsl);
+  color: var(--gray);
+  margin-top: 3rem;
+}
+
+.form p {
+  margin-bottom: 1rem;
+}
+
+.form_answer_container {
+  margin-left: 2rem;
+}
+
+.input input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  color: currentColor;
+  width: 1.5em;
+  height: 1.5em;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.input input[type="radio"]::before {
+  content: "";
+  width: 0.9em;
+  height: 0.9em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--primary);
+}
+
+.input input[type="radio"]:checked {
+  color: var(--primary);
+}
+
+.input input[type="radio"]:checked::before {
+  transform: scale(1);
+}

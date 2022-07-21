@@ -1,6 +1,6 @@
 import { Layout } from "../Layout/Layout";
 import styles from "../styles/pages/evaluacion360.module.css";
-import Link from "next/link"
+import Link from "next/link";
 
 export default function Evaluacion360() {
   return (
@@ -40,9 +40,8 @@ export default function Evaluacion360() {
               <span>Perfil de madurez</span>
             </div>
           </div>
-          <Link href="/">
-
-          <button>Iniciar test</button>
+          <Link href="/test">
+            <button>Iniciar test</button>
           </Link>
           <small>Tiempo estimado en realizar el test: 5 minutos</small>
         </div>
