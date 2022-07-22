@@ -1,4 +1,6 @@
-export const QuestionInput = (answer, inputNumber, handleChange) => {
+import styles from "../styles/pages/test.module.css";
+
+export const QuestionInput = ({ answer, inputNumber, handleChange }) => {
   return (
     <div className={styles.input}>
       <input

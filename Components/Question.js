@@ -1,23 +1,18 @@
 import styles from "../styles/pages/test.module.css";
 import { QuestionInput } from "./QuestionInput";
 
-export const QuestionTest = ({
-  question,
-  answers,
-  inputNumber,
-  handleChange,
-}) => {
+export const Question = ({ question, answers, inputNumber, handleChange }) => {
   return (
     <div className={styles.question}>
-      <p className="question">{question}</p>
+      <p className="question">{`${inputNumber}. ${question}`}</p>
       <div className={styles.form_answer_container}>
-        {answers.map((answer) => {
-          const { answer } = answers;
+        {answers.map((option) => {
           return (
             <QuestionInput
-              answer={answer}
+              answer={option}
               inputNumber={inputNumber}
               handleChange={handleChange}
+              key={option}
             />
           );
         })}

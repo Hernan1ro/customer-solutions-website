@@ -1,0 +1,85 @@
+export const customerQuestion = [
+  {
+    id: 1,
+    question: "¿Tu eres?",
+    answers: ["Emprendedor", "Empleado", "Comerciante informal"],
+  },
+  {
+    id: 2,
+    question: "Número de trabajadores",
+    answers: [
+      "Solo 1",
+      "De 1 a 10 empleados",
+      "De 11 a 49 empleados",
+      "Más de 50 empleados",
+    ],
+  },
+  {
+    id: 3,
+    question: "Tiempo en el mercado",
+    answers: [
+      "Menos de 1 año",
+      "De 1 a 3 años",
+      "De 3 a 5 años",
+      "Más de 5 años",
+    ],
+  },
+  {
+    id: 4,
+    question: "Cargo o puesto en la empresa",
+    answers: [
+      "Presidente",
+      "Vicepresidente",
+      "Fundador",
+      "Cofundador",
+      "Gerente",
+      "Director",
+      "Jefe de area",
+      "Coordinador",
+      "Es mi primer emprendiemento, hago de todo",
+      "Otro",
+    ],
+  },
+  {
+    id: 5,
+    question: "¿Sector al que pertences?",
+    answers: [
+      "Actividades inmobiliarias y administrativas",
+      "Actividades profesionales, cientificas y tecnicas",
+      "Sector salud y servicios sociales",
+      "Banca y seguros",
+      "Comercio al por menor",
+      "Comercio al por mayor",
+      "Construcción",
+      "Educación",
+      "Industria servicios energia, agua, alcantarillado",
+      "Telecomunicaciones y servicios",
+      "Trasporte y almacenamiento",
+      "Sector primario",
+      "Hoteleria y turismo",
+      "Sector informal",
+      "Emprendedor",
+      "Comerciante",
+      "Consultorias y asesorias",
+      "Venta y reparación de vehiculos",
+      "Otros servicios",
+    ],
+  },
+];
+export const test360Questions = [
+  {
+    id: 1,
+    question: "¿Tu eres?",
+    answers: ["Emprendedor", "Empleado", "Comerciante informal"],
+  },
+  {
+    id: 2,
+    question: "Número de trabajadores",
+    answers: [
+      "Solo 1",
+      "De 1 a 10 empleados",
+      "De 11 a 49 empleados",
+      "Más de 50 empleados",
+    ],
+  },
+];

@@ -1,8 +1,9 @@
 import { useRef, useState } from "react";
-
 import { Layout } from "../Layout/Layout";
 import styles from "../styles/pages/test.module.css";
 import Link from "next/link";
+import { customerQuestion } from "../pages/api/questions";
+import { Question } from "../Components/Question";
 
 export default function Test() {
   const form = useRef(null);
@@ -28,14 +29,12 @@ export default function Test() {
 
     console.log(answers);
   };
-
-  const handleChange = (e) => {
+  //-------------- checking progress ----------------//
+  const handleChange = () => {
     const questionDiv = form.current.children;
     for (let i = 0; i < questionDiv.length - 1; i++) {
-      let question = questionDiv[i].children[0].innerHTML;
       let inputs = questionDiv[i].children[1].children;
       for (let j = 0; j < inputs.length; j++) {
-        let answer = inputs[j].children[0].value;
         let check = inputs[j].children[0].checked;
         if (check) {
           setProgess(i + 1);
@@ -52,7 +51,20 @@ export default function Test() {
           <h3>Evaluación de la madurez</h3>
           <div>
             <form onSubmit={handleSubmit} className={styles.form} ref={form}>
-              <div className={styles.question}>
+              {customerQuestion.map((item) => {
+                const { question, answers, id } = item;
+                return (
+                  <Question
+                    question={question}
+                    answers={answers}
+                    inputNumber={id}
+                    handleChange={handleChange}
+                    onSubmit={handleChange}
+                    key={id}
+                  />
+                );
+              })}
+              {/* <div className={styles.question}>
                 <p className="question">1. ¿Tú eres?</p>
                 <div className={styles.form_answer_container}>
                   <div className={styles.input}>
@@ -124,7 +136,7 @@ export default function Test() {
                     <label htmlFor="input2">depende</label>
                   </div>
                 </div>
-              </div>
+              </div> */}
               <button type="submit">Finalizar test</button>
             </form>
           </div>
