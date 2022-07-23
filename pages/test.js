@@ -13,6 +13,8 @@ export default function Test() {
   const [answers, setAnswers] = useState([]);
   const [progress, setProgess] = useState(0);
 
+  const percent = (progress / customerQuestion.length) * 100;
+
   const handleSubmit = (e) => {
     e.preventDefault();
     //-------------- Collect all data ----------------//
@@ -39,47 +41,24 @@ export default function Test() {
       let inputs = questionDiv[i].children[1].children;
       for (let j = 0; j < inputs.length; j++) {
         let check = inputs[j].children[0].checked;
-        if (check && progress < 5) {
+        if (check && progress < customerQuestion.length) {
           setProgess(progress + 1);
         }
       }
     }
-    if (id > 0 && id < 5) {
-      console.log(document.querySelector(`#question_${id}`));
+    if (id > 0 && id < customerQuestion.length) {
       // --------- Scroll to the next question -------------//
       document.querySelector(`#question_${id + 1}`).scrollIntoView({
         behavior: "smooth",
       });
     }
-    if (id === 5) {
-      console.log("scroll final");
-      // --------- Scroll to the next question -------------//
+    if (id === customerQuestion.length) {
+      // --------- Scroll to the submit button -------------//
       document.querySelector(`#submit_btn`).scrollIntoView({
         behavior: "smooth",
       });
     }
   };
-
-  //------------- hide progressbar when test finishes ---------- //
-
-  // useEffect(() => {
-  //   let options = {
-  //     rootMargin: "0px",
-  //     threshold: 1,
-  //   };
-
-  //   const observer = new IntersectionObserver((entries) => {
-  //     const { isIntersecting } = entries[0];
-
-  //     if (isIntersecting) {
-  //       console.log("Observando");
-  //     } else {
-  //       console.log("No observando");
-  //     }
-  //   }, options);
-
-  //   observer.observe(button.current);
-  // }, [button]);
 
   return (
     <Layout page="Test">
@@ -131,9 +110,9 @@ export default function Test() {
       </section>
       <div className={styles.progressbar}>
         <div className={styles.progressbar_container}>
-          <h4>10% completado</h4>
+          <h4>{`${percent}% completado`}</h4>
           <div className={styles.bg_container}>
-            <div className={styles.bg}></div>
+            <div className={styles.bg} style={{ width: `${percent}%` }}></div>
           </div>
         </div>
       </div>

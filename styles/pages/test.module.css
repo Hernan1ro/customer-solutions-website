@@ -29,10 +29,13 @@
 }
 
 .form .question {
-  padding: 5rem 0;
+  padding: 8rem 0 3rem 0;
 }
 .form .question:last-of-type {
   padding: 5rem 0 0 0;
+}
+.form .question:first-of-type {
+  padding: 3rem 0 0 0;
 }
 .form p {
   margin-bottom: 1rem;
@@ -142,6 +145,9 @@
   gap: 1rem;
   align-items: center;
 }
+.progressbar_container h4 {
+  transition: all ease 1s;
+}
 
 .bg_container {
   background-color: var(--primary-hover);
@@ -152,8 +158,8 @@
   overflow: hidden;
 }
 .bg {
-  width: 10%;
   height: 100%;
   background-color: var(--white);
   border-radius: 4rem;
+  transition: all ease 0.5s;
 }
