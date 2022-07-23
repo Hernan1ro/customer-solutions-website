@@ -12,10 +12,11 @@
   font-size: var(--larger);
   color: var(--primary);
   font-weight: bold;
+  margin-bottom: 1rem;
 }
 .container h3 {
   font-size: var(--large);
-  color: var(--secondary);
+  color: var(--secondary1);
   font-weight: normal;
 }
 
@@ -40,8 +41,9 @@
   gap: 1rem 1rem;
 }
 .question {
-  margin-bottom: 7rem;
+  padding: 5rem 0;
 }
+
 .grid .input {
   display: grid;
   grid-template-columns: 10% 1fr;
@@ -100,4 +102,10 @@
 .form button:hover {
   background-color: var(--primary-hover);
   transform: scale(1.02);
+}
+
+.progressbar {
+  position: fixed;
+  top: 20rem;
+  right: 10rem;
 }

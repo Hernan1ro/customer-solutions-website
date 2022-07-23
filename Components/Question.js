@@ -3,7 +3,7 @@ import { QuestionInput } from "./QuestionInput";
 
 export const Question = ({ question, answers, inputNumber, handleChange }) => {
   return (
-    <div className={styles.question}>
+    <div className={styles.question} id={`question_${inputNumber}`}>
       <p className="question">{`${inputNumber}. ${question}`}</p>
       <div
         className={`${styles.form_answer_container} ${

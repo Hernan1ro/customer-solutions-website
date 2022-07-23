@@ -7,7 +7,7 @@ export const QuestionInput = ({ answer, inputNumber, handleChange }) => {
         type="radio"
         name={`input${inputNumber}`}
         value={answer}
-        onChange={handleChange}
+        onChange={() => handleChange(inputNumber)}
       />
       <label htmlFor="input1">{answer}</label>
     </div>

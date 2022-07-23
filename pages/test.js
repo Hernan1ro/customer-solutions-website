@@ -4,6 +4,8 @@ import styles from "../styles/pages/test.module.css";
 import Link from "next/link";
 import { customerQuestion } from "../pages/api/questions";
 import { Question } from "../Components/Question";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
 export default function Test() {
   const form = useRef(null);
@@ -30,16 +32,23 @@ export default function Test() {
     console.log(answers);
   };
   //-------------- checking progress ----------------//
-  const handleChange = () => {
+  const handleChange = (id) => {
     const questionDiv = form.current.children;
     for (let i = 0; i < questionDiv.length - 1; i++) {
       let inputs = questionDiv[i].children[1].children;
       for (let j = 0; j < inputs.length; j++) {
         let check = inputs[j].children[0].checked;
-        if (check) {
-          setProgess(i + 1);
+        if (check && progress < 5) {
+          setProgess(progress + 1);
         }
       }
+    }
+    if (progress < 4) {
+      console.log(document.querySelector(`#question_${id}`));
+      // --------- Scroll to the next question -------------//
+      document.querySelector(`#question_${id + 1}`).scrollIntoView({
+        behavior: "smooth",
+      });
     }
   };
 
@@ -48,7 +57,7 @@ export default function Test() {
       <section className={styles.container}>
         <div>
           <h2>Autoevaluación 360°</h2>
-          <h3>Evaluación de la madurez</h3>
+          <h3>Antes de comenzar primero cuentanos un poco sobre ti</h3>
           <div>
             <form onSubmit={handleSubmit} className={styles.form} ref={form}>
               {customerQuestion.map((item) => {
@@ -68,7 +77,26 @@ export default function Test() {
             </form>
           </div>
         </div>
-        <div>circular spinner | Progreso: {progress}%</div>
+        <div>
+          <div className={styles.progressbar}>
+            <CircularProgressbar
+              value={progress}
+              minValue={0}
+              maxValue={5}
+              text={`${progress}/5 respuestas`}
+              styles={buildStyles({
+                rotation: 0.25,
+                strokeLinecap: "butt",
+                textSize: "12px",
+                pathTransitionDuration: 0.5,
+                pathColor: "#e57716",
+                textColor: "#e57716",
+                trailColor: "#e7f5ff",
+                backgroundColor: "#e57716",
+              })}
+            />
+          </div>
+        </div>
       </section>
     </Layout>
   );
