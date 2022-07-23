@@ -148,6 +148,19 @@
 .progressbar_container h4 {
   transition: all ease 1s;
 }
+.progressbar_container img {
+  animation: show 1s ease;
+  /* margin: -1rem; */
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 .bg_container {
   background-color: var(--primary-hover);

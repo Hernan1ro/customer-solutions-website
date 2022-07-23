@@ -17,6 +17,11 @@ export default function Test() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    //---------------check if the form has been answered ------------//
+    if (progress < customerQuestion.length) {
+      console.log("debe responder todos las preguntas mamahuevo");
+      return;
+    }
     //-------------- Collect all data ----------------//
     const questionDiv = form.current.children;
     for (let i = 0; i < questionDiv.length - 1; i++) {
@@ -114,6 +119,12 @@ export default function Test() {
           <div className={styles.bg_container}>
             <div className={styles.bg} style={{ width: `${percent}%` }}></div>
           </div>
+          {percent === 100 ? (
+            <img
+              src="./assets/icons/check_list.svg"
+              alt="Cuestionario completado"
+            ></img>
+          ) : null}
         </div>
       </div>
     </Layout>
