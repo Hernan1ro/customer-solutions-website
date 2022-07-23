@@ -1,6 +1,6 @@
 .container {
   max-width: 128rem;
-  margin: 3rem auto;
+  margin: 8rem auto;
   width: 95%;
   display: grid;
   grid-template-columns: 70% 1fr;
@@ -24,8 +24,16 @@
   font-size: var(--xsl);
   color: var(--gray);
   margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
 }
 
+.form .question {
+  padding: 5rem 0;
+}
+.form .question:last-of-type {
+  padding: 5rem 0 0 0;
+}
 .form p {
   margin-bottom: 1rem;
   color: var(--primary);
@@ -39,9 +47,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem 1rem;
-}
-.question {
-  padding: 5rem 0;
 }
 
 .grid .input {
@@ -92,11 +97,15 @@
   padding: 1rem;
   border-radius: 1rem;
   border: none;
-  font-size: var(--md);
+  font-size: var(--lg);
   font-weight: bold;
   text-transform: uppercase;
-  margin-top: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
   cursor: pointer;
+  max-width: 30rem;
+  width: 100%;
+  align-self: start;
 }
 
 .form button:hover {
@@ -104,8 +113,47 @@
   transform: scale(1.02);
 }
 
-.progressbar {
+.circular_progressbar {
   position: fixed;
   top: 20rem;
   right: 10rem;
+}
+
+.progressbar {
+  background-color: var(--primary);
+  height: 6rem;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  color: var(--white);
+  font-size: var(--lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progressbar_container {
+  max-width: 128rem;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+
+.bg_container {
+  background-color: var(--primary-hover);
+  width: 30%;
+  height: 2rem;
+  border-radius: 4rem;
+  display: flex;
+  overflow: hidden;
+}
+.bg {
+  width: 10%;
+  height: 100%;
+  background-color: var(--white);
+  border-radius: 4rem;
 }

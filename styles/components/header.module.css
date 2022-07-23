@@ -2,6 +2,12 @@
   padding: 1rem;
   box-shadow: 1px 1px 10px var(--gray);
   animation: fadeIn 1s ease;
+  /* position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 10; */
+  background-color: var(--white);
 }
 
 @keyframes fadeIn {

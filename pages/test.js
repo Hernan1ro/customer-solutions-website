@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Layout } from "../Layout/Layout";
 import styles from "../styles/pages/test.module.css";
 import Link from "next/link";
@@ -9,6 +9,7 @@ import "react-circular-progressbar/dist/styles.css";
 
 export default function Test() {
   const form = useRef(null);
+
   const [answers, setAnswers] = useState([]);
   const [progress, setProgess] = useState(0);
 
@@ -43,17 +44,45 @@ export default function Test() {
         }
       }
     }
-    if (progress < 4) {
+    if (id > 0 && id < 5) {
       console.log(document.querySelector(`#question_${id}`));
       // --------- Scroll to the next question -------------//
       document.querySelector(`#question_${id + 1}`).scrollIntoView({
         behavior: "smooth",
       });
     }
+    if (id === 5) {
+      console.log("scroll final");
+      // --------- Scroll to the next question -------------//
+      document.querySelector(`#submit_btn`).scrollIntoView({
+        behavior: "smooth",
+      });
+    }
   };
 
+  //------------- hide progressbar when test finishes ---------- //
+
+  // useEffect(() => {
+  //   let options = {
+  //     rootMargin: "0px",
+  //     threshold: 1,
+  //   };
+
+  //   const observer = new IntersectionObserver((entries) => {
+  //     const { isIntersecting } = entries[0];
+
+  //     if (isIntersecting) {
+  //       console.log("Observando");
+  //     } else {
+  //       console.log("No observando");
+  //     }
+  //   }, options);
+
+  //   observer.observe(button.current);
+  // }, [button]);
+
   return (
-    <Layout page="Inicio">
+    <Layout page="Test">
       <section className={styles.container}>
         <div>
           <h2>Autoevaluación 360°</h2>
@@ -73,12 +102,14 @@ export default function Test() {
                   />
                 );
               })}
-              <button type="submit">Finalizar test</button>
+              <button id="submit_btn" type="submit">
+                Continuar test
+              </button>
             </form>
           </div>
         </div>
         <div>
-          <div className={styles.progressbar}>
+          <div className={styles.circular_progressbar}>
             <CircularProgressbar
               value={progress}
               minValue={0}
@@ -98,6 +129,14 @@ export default function Test() {
           </div>
         </div>
       </section>
+      <div className={styles.progressbar}>
+        <div className={styles.progressbar_container}>
+          <h4>10% completado</h4>
+          <div className={styles.bg_container}>
+            <div className={styles.bg}></div>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 }
