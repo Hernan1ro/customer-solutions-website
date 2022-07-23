@@ -9,7 +9,7 @@ import "react-circular-progressbar/dist/styles.css";
 
 export default function Test() {
   const form = useRef(null);
-
+  const [error, setError] = useState(false);
   const [answers, setAnswers] = useState([]);
   const [progress, setProgess] = useState(0);
 
@@ -19,7 +19,10 @@ export default function Test() {
     e.preventDefault();
     //---------------check if the form has been answered ------------//
     if (progress < customerQuestion.length) {
-      console.log("debe responder todos las preguntas mamahuevo");
+      setError(true);
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
       return;
     }
     //-------------- Collect all data ----------------//
@@ -89,6 +92,11 @@ export default function Test() {
               <button id="submit_btn" type="submit">
                 Continuar test
               </button>
+              {error ? (
+                <span>
+                  Debes responder todas las preguntas para poder continuar
+                </span>
+              ) : null}
             </form>
           </div>
         </div>
@@ -112,6 +120,11 @@ export default function Test() {
             />
           </div>
         </div>
+        <img
+          className={styles.bg_image}
+          src="./assets/icons/customer_logo.svg"
+          alt="Customer solutions"
+        />
       </section>
       <div className={styles.progressbar}>
         <div className={styles.progressbar_container}>

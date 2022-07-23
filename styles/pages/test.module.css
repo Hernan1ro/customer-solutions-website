@@ -6,6 +6,7 @@
   grid-template-columns: 70% 1fr;
   gap: 1rem;
   place-items: center;
+  position: relative;
 }
 
 .container h2 {
@@ -116,12 +117,29 @@
   transform: scale(1.02);
 }
 
+.form span {
+  font-size: var(--sm);
+  color: var(--secondary);
+  background-color: #daedfc;
+  padding: 1rem 2rem;
+  width: fit-content;
+  border-radius: 1rem;
+  animation: show ease 0.5s;
+}
+
 .circular_progressbar {
   position: fixed;
   top: 20rem;
   right: 10rem;
 }
-
+.bg_image {
+  position: fixed;
+  top: 25rem;
+  height: 30rem;
+  z-index: -2;
+  opacity: 0.1;
+  right: calc(50% - 15rem);
+}
 .progressbar {
   background-color: var(--primary);
   height: 6rem;
@@ -150,7 +168,6 @@
 }
 .progressbar_container img {
   animation: show 1s ease;
-  /* margin: -1rem; */
 }
 
 @keyframes show {
