@@ -125,6 +125,7 @@
   width: fit-content;
   border-radius: 1rem;
   animation: show ease 0.5s;
+  margin-top: -1rem;
 }
 
 .circular_progressbar {
