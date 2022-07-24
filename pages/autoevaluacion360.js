@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { Layout } from "../Layout/Layout";
 import styles from "../styles/pages/test.module.css";
-import { customerQuestion } from "../pages/api/questions";
+import { test360Questions } from "../pages/api/questions";
 import { Question } from "../Components/Question";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
@@ -14,12 +14,12 @@ export default function Test() {
   const [progress, setProgess] = useState(0);
   const router = useRouter();
 
-  const percent = (progress / customerQuestion.length) * 100;
+  const percent = ((progress / test360Questions.length) * 100).toFixed(0);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     //---------------check if the form has been answered ------------//
-    if (progress < customerQuestion.length) {
+    if (progress < test360Questions.length) {
       setError(true);
       setTimeout(() => {
         document.querySelector(`#error`).scrollIntoView({
@@ -57,18 +57,18 @@ export default function Test() {
       let inputs = questionDiv[i].children[1].children;
       for (let j = 0; j < inputs.length; j++) {
         let check = inputs[j].children[0].checked;
-        if (check && progress < customerQuestion.length) {
+        if (check && progress < test360Questions.length) {
           setProgess(progress + 1);
         }
       }
     }
-    if (id > 0 && id < customerQuestion.length) {
+    if (id > 0 && id < test360Questions.length) {
       // --------- Scroll to the next question -------------//
       document.querySelector(`#question_${id + 1}`).scrollIntoView({
         behavior: "smooth",
       });
     }
-    if (id === customerQuestion.length) {
+    if (id === test360Questions.length) {
       // --------- Scroll to the submit button -------------//
       document.querySelector(`#submit_btn`).scrollIntoView({
         behavior: "smooth",
@@ -81,10 +81,10 @@ export default function Test() {
       <section className={styles.container}>
         <div>
           <h2>Autoevaluación 360°</h2>
-          <h3>Antes de comenzar primero cuentanos un poco sobre ti</h3>
+          <h3>Evaluación de la madurez</h3>
           <div>
             <form onSubmit={handleSubmit} className={styles.form} ref={form}>
-              {customerQuestion.map((item) => {
+              {test360Questions.map((item) => {
                 const { question, answers, id } = item;
                 return (
                   <Question
@@ -113,12 +113,12 @@ export default function Test() {
             <CircularProgressbar
               value={progress}
               minValue={0}
-              maxValue={5}
-              text={`${progress}/5 respuestas`}
+              maxValue={30}
+              text={`${progress}/${test360Questions.length} respuestas`}
               styles={buildStyles({
                 rotation: 0.25,
                 strokeLinecap: "butt",
-                textSize: "12px",
+                textSize: "10px",
                 pathTransitionDuration: 0.5,
                 pathColor: "#e57716",
                 textColor: "#e57716",
