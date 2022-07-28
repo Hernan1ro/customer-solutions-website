@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { Layout } from "../Layout/Layout";
 import styles from "../styles/pages/test.module.css";
 import { test360Questions } from "../pages/api/questions";
@@ -48,7 +48,7 @@ export default function Test() {
 
     console.log(answers);
 
-    router.push("/autoevaluacion360");
+    router.push("/diagnostico");
   };
   const handleChange = (id) => {
     //-------------- checking progress ----------------//
@@ -80,7 +80,7 @@ export default function Test() {
     <Layout page="Test">
       <section className={styles.container}>
         <div>
-          <h2>Autoevaluación 360°</h2>
+          <h2>Evaluación nivel de experiencia y calidad del servicio 360°</h2>
           <h3>Evaluación de la madurez</h3>
           <div>
             <form onSubmit={handleSubmit} className={styles.form} ref={form}>
@@ -98,7 +98,7 @@ export default function Test() {
                 );
               })}
               <button id="submit_btn" type="submit">
-                Continuar test
+                Finalizar test
               </button>
               {error ? (
                 <span id="error">
@@ -140,7 +140,7 @@ export default function Test() {
           <div className={styles.bg_container}>
             <div className={styles.bg} style={{ width: `${percent}%` }}></div>
           </div>
-          {percent === 100 ? (
+          {percent == 100 ? (
             <img
               src="./assets/icons/check_list.svg"
               alt="Cuestionario completado"

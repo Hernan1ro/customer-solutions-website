@@ -29,15 +29,24 @@ export default function Evaluacion360() {
             </div>
             <div>
               <img src="./assets/icons/check.svg" alt="check" />
-              <span>4 dimensiones</span>
+              <span>
+                4 dimensiones de la organización: estrategia + procesos +
+                empleados + clientes
+              </span>
             </div>
             <div>
               <img src="./assets/icons/check.svg" alt="check" />
-              <span>Index especifico</span>
+              <span>
+                Te entregamos un indicador del lugar donde estas: Index
+                específico
+              </span>
             </div>
             <div>
               <img src="./assets/icons/check.svg" alt="check" />
-              <span>Perfil de madurez</span>
+              <span>
+                Conoce el perfil de madurez de tu experiencia y calidad de
+                servicio.
+              </span>
             </div>
           </div>
           <Link href="/test">

@@ -80,7 +80,7 @@ export default function Test() {
     <Layout page="Test">
       <section className={styles.container}>
         <div>
-          <h2>Autoevaluación 360°</h2>
+          <h2>Perfil corporativo</h2>
           <h3>Antes de comenzar primero cuentanos un poco sobre ti</h3>
           <div>
             <form onSubmit={handleSubmit} className={styles.form} ref={form}>
