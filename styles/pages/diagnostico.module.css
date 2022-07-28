@@ -1,0 +1,87 @@
+.diagnostic {
+  text-align: center;
+  max-width: 128rem;
+  margin: 4rem auto;
+  width: 95%;
+}
+
+.diagnostic h2 {
+  font-size: var(--larger);
+  color: var(--primary);
+  font-weight: bold;
+}
+.diagnostic h3 {
+  font-size: var(--large);
+  color: var(--secondary);
+  font-weight: bold;
+  margin: 2rem 0;
+}
+.index_container {
+  border: 2px solid var(--primary-hover);
+  padding: 2rem;
+  border-radius: 1.5rem;
+}
+.index_container h4 {
+  font-size: var(--large);
+  color: var(--primary);
+}
+.main_index {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  place-items: center;
+}
+
+.index_bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 80%;
+}
+
+.index_bar .progressbar {
+  width: 30rem;
+}
+
+.index_bar span {
+  font-size: var(--xxl);
+  color: var(--secondary1);
+  font-weight: 500;
+}
+
+.index_description img {
+  width: 30rem;
+}
+.index_description p {
+  font-size: var(--xxl);
+  color: var(--black);
+}
+
+.index_description button {
+  background-color: var(--primary);
+  outline: none;
+  border: none;
+  color: var(--white);
+  font-size: var(--md);
+  text-transform: uppercase;
+  padding: 1rem 3rem;
+  width: fit-content;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: ease 0.3s all;
+  font-weight: bold;
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.index_description button img {
+  width: 3rem;
+}
+
+.index_description button:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.05);
+}
