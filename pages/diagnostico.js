@@ -1,11 +1,7 @@
 import { useRef, useState } from "react";
 import { Layout } from "../Layout/Layout";
 import styles from "../styles/pages/diagnostico.module.css";
-import {
-  CircularProgressbar,
-  buildStyles,
-  CircularProgressbarWithChildren,
-} from "react-circular-progressbar";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { useRouter } from "next/router";
 import { CategoryIndex } from "../Components/CategoryIndex";

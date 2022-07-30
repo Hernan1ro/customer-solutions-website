@@ -5,7 +5,13 @@ import {
   CircularProgressbarWithChildren,
 } from "react-circular-progressbar";
 
-export const CategoryIndex = () => {
+export const CategoryIndex = ({
+  category,
+  img,
+  percentage,
+  heading,
+  description,
+}) => {
   return (
     <div className={styles.category_index}>
       <h5>Estrategia</h5>

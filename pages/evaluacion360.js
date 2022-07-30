@@ -18,9 +18,9 @@ export default function Evaluacion360() {
             Evaluación de nivel de madurez en experiencia del cliente SX360°
           </h2>
           <p>
-            La herramienta de diagnóstico gratuita que te permitirá conocer el
-            grado de digitalización de tu empresa y los pasos a seguir para
-            mejorar tu situación.
+            La herramienta de diagnóstico automático que te permitirá conocer el
+            grado de madurez de la experiencia de servicio y los recomendaciones
+            para optimizar tus resultados
           </p>
           <div className={styles.bulletpoint_container}>
             <div>
