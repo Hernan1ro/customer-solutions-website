@@ -85,15 +85,16 @@ export default function Test() {
           <div>
             <form onSubmit={handleSubmit} className={styles.form} ref={form}>
               {customerQuestion.map((item) => {
-                const { question, answers, id } = item;
+                const { question, options, id, dimension } = item;
                 return (
                   <Question
                     question={question}
-                    answers={answers}
+                    options={options}
                     inputNumber={id}
                     handleChange={handleChange}
                     onSubmit={handleChange}
                     key={id}
+                    dimension={dimension}
                   />
                 );
               })}
