@@ -35,20 +35,21 @@ export default function Test() {
     const questionDiv = form.current.children;
     for (let i = 0; i < questionDiv.length - 1; i++) {
       let question = questionDiv[i].children[0].innerHTML;
+      let dimension = questionDiv[i].children[0].attributes[1].value;
       let inputs = questionDiv[i].children[1].children;
 
       for (let j = 0; j < inputs.length; j++) {
         let answer = inputs[j].children[0].value;
         let check = inputs[j].children[0].checked;
         if (check) {
-          answers.push({ question, answer });
+          answers.push({ question, answer, dimension });
         }
       }
     }
 
     console.log(answers);
 
-    router.push("/diagnostico");
+    // router.push("/diagnostico");
   };
   const handleChange = (id) => {
     //-------------- checking progress ----------------//
