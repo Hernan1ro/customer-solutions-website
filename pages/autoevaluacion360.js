@@ -40,17 +40,24 @@ export default function Test() {
 
       for (let j = 0; j < inputs.length; j++) {
         let answer = inputs[j].children[0].value;
+        let points = Number(inputs[j].children[0].attributes[2].value);
         let check = inputs[j].children[0].checked;
         if (check) {
-          answers.push({ question, answer, dimension });
+          console.log(inputs[j].children[0].attributes);
+          answers.push({ question, answer, dimension, points });
         }
       }
     }
 
-    console.log(answers);
+    calculateIndex(answers);
 
     // router.push("/diagnostico");
   };
+
+  function calculateIndex(answers) {
+    console.log(answers);
+  }
+
   const handleChange = (id) => {
     //-------------- checking progress ----------------//
     const questionDiv = form.current.children;
