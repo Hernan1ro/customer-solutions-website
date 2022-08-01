@@ -12,6 +12,11 @@ export default function Test() {
   const [error, setError] = useState(false);
   const [answers, setAnswers] = useState([]);
   const [progress, setProgess] = useState(0);
+  const [strategy, setStrategy] = useState(0);
+  const [process, setProcess] = useState(0);
+  const [people, setPeople] = useState(0);
+  const [customer, setCustomer] = useState(0);
+
   const router = useRouter();
 
   const percent = ((progress / test360Questions.length) * 100).toFixed(0);
@@ -19,18 +24,18 @@ export default function Test() {
   const handleSubmit = (e) => {
     e.preventDefault();
     //---------------check if the form has been answered ------------//
-    if (progress < test360Questions.length) {
-      setError(true);
-      setTimeout(() => {
-        document.querySelector(`#error`).scrollIntoView({
-          behavior: "smooth",
-        });
-      }, 100);
-      setTimeout(() => {
-        setError(false);
-      }, 3000);
-      return;
-    }
+    // if (progress < test360Questions.length) {
+    //   setError(true);
+    //   setTimeout(() => {
+    //     document.querySelector(`#error`).scrollIntoView({
+    //       behavior: "smooth",
+    //     });
+    //   }, 100);
+    //   setTimeout(() => {
+    //     setError(false);
+    //   }, 3000);
+    //   return;
+    // }
     //-------------- Collect all data ----------------//
     const questionDiv = form.current.children;
     for (let i = 0; i < questionDiv.length - 1; i++) {
@@ -43,19 +48,56 @@ export default function Test() {
         let points = Number(inputs[j].children[0].attributes[2].value);
         let check = inputs[j].children[0].checked;
         if (check) {
-          console.log(inputs[j].children[0].attributes);
           answers.push({ question, answer, dimension, points });
         }
       }
     }
 
-    calculateIndex(answers);
+    handleData(answers);
 
     // router.push("/diagnostico");
   };
 
-  function calculateIndex(answers) {
-    console.log(answers);
+  // ---------- Calculate index 360 ----------------- //
+  function handleData(data) {
+    let strategyCount = 0;
+    let processCount = 0;
+    let peopleCount = 0;
+    let customersCount = 0;
+    let indexCount = 0;
+
+    data.map((item) => {
+      const { dimension, points } = item;
+      if (dimension === "strategy") {
+        strategyCount += points;
+      } else if (dimension === "process") {
+        processCount += points;
+      } else if (dimension === "people") {
+        peopleCount += points;
+      } else if (dimension === "customers") {
+        customersCount += points;
+      }
+      indexCount += points;
+    });
+
+    console.log(strategyCount, processCount, peopleCount, customersCount);
+    const indexStrategy = calculateIndex(strategyCount, 60);
+    const indexProcess = calculateIndex(processCount, 60);
+    const indexPeople = calculateIndex(peopleCount, 90);
+    const indexCustomers = calculateIndex(customersCount, 90);
+    const indexTotal = calculateIndex(indexCount, 300);
+
+    console.log(
+      indexStrategy,
+      indexProcess,
+      indexPeople,
+      indexCustomers,
+      indexTotal
+    );
+  }
+
+  function calculateIndex(points, standar) {
+    return Number(((points / standar) * 100).toFixed(0));
   }
 
   const handleChange = (id) => {
@@ -89,7 +131,7 @@ export default function Test() {
       <section className={styles.container}>
         <div>
           <h2>Evaluación nivel de experiencia y calidad del servicio 360°</h2>
-          <h3>Evaluación de la madurez</h3>
+          <h3>Evaluación de la madurez - {strategy}</h3>
           <div>
             <form onSubmit={handleSubmit} className={styles.form} ref={form}>
               {test360Questions.map((item) => {
