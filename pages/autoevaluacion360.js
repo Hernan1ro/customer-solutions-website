@@ -12,10 +12,6 @@ export default function Test() {
   const [error, setError] = useState(false);
   const [answers, setAnswers] = useState([]);
   const [progress, setProgess] = useState(0);
-  const [strategy, setStrategy] = useState(0);
-  const [process, setProcess] = useState(0);
-  const [people, setPeople] = useState(0);
-  const [customer, setCustomer] = useState(0);
 
   const router = useRouter();
 
@@ -24,18 +20,18 @@ export default function Test() {
   const handleSubmit = (e) => {
     e.preventDefault();
     //---------------check if the form has been answered ------------//
-    // if (progress < test360Questions.length) {
-    //   setError(true);
-    //   setTimeout(() => {
-    //     document.querySelector(`#error`).scrollIntoView({
-    //       behavior: "smooth",
-    //     });
-    //   }, 100);
-    //   setTimeout(() => {
-    //     setError(false);
-    //   }, 3000);
-    //   return;
-    // }
+    if (progress < test360Questions.length) {
+      setError(true);
+      setTimeout(() => {
+        document.querySelector(`#error`).scrollIntoView({
+          behavior: "smooth",
+        });
+      }, 100);
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
+      return;
+    }
     //-------------- Collect all data ----------------//
     const questionDiv = form.current.children;
     for (let i = 0; i < questionDiv.length - 1; i++) {
@@ -80,7 +76,6 @@ export default function Test() {
       indexCount += points;
     });
 
-    console.log(strategyCount, processCount, peopleCount, customersCount);
     const indexStrategy = calculateIndex(strategyCount, 60);
     const indexProcess = calculateIndex(processCount, 60);
     const indexPeople = calculateIndex(peopleCount, 90);
@@ -95,7 +90,7 @@ export default function Test() {
       indexTotal
     );
   }
-
+  // ------------- calculatr percent ------------- //
   function calculateIndex(points, standar) {
     return Number(((points / standar) * 100).toFixed(0));
   }
@@ -131,7 +126,7 @@ export default function Test() {
       <section className={styles.container}>
         <div>
           <h2>Evaluación nivel de experiencia y calidad del servicio 360°</h2>
-          <h3>Evaluación de la madurez - {strategy}</h3>
+          <h3>Evaluación de la madurez </h3>
           <div>
             <form onSubmit={handleSubmit} className={styles.form} ref={form}>
               {test360Questions.map((item) => {
