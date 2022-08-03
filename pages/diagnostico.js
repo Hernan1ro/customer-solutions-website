@@ -14,6 +14,27 @@ export default function Diagnostico() {
   } = useSelector((state) => state.index360Slice);
 
   const indicators = diagnostic(index, strategy, process, people, customers);
+  // --------------data for the main index-------------------//
+  const { category, conclusion, heading, value } = indicators[0];
+
+  const textHandler = (text) => {
+    if (value < 40) {
+      return text.low;
+    } else if (value >= 40 && value < 70) {
+      return text.middle;
+    } else if (value >= 70) {
+      return text.high;
+    }
+  };
+  const colorHandler = (points) => {
+    if (points < 40) {
+      return "#f57070";
+    } else if (points >= 40 && points < 70) {
+      return "#3aa8f7";
+    } else if (points >= 70) {
+      return "#e57716";
+    }
+  };
 
   return (
     <Layout page="Diagnóstico 360°">
@@ -21,7 +42,7 @@ export default function Diagnostico() {
         <h2>Diagnóstico madurez experiencia de servicio</h2>
         <h3>Estos son tus resultados</h3>
         <div className={styles.index_container}>
-          <h4>Index 360°</h4>
+          <h4>{category}</h4>
           <div className={styles.main_index}>
             <div className={styles.index_bar}>
               <div className={styles.progressbar}>
@@ -32,30 +53,26 @@ export default function Diagnostico() {
                     rotation: 0.25,
                     strokeLinecap: "butt",
                     textSize: "20px",
+                    fontWeight: "bold",
                     pathTransitionDuration: 0.5,
-                    pathColor: "#e57716",
-                    textColor: "#e57716",
+                    pathColor: colorHandler(value),
+                    textColor: colorHandler(value),
                     trailColor: "#daedfc",
-                    backgroundColor: "#e57716",
+                    backgroundColor: colorHandler(value),
                   })}
                 />
               </div>
-              <span>
-                Tu nivel de madurez en experiencia y satisfacción del cliente es
-                de XX%
-              </span>
+              <span>{textHandler(heading)}</span>
             </div>
             <div className={styles.index_description}>
               <img src="./assets/Illustrations/results.svg" alt="Index image" />
-              <p>
-                {" "}
-                Eres un perfil maduro y consistente en tus acciones. Debes
-                continuar en ese camino de la mejora permanente siempre enfocado
-                en brindar experiencias inolvidables a tus empleados y clientes
-              </p>
+              <p>{textHandler(conclusion)}</p>
               <button>
                 Descarga tu informe completo
-                <img src="./assets/icons/download.svg" alt="download" />
+                <img
+                  src="./assets/icons/download.svg"
+                  alt="download complete inform"
+                />
               </button>
             </div>
           </div>
@@ -72,6 +89,8 @@ export default function Diagnostico() {
                   conclusion={conclusion}
                   heading={heading}
                   key={category}
+                  textHandler={textHandler}
+                  colorHandler={colorHandler}
                 />
               );
             }

@@ -16,7 +16,7 @@ export const diagnostic = (index, strategy, process, people, customers) => [
   },
   {
     category: "Estrategia",
-    value: index,
+    value: strategy,
     img: "strategy",
     heading: {
       high: `Tu estrategia esta en un ${strategy}%.`,
@@ -31,8 +31,8 @@ export const diagnostic = (index, strategy, process, people, customers) => [
   },
   {
     category: "Procesos",
-    value: index,
-    img: "strategy",
+    value: process,
+    img: "process",
     heading: {
       high: `Tu nivel de procesos es  ${process}%`,
       middle: `Tus procesos de experiencia estan en un ${process}%`,
@@ -46,8 +46,8 @@ export const diagnostic = (index, strategy, process, people, customers) => [
   },
   {
     category: "Personas",
-    value: index,
-    img: "strategy",
+    value: people,
+    img: "employee",
     heading: {
       high: `Tienes un nivel de ${people}%`,
       middle: `Tu nivel de experiencia de tus empleados es ${people}%`,
@@ -61,8 +61,8 @@ export const diagnostic = (index, strategy, process, people, customers) => [
   },
   {
     category: "Clientes",
-    value: index,
-    img: "strategy",
+    value: customers,
+    img: "users",
     heading: {
       high: `Tienes un porcentaje de ${customers}%`,
       middle: `Tu porcentaje aquí es ${customers}%`,

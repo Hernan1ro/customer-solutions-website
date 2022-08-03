@@ -11,18 +11,9 @@ export const CategoryIndex = ({
   conclusion,
   heading,
   value,
+  textHandler,
+  colorHandler,
 }) => {
-  const [color, setColor] = useState();
-  // Handling dinamic responses //
-  const textHandler = (text) => {
-    if (value < 40) {
-      return text.low;
-    } else if (value >= 40 && value < 70) {
-      return text.middle;
-    } else if (value >= 70) {
-      return text.high;
-    }
-  };
   return (
     <div className={styles.category_index}>
       <h5>{category}</h5>
@@ -34,10 +25,10 @@ export const CategoryIndex = ({
             strokeLinecap: "butt",
             textSize: "20px",
             pathTransitionDuration: 0.5,
-            pathColor: "#e57716",
-            textColor: "#e57716",
+            pathColor: colorHandler(value),
+            textColor: colorHandler(value),
             trailColor: "#daedfc",
-            backgroundColor: "#e57716",
+            backgroundColor: colorHandler(value),
           })}
         >
           <img
@@ -45,7 +36,9 @@ export const CategoryIndex = ({
             src={`/assets/icons/${img}.svg`}
             alt={`${category}-image`}
           />
-          <div style={{ fontSize: 40, marginTop: 5, color: "#e57716" }}>
+          <div
+            style={{ fontSize: 40, marginTop: 5, color: colorHandler(value) }}
+          >
             <strong>{value}%</strong>
           </div>
         </CircularProgressbarWithChildren>
