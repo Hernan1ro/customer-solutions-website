@@ -5,8 +5,13 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { useRouter } from "next/router";
 import { CategoryIndex } from "../Components/CategoryIndex";
+import { useSelector } from "react-redux";
 
 export default function Diagnostico() {
+  const {
+    result: { index, strategy, process, people, customers },
+  } = useSelector((state) => state.index360Slice);
+
   return (
     <Layout page="Diagnóstico 360°">
       <section className={styles.diagnostic}>
@@ -18,8 +23,8 @@ export default function Diagnostico() {
             <div className={styles.index_bar}>
               <div className={styles.progressbar}>
                 <CircularProgressbar
-                  value={93}
-                  text={"93%"}
+                  value={index}
+                  text={`${index}%`}
                   styles={buildStyles({
                     rotation: 0.25,
                     strokeLinecap: "butt",
@@ -53,10 +58,10 @@ export default function Diagnostico() {
           </div>
         </div>
         <div className={styles.indexes_container}>
-          <CategoryIndex />
-          <CategoryIndex />
-          <CategoryIndex />
-          <CategoryIndex />
+          <CategoryIndex value={strategy} category="Estrategia" />
+          <CategoryIndex value={process} category="Procesos" />
+          <CategoryIndex value={people} category="Personas" />
+          <CategoryIndex value={customers} category="Clientes" />
         </div>
       </section>
     </Layout>

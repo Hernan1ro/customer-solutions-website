@@ -11,13 +11,14 @@ export const CategoryIndex = ({
   percentage,
   heading,
   description,
+  value,
 }) => {
   return (
     <div className={styles.category_index}>
-      <h5>Estrategia</h5>
+      <h5>{category}</h5>
       <div>
         <CircularProgressbarWithChildren
-          value={66}
+          value={value}
           styles={buildStyles({
             rotation: 0.25,
             strokeLinecap: "butt",
@@ -36,7 +37,7 @@ export const CategoryIndex = ({
             alt="category-image"
           />
           <div style={{ fontSize: 40, marginTop: 5, color: "#e57716" }}>
-            <strong>66%</strong>
+            <strong>{value}%</strong>
           </div>
         </CircularProgressbarWithChildren>
       </div>

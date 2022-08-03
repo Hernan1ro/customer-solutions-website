@@ -54,7 +54,7 @@ export default function Test() {
 
     handleData(answers);
 
-    // router.push("/diagnostico");
+    router.push("/diagnostico");
   };
 
   // ---------- Calculate index 360 ----------------- //
