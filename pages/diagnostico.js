@@ -6,11 +6,14 @@ import "react-circular-progressbar/dist/styles.css";
 import { useRouter } from "next/router";
 import { CategoryIndex } from "../Components/CategoryIndex";
 import { useSelector } from "react-redux";
+import { diagnostic } from "../pages/api/diagnostic";
 
 export default function Diagnostico() {
   const {
     result: { index, strategy, process, people, customers },
   } = useSelector((state) => state.index360Slice);
+
+  const indicators = diagnostic(index, strategy, process, people, customers);
 
   return (
     <Layout page="Diagnóstico 360°">
@@ -58,10 +61,21 @@ export default function Diagnostico() {
           </div>
         </div>
         <div className={styles.indexes_container}>
-          <CategoryIndex value={strategy} category="Estrategia" />
-          <CategoryIndex value={process} category="Procesos" />
-          <CategoryIndex value={people} category="Personas" />
-          <CategoryIndex value={customers} category="Clientes" />
+          {indicators.map((obj, index) => {
+            const { category, img, conclusion, heading, value } = obj;
+            if (index > 0) {
+              return (
+                <CategoryIndex
+                  value={value}
+                  category={category}
+                  img={img}
+                  conclusion={conclusion}
+                  heading={heading}
+                  key={category}
+                />
+              );
+            }
+          })}
         </div>
       </section>
     </Layout>

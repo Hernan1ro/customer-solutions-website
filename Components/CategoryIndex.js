@@ -1,6 +1,6 @@
+import { useState } from "react";
 import styles from "../styles/pages/diagnostico.module.css";
 import {
-  CircularProgressbar,
   buildStyles,
   CircularProgressbarWithChildren,
 } from "react-circular-progressbar";
@@ -8,11 +8,21 @@ import {
 export const CategoryIndex = ({
   category,
   img,
-  percentage,
+  conclusion,
   heading,
-  description,
   value,
 }) => {
+  const [color, setColor] = useState();
+  // Handling dinamic responses //
+  const textHandler = (text) => {
+    if (value < 40) {
+      return text.low;
+    } else if (value >= 40 && value < 70) {
+      return text.middle;
+    } else if (value >= 70) {
+      return text.high;
+    }
+  };
   return (
     <div className={styles.category_index}>
       <h5>{category}</h5>
@@ -30,27 +40,18 @@ export const CategoryIndex = ({
             backgroundColor: "#e57716",
           })}
         >
-          {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
           <img
             style={{ width: 80, marginTop: -5 }}
-            src="./assets/icons/strategy.svg"
-            alt="category-image"
+            src={`/assets/icons/${img}.svg`}
+            alt={`${category}-image`}
           />
           <div style={{ fontSize: 40, marginTop: 5, color: "#e57716" }}>
             <strong>{value}%</strong>
           </div>
         </CircularProgressbarWithChildren>
       </div>
-      <span>
-        Tu nivel de madurez en experiencia y satisfacción del cliente es de XX%
-      </span>
-      <p>
-        {" "}
-        La estrategia en experiencia y satisfacción de tus clientes y empleados
-        esta consolidada. Tu empresa trabaja pensando en sus clientes/empleados,
-        recuerda que con frecuencia surgen tendencias de las cuales debes estar
-        enterado. Vas en el camino adecuado, continua en esta ruta.
-      </p>
+      <span>{textHandler(heading)}</span>
+      <p>{textHandler(conclusion)}</p>
     </div>
   );
 };
