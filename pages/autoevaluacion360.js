@@ -6,12 +6,15 @@ import { Question } from "../Components/Question";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { setResult } from "../store/slices/index360";
 
 export default function Test() {
   const form = useRef(null);
   const [error, setError] = useState(false);
   const [answers, setAnswers] = useState([]);
   const [progress, setProgess] = useState(0);
+  const dispatch = useDispatch();
 
   const router = useRouter();
 
@@ -82,12 +85,14 @@ export default function Test() {
     const indexCustomers = calculateIndex(customersCount, 90);
     const indexTotal = calculateIndex(indexCount, 300);
 
-    console.log(
-      indexStrategy,
-      indexProcess,
-      indexPeople,
-      indexCustomers,
-      indexTotal
+    dispatch(
+      setResult({
+        index: indexTotal,
+        strategy: indexStrategy,
+        process: indexProcess,
+        people: indexPeople,
+        customers: indexCustomers,
+      })
     );
   }
   // ------------- calculatr percent ------------- //
