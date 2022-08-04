@@ -57,7 +57,7 @@
 .index_bar span {
   font-size: var(--xxl);
   color: var(--secondary);
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .index_description img {
@@ -87,6 +87,7 @@
   justify-content: center;
   gap: 0.5rem;
   height: 4rem;
+  margin-bottom: 0;
 }
 .index_description button img {
   width: 3rem;

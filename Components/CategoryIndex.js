@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { IndexIcon } from "../Components/IndexIcon";
 import styles from "../styles/pages/diagnostico.module.css";
 import {
   buildStyles,
@@ -7,7 +8,6 @@ import {
 
 export const CategoryIndex = ({
   category,
-  img,
   conclusion,
   heading,
   value,
@@ -37,11 +37,7 @@ export const CategoryIndex = ({
             backgroundColor: color,
           })}
         >
-          <img
-            style={{ width: 80, marginTop: -5 }}
-            src={`/assets/icons/${img}.svg`}
-            alt={`${category}-image`}
-          />
+          <IndexIcon name={category} color={color} />
           <div
             style={{
               fontSize: 40,

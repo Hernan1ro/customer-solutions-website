@@ -1,4 +1,4 @@
-export const diagnostic = (index, strategy, process, people, customers) => [
+export const diagnostic = (index, strategy, process, employee, customers) => [
   {
     category: "Index 360°",
     value: index,
@@ -51,13 +51,13 @@ export const diagnostic = (index, strategy, process, people, customers) => [
     lie: 50,
   },
   {
-    category: "Personas",
-    value: people,
+    category: "Empleados",
+    value: employee,
     img: "employee",
     heading: {
-      high: `Tienes un nivel de ${people}%`,
-      middle: `Tu nivel de experiencia de tus empleados es ${people}%`,
-      low: `Tienes un nivel de ${people}%`,
+      high: `Tienes un nivel de ${employee}%`,
+      middle: `Tu nivel de experiencia de tus empleados es ${employee}%`,
+      low: `Tienes un nivel de ${employee}%`,
     },
     conclusion: {
       high: `Consolida los programas que tienes con tus empleados, se encuentran comprometidos con brindar experiencias inolvidables, ademas de que comprenden su papel en la consecusion de los logros. Asegurate de que esten permanentemente motivados.`,
