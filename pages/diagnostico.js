@@ -40,13 +40,24 @@ export default function Diagnostico() {
   const color = colorHandler(value, lie, lse);
   const summary = textHandler(value, heading, lie, lse);
   const text = textHandler(value, conclusion, lie, lse);
+  //-------------styles ---------------//
+  const hoverClass = (hex) => {
+    switch (hex) {
+      case "#f57070":
+        return styles.redhover;
+      case "#3aa8f7":
+        return styles.bluehover;
+      case "#e57716":
+        return styles.orangehover;
+    }
+  };
 
   return (
     <Layout page="Diagnóstico 360°">
-      <section className={styles.diagnostic}>
+      <section className={`${styles.diagnostic}`}>
         <h2>Diagnóstico madurez experiencia de servicio</h2>
         <h3>Estos son tus resultados</h3>
-        <div className={styles.index_container}>
+        <div className={`${styles.index_container} `}>
           <h4>{category}</h4>
           <div className={styles.main_index}>
             <div className={styles.index_bar}>
@@ -97,6 +108,7 @@ export default function Diagnostico() {
                   colorHandler={colorHandler}
                   lse={lse}
                   lie={lie}
+                  hoverClass={hoverClass}
                 />
               );
             }

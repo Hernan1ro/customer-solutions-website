@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { IndexIcon } from "../Components/IndexIcon";
 import styles from "../styles/pages/diagnostico.module.css";
 import {
@@ -15,14 +14,15 @@ export const CategoryIndex = ({
   colorHandler,
   lse,
   lie,
+  hoverClass,
 }) => {
   const color = colorHandler(value, lie, lse);
   const summary = textHandler(value, heading, lie, lse);
   const text = textHandler(value, conclusion, lie, lse);
 
   return (
-    <div className={styles.category_index}>
-      <h5>{category}</h5>
+    <div className={`${styles.category_index} ${hoverClass(color)}`}>
+      <h5 style={{ color }}>{category}</h5>
       <div>
         <CircularProgressbarWithChildren
           value={value}

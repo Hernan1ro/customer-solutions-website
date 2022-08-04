@@ -22,14 +22,19 @@
 }
 .diagnostic h3 {
   font-size: var(--large);
-  color: var(--secondary);
+  color: var(--secondary1);
   font-weight: bold;
   margin: 2rem 0;
 }
 .index_container {
-  border: 2px solid var(--primary-hover);
+  box-shadow: 2px 2px 16px var(--light-blue);
   padding: 2rem;
   border-radius: 1.5rem;
+  transition: all 0.8s;
+  margin-bottom: 2rem;
+}
+.index_container:hover {
+  box-shadow: 2px 2px 10px var(--primary);
 }
 .index_container h4 {
   font-size: var(--large);
@@ -102,19 +107,31 @@
   display: flex;
   flex-flow: wrap;
   justify-content: center;
-  padding: 1rem;
   gap: 2rem;
   margin-top: 1rem;
 }
 
 .category_index {
   padding: 2rem;
-  border: solid 2px var(--primary);
-  max-width: 40rem;
-  width: 100%;
+  box-shadow: 2px 2px 16px var(--light-blue);
+  width: 32%;
+  min-width: 30rem;
   border-radius: 1.5rem;
   display: grid;
   gap: 1rem;
+  transition: all 0.8s;
+}
+.category_index:hover {
+  box-shadow: 2px 2px 10px var(--primary);
+}
+.redhover:hover {
+  box-shadow: 2px 2px 10px #f57070;
+}
+.bluehover:hover {
+  box-shadow: 2px 2px 10px var(--secondary);
+}
+.orangehover:hover {
+  box-shadow: 2px 2px 10px var(--primary);
 }
 
 .category_index h5 {
@@ -126,7 +143,7 @@
   margin: 0 auto;
 }
 .category_index span {
-  font-size: var(--lg);
+  font-size: var(--xl);
   color: var(--secondary);
   font-weight: bold;
 }
