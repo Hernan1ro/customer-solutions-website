@@ -14,27 +14,32 @@ export default function Diagnostico() {
   } = useSelector((state) => state.index360Slice);
 
   const indicators = diagnostic(index, strategy, process, people, customers);
-  // --------------data for the main index-------------------//
-  const { category, conclusion, heading, value } = indicators[0];
 
-  const textHandler = (text) => {
-    if (value < 40) {
+  // --------------data for the main index-------------------//
+  const { category, conclusion, heading, value, lse, lie } = indicators[0];
+
+  const textHandler = (value, text, lie, lse) => {
+    if (value < lie) {
       return text.low;
-    } else if (value >= 40 && value < 70) {
+    } else if (value >= lie && value < lse) {
       return text.middle;
-    } else if (value >= 70) {
+    } else if (value >= lse) {
       return text.high;
     }
   };
-  const colorHandler = (points) => {
-    if (points < 40) {
+  const colorHandler = (points, lie, lse) => {
+    if (points < lie) {
       return "#f57070";
-    } else if (points >= 40 && points < 70) {
+    } else if (points >= lie && points < lse) {
       return "#3aa8f7";
-    } else if (points >= 70) {
+    } else if (points >= lse) {
       return "#e57716";
     }
   };
+
+  const color = colorHandler(value, lie, lse);
+  const summary = textHandler(value, heading, lie, lse);
+  const text = textHandler(value, conclusion, lie, lse);
 
   return (
     <Layout page="Diagnóstico 360°">
@@ -55,18 +60,18 @@ export default function Diagnostico() {
                     textSize: "20px",
                     fontWeight: "bold",
                     pathTransitionDuration: 0.5,
-                    pathColor: colorHandler(value),
-                    textColor: colorHandler(value),
+                    pathColor: color,
+                    textColor: color,
                     trailColor: "#daedfc",
-                    backgroundColor: colorHandler(value),
+                    backgroundColor: color,
                   })}
                 />
               </div>
-              <span>{textHandler(heading)}</span>
+              <span style={{ color }}>{summary}</span>
             </div>
             <div className={styles.index_description}>
               <img src="./assets/Illustrations/results.svg" alt="Index image" />
-              <p>{textHandler(conclusion)}</p>
+              <p>{text}</p>
               <button>
                 Descarga tu informe completo
                 <img
@@ -79,7 +84,7 @@ export default function Diagnostico() {
         </div>
         <div className={styles.indexes_container}>
           {indicators.map((obj, index) => {
-            const { category, img, conclusion, heading, value } = obj;
+            const { category, img, conclusion, heading, value, lse, lie } = obj;
             if (index > 0) {
               return (
                 <CategoryIndex
@@ -91,6 +96,8 @@ export default function Diagnostico() {
                   key={category}
                   textHandler={textHandler}
                   colorHandler={colorHandler}
+                  lse={lse}
+                  lie={lie}
                 />
               );
             }

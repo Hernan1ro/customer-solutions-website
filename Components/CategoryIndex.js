@@ -13,7 +13,13 @@ export const CategoryIndex = ({
   value,
   textHandler,
   colorHandler,
+  lse,
+  lie,
 }) => {
+  const color = colorHandler(value, lie, lse);
+  const summary = textHandler(value, heading, lie, lse);
+  const text = textHandler(value, conclusion, lie, lse);
+
   return (
     <div className={styles.category_index}>
       <h5>{category}</h5>
@@ -25,10 +31,10 @@ export const CategoryIndex = ({
             strokeLinecap: "butt",
             textSize: "20px",
             pathTransitionDuration: 0.5,
-            pathColor: colorHandler(value),
-            textColor: colorHandler(value),
+            pathColor: color,
+            textColor: color,
             trailColor: "#daedfc",
-            backgroundColor: colorHandler(value),
+            backgroundColor: color,
           })}
         >
           <img
@@ -37,14 +43,18 @@ export const CategoryIndex = ({
             alt={`${category}-image`}
           />
           <div
-            style={{ fontSize: 40, marginTop: 5, color: colorHandler(value) }}
+            style={{
+              fontSize: 40,
+              marginTop: 5,
+              color: color,
+            }}
           >
             <strong>{value}%</strong>
           </div>
         </CircularProgressbarWithChildren>
       </div>
-      <span>{textHandler(heading)}</span>
-      <p>{textHandler(conclusion)}</p>
+      <span style={{ color }}>{summary}</span>
+      <p>{text}</p>
     </div>
   );
 };
