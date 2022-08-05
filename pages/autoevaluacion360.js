@@ -1,13 +1,16 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Layout } from "../Layout/Layout";
 import styles from "../styles/pages/test.module.css";
 import { test360Questions } from "../pages/api/questions";
+import { test360QuestionsInformal } from "../pages/api/questions";
+import { test360QuestionsEmployee } from "../pages/api/questions";
 import { Question } from "../Components/Question";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { setResult } from "../store/slices/index360";
+import { useSelector } from "react-redux";
 
 export default function Test() {
   const form = useRef(null);
@@ -15,8 +18,33 @@ export default function Test() {
   const [answers, setAnswers] = useState([]);
   const [progress, setProgess] = useState(0);
   const dispatch = useDispatch();
-
   const router = useRouter();
+  const [questionTest, setQuestionsTest] = useState([]);
+
+  // ---------------- extracting data from global state ---------------- //
+  const {
+    profile: [question],
+  } = useSelector((state) => state.index360Slice);
+
+  const dbOptions = (profile) => {
+    switch (profile) {
+      case "Comerciante informal":
+        setQuestionsTest(test360QuestionsInformal);
+        break;
+      case "Empleado":
+        setQuestionsTest(test360QuestionsEmployee);
+        break;
+      default:
+        setQuestionsTest(test360Questions);
+        break;
+    }
+  };
+
+  useEffect(() => {
+    dbOptions(question.answer);
+  }, []);
+
+  console.log(questionTest);
 
   const percent = ((progress / test360Questions.length) * 100).toFixed(0);
 
@@ -53,7 +81,6 @@ export default function Test() {
     }
 
     handleData(answers);
-
     router.push("/diagnostico");
   };
 

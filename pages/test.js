@@ -6,6 +6,8 @@ import { Question } from "../Components/Question";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { setProfile } from "../store/slices/index360";
 
 export default function Test() {
   const form = useRef(null);
@@ -13,6 +15,7 @@ export default function Test() {
   const [answers, setAnswers] = useState([]);
   const [progress, setProgess] = useState(0);
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const percent = (progress / customerQuestion.length) * 100;
 
@@ -46,8 +49,7 @@ export default function Test() {
       }
     }
 
-    console.log(answers);
-
+    dispatch(setProfile(answers));
     router.push("/autoevaluacion360");
   };
   const handleChange = (id) => {
