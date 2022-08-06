@@ -22,15 +22,27 @@
 @media (max-width: 767px) {
   .container {
     grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+}
+.hero_img_container {
+  border-radius: 1rem;
+  box-shadow: 2px 2px 10px var(--primary);
+  width: 40rem;
+  height: 54rem;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .hero_img_container {
+    display: none;
   }
 }
 
 .hero_img {
-  max-width: 60rem;
-  width: 100%;
-  object-fit: cover;
-  max-height: 60rem;
-  box-shadow: 2px 2px 10px var(--primary);
+  border-radius: 1rem;
+  width: 60rem;
+  height: 60rem;
 }
 
 .hero_text {
@@ -50,6 +62,15 @@
   font-weight: 500;
 }
 
+@media (max-width: 767px) {
+  .hero_text h2 {
+    font-size: var(--xxl);
+  }
+  .hero_text p {
+    font-size: var(--lg);
+  }
+}
+
 .bulletpoint_container {
   display: flex;
   flex-direction: column;
@@ -64,6 +85,12 @@
 .bulletpoint_container div span {
   font-size: var(--lg);
   color: var(--black);
+}
+
+@media (max-width: 767px) {
+  .bulletpoint_container div span {
+    font-size: var(--md);
+  }
 }
 
 .hero_text button {
@@ -81,6 +108,12 @@
   font-weight: bold;
 }
 
+@media (max-width: 767px) {
+  .hero_text button {
+    font-size: var(--md);
+  }
+}
+
 .hero_text button:hover {
   background-color: var(--primary-hover);
 }
@@ -95,4 +128,10 @@
   color: var(--secondary);
   background-color: #daedfc;
   border-radius: 1rem;
+}
+
+@media (max-width: 767px) {
+  .hero_text small {
+    font-size: var(--sm);
+  }
 }

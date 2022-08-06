@@ -1,15 +1,18 @@
 import { Layout } from "../Layout/Layout";
 import styles from "../styles/pages/evaluacion360.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Evaluacion360() {
   return (
     <Layout page="Inicio">
       <section className={styles.container}>
-        <div>
-          <img
+        <div className={styles.hero_img_container}>
+          <Image
+            priority
+            layout="fill"
             className={styles.hero_img}
-            src="./assets/evaluacion360/heading.jpg"
+            src="/assets/evaluacion360/heading.jpg"
             alt="evaluación 360"
           />
         </div>

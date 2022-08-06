@@ -9,7 +9,7 @@ export const HamburgerMenu = ({ handleClick }) => {
     setClose(!close);
     setTimeout(() => {
       handleClick();
-    }, 500);
+    }, 600);
   };
   return (
     <nav className={close ? `${styles.nav} ${styles.close}` : styles.nav}>
