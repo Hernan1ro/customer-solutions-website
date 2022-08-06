@@ -77,6 +77,7 @@ export default function Test() {
       document.querySelector(`#submit_btn`).scrollIntoView({
         behavior: "smooth",
       });
+      document.querySelector(`#submit_btn`).style.opacity = 1;
     }
   };
 
