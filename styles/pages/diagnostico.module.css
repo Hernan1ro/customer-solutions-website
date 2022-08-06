@@ -19,6 +19,7 @@
   font-size: var(--larger);
   color: var(--primary);
   font-weight: bold;
+  margin-bottom: 1rem;
 }
 .diagnostic h3 {
   font-size: var(--large);
@@ -26,6 +27,15 @@
   font-weight: bold;
   margin: 2rem 0;
 }
+@media (max-width: 768px) {
+  .diagnostic h2 {
+    font-size: var(--xsl);
+  }
+  .diagnostic h3 {
+    font-size: var(--xxl);
+  }
+}
+
 .index_container {
   box-shadow: 2px 2px 16px var(--light-blue);
   padding: 2rem;
@@ -33,18 +43,30 @@
   transition: all 0.8s;
   margin-bottom: 2rem;
 }
-.index_container:hover {
+/* .index_container:hover {
   box-shadow: 2px 2px 10px var(--primary);
-}
+} */
 .index_container h4 {
   font-size: var(--large);
   color: var(--primary);
+}
+@media (max-width: 768px) {
+  .index_container h4 {
+    font-size: var(--xsl);
+    margin-bottom: 1rem;
+  }
 }
 .main_index {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   place-items: center;
+}
+
+@media (max-width: 768px) {
+  .main_index {
+    grid-template-columns: 1fr;
+  }
 }
 
 .index_bar {
@@ -56,7 +78,8 @@
 }
 
 .index_bar .progressbar {
-  width: 30rem;
+  max-width: 30rem;
+  width: 80%;
 }
 
 .index_bar span {
@@ -68,9 +91,23 @@
 .index_description img {
   height: 20rem;
 }
+@media (max-width: 768px) {
+  .index_description img {
+    height: 12rem;
+  }
+}
 .index_description p {
   font-size: var(--xxl);
   color: var(--black);
+}
+
+@media (max-width: 768px) {
+  .index_bar span {
+    font-size: var(--lg);
+  }
+  .index_description p {
+    font-size: var(--md);
+  }
 }
 
 .index_description button {
@@ -93,6 +130,14 @@
   gap: 0.5rem;
   height: 4rem;
   margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .index_description button {
+    font-size: var(--sm);
+    gap: 0;
+    padding: 1rem 0.5rem;
+  }
 }
 .index_description button img {
   width: 3rem;
@@ -141,6 +186,13 @@
 .category_index div {
   width: 70%;
   margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .category_index div strong {
+    font-size: var(--large);
+    margin-top: -1rem;
+  }
 }
 .category_index span {
   font-size: var(--xl);

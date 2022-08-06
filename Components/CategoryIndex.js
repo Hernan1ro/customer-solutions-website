@@ -41,7 +41,7 @@ export const CategoryIndex = ({
           <div
             style={{
               fontSize: 40,
-              marginTop: 5,
+              marginTop: -8,
               color: color,
             }}
           >
