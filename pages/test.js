@@ -82,7 +82,7 @@ export default function Test() {
   };
 
   return (
-    <Layout page="Test">
+    <Layout page="Perfil corporativo" hide={true}>
       <section className={styles.container}>
         <div>
           <h2>Perfil corporativo</h2>

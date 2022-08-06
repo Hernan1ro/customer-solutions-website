@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Evaluacion360() {
   return (
-    <Layout page="Inicio">
+    <Layout page="Evaluación 360°" hide={true}>
       <section className={styles.container}>
         <div className={styles.hero_img_container}>
           <Image

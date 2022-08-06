@@ -178,7 +178,7 @@ export default function Test() {
   };
 
   return (
-    <Layout page="Test">
+    <Layout page="Auto evaluación 360" hide={true}>
       <section className={styles.container}>
         <div>
           <h2>Evaluación nivel de experiencia y calidad del servicio 360°</h2>

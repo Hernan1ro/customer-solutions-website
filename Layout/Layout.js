@@ -3,7 +3,7 @@ import styles from "../styles/Layout/Layout.module.css";
 import { Header } from "../Components/Header";
 import { Footer } from "../Components/Footer";
 
-export const Layout = ({ children, page }) => {
+export const Layout = ({ children, page, hide }) => {
   return (
     <>
       <Head>
@@ -14,9 +14,9 @@ export const Layout = ({ children, page }) => {
         />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Header />
+      <Header hide={hide} />
       <main className={styles.main_container}>{children}</main>
-      {page !== "Test" ? <Footer /> : null}
+      {!hide ? <Footer /> : null}
     </>
   );
 };
