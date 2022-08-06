@@ -165,6 +165,8 @@ export default function Test() {
       document.querySelector(`#question_${id + 1}`).scrollIntoView({
         behavior: "smooth",
       });
+      document.querySelector(`#question_${id}`).style.opacity = 1;
+      document.querySelector(`#question_${id + 1}`).style.opacity = 1;
     }
     if (id === questionTest.length) {
       // --------- Scroll to the submit button -------------//

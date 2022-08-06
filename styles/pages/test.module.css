@@ -60,13 +60,26 @@
 }
 
 .form .question {
+  padding: 18rem 0 3rem 0;
+  opacity: 0.1;
+}
+.form .question:first-child {
   padding: 8rem 0 3rem 0;
+  opacity: 1;
 }
 .form .question:last-of-type {
-  padding: 5rem 0 0 0;
+  padding: 16rem 0 0 0;
 }
 .form .question:first-of-type {
   padding: 3rem 0 0 0;
+}
+@media (max-width: 1024px) {
+  .form .question {
+    padding: 10rem 0 3rem 0;
+  }
+  .form .question:last-of-type {
+    padding: 7rem 0 0 0;
+  }
 }
 .form p {
   margin-bottom: 1rem;
@@ -207,7 +220,7 @@
 
 @media (min-width: 1024px) {
   .circular_progressbar {
-    width: 28rem;
+    width: 24rem;
     right: calc(17% - 14rem);
   }
 }
