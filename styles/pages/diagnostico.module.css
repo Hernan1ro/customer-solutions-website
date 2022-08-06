@@ -160,11 +160,28 @@
   padding: 2rem;
   box-shadow: 2px 2px 16px var(--light-blue);
   width: 32%;
-  min-width: 30rem;
+  /* min-width: 30rem; */
   border-radius: 1.5rem;
   display: grid;
   gap: 1rem;
   transition: all 0.8s;
+}
+
+@media (max-width: 767px) {
+  .category_index {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .category_index {
+    min-width: 30rem;
+  }
+}
+@media (max-width: 1024px) {
+  .category_index {
+    width: 48%;
+  }
 }
 .category_index:hover {
   box-shadow: 2px 2px 10px var(--primary);
