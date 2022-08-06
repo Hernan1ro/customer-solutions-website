@@ -1435,77 +1435,23 @@ export const test360QuestionsEmployee = [
   {
     id: 13,
     question:
-      "¿Tus empleados conocen la estrategia de experiencia y satisfaccion de la empresa?",
+      "¿La empresa cuenta con arquetipos o perfiles de sus clientes ideales?",
     options: [
-      { answer: "No tienen cononcimiento", points: 2 },
       {
-        answer: "Muy pocos empleados",
-        points: 4,
-      },
-      {
-        answer: "Algunos empleados",
-        points: 6,
-      },
-      {
-        answer: "La gran mayoria de empleados",
-        points: 8,
-      },
-      {
-        answer: "Todos los empleados",
+        answer: "Si",
         points: 10,
       },
+      {
+        answer: "No",
+        points: 0,
+      },
     ],
-    dimension: "people",
+    dimension: "customers",
   },
   {
     id: 14,
     question:
-      "¿Existe conciencia en todos los empleados de la importancia del cliente para la empresa?",
-    options: [
-      { answer: "No existe conciencia", points: 2.5 },
-      {
-        answer: "Existe en pocos empleados",
-        points: 5,
-      },
-      {
-        answer: "Existe en la gran mayoría de empleados",
-        points: 7.5,
-      },
-      {
-        answer: "Existe en todos los empleados",
-        points: 10,
-      },
-    ],
-    dimension: "people",
-  },
-  {
-    id: 15,
-    question: "¿La empresa conoce el nivel de satisfacción de sus empleados?",
-    options: [
-      { answer: "No tienen cononcimiento", points: 2 },
-      {
-        answer: "Muy pocos empleados",
-        points: 4,
-      },
-      {
-        answer: "Algunos empleados",
-        points: 6,
-      },
-      {
-        answer: "La gran mayoria de empleados",
-        points: 8,
-      },
-      {
-        answer: "Todos los empleados",
-        points: 10,
-      },
-    ],
-    dimension: "people",
-  },
-  {
-    id: 16,
-    question:
-      "¿Existen programas de capacitación y formación a los empleados  alineados con la estrategia de experiencia del cliente?",
+      "¿Conoces los momentos sensibles y criticos de tus clientes en tu empresa?",
     options: [
       {
         answer: "Si",
@@ -1516,37 +1462,77 @@ export const test360QuestionsEmployee = [
         points: 0,
       },
     ],
-    dimension: "people",
+    dimension: "customers",
+  },
+  {
+    id: 15,
+    question:
+      "¿Los canales de contacto son de claro conocimiento para tus clientes?",
+    options: [
+      { answer: "1", points: 2 },
+      {
+        answer: "2",
+        points: 4,
+      },
+      {
+        answer: "3",
+        points: 6,
+      },
+      {
+        answer: "4",
+        points: 8,
+      },
+      {
+        answer: "5",
+        points: 10,
+      },
+    ],
+    dimension: "customers",
+  },
+  {
+    id: 16,
+    question: "¿Que grado de satisfaccion tienen los clientes en su empresa?",
+    options: [
+      { answer: "1", points: 2 },
+      {
+        answer: "2",
+        points: 4,
+      },
+      {
+        answer: "3",
+        points: 6,
+      },
+      {
+        answer: "4",
+        points: 8,
+      },
+      {
+        answer: "5",
+        points: 10,
+      },
+    ],
+    dimension: "customers",
   },
   {
     id: 17,
     question:
-      "¿En que grado los empleados ven a otros empleados como clientes?",
+      "¿Conoces el grado de recomendación que tus clientes hacen de tu empresa?",
     options: [
-      { answer: "1", points: 2 },
       {
-        answer: "2",
-        points: 4,
-      },
-      {
-        answer: "3",
-        points: 6,
-      },
-      {
-        answer: "4",
-        points: 8,
-      },
-      {
-        answer: "5",
+        answer: "Si",
         points: 10,
       },
+      {
+        answer: "No",
+        points: 0,
+      },
     ],
-    dimension: "people",
+    dimension: "customers",
   },
   {
     id: 18,
     question:
-      "¿Que grado de motivación tienen los empleados en su organización frente a la satisfaccion de sus clientes?",
+      "¿Los canales de contacto estan diseñados según las necesidades de sus clientes?",
     options: [
       { answer: "1", points: 2 },
       {
@@ -1566,50 +1552,37 @@ export const test360QuestionsEmployee = [
         points: 10,
       },
     ],
-    dimension: "people",
+    dimension: "customers",
   },
   {
     id: 19,
     question:
-      "¿Existen programas de reconocimiento a los empleados relacionado con la experiencia y satisfacción del cliente?",
+      "¿Cuál es el grado de claridad, sencillez y exactitud de las respuestas que se entregan a los clientes?",
     options: [
+      { answer: "1", points: 2 },
       {
-        answer: "Si",
+        answer: "2",
+        points: 4,
+      },
+      {
+        answer: "3",
+        points: 6,
+      },
+      {
+        answer: "4",
+        points: 8,
+      },
+      {
+        answer: "5",
         points: 10,
       },
-      {
-        answer: "No",
-        points: 0,
-      },
     ],
-    dimension: "people",
+    dimension: "customers",
   },
   {
     id: 20,
     question:
-      "¿los empleados siempre estan enterados de nuevas promociones, lanzamientos, descuentos o novedades antes de publicarlas a los clientes?",
-    options: [
-      { answer: "Nunca estan enterados", points: 2.5 },
-      {
-        answer: "Rara vez están enterados",
-        points: 5,
-      },
-      {
-        answer: "Con frecuencia están enterados",
-        points: 7.5,
-      },
-      {
-        answer:
-          "Siempre están enterados, existe armonia y alineación entre las areas",
-        points: 10,
-      },
-    ],
-    dimension: "people",
-  },
-  {
-    id: 21,
-    question:
-      "¿Conoces el grado de recomendación que tus empleados hacen de tu empresa?",
+      "¿Los clientes viven experiencias enriquecedoras y memorables en su empresa?",
     options: [
       {
         answer: "Si",
@@ -1620,6 +1593,30 @@ export const test360QuestionsEmployee = [
         points: 0,
       },
     ],
-    dimension: "people",
+    dimension: "customers",
+  },
+  {
+    id: 21,
+    question: "¿Prestas un servicio bien a la primera vez?",
+    options: [
+      { answer: "Nunca", points: 2 },
+      {
+        answer: "Pocas veces",
+        points: 4,
+      },
+      {
+        answer: "Algunas veces",
+        points: 6,
+      },
+      {
+        answer: "Con mucha frecuencia",
+        points: 8,
+      },
+      {
+        answer: "Siempre, es mi filosofía",
+        points: 10,
+      },
+    ],
+    dimension: "customers",
   },
 ];

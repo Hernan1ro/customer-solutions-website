@@ -96,7 +96,7 @@ export default function Diagnostico() {
         <div className={styles.indexes_container}>
           {indicators.map((obj, index) => {
             const { category, conclusion, heading, value, lse, lie } = obj;
-            if (index > 0) {
+            if (index > 0 && value > 0) {
               return (
                 <CategoryIndex
                   value={value}

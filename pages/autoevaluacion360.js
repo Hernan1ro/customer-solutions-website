@@ -20,6 +20,13 @@ export default function Test() {
   const dispatch = useDispatch();
   const router = useRouter();
   const [questionTest, setQuestionsTest] = useState([]);
+  const [standars, setStandars] = useState({
+    strategy: 60,
+    process: 60,
+    people: 90,
+    customers: 90,
+    indexTotal: 300,
+  });
 
   // ---------------- extracting data from global state ---------------- //
   const {
@@ -30,9 +37,23 @@ export default function Test() {
     switch (profile) {
       case "Comerciante informal":
         setQuestionsTest(test360QuestionsInformal);
+        setStandars({
+          strategy: 40,
+          process: 40,
+          people: 60,
+          customers: 60,
+          indexTotal: 200,
+        });
         break;
       case "Empleado":
         setQuestionsTest(test360QuestionsEmployee);
+        setStandars({
+          strategy: 60,
+          process: 60,
+          people: 0,
+          customers: 90,
+          indexTotal: 210,
+        });
         break;
       default:
         setQuestionsTest(test360Questions);
@@ -46,12 +67,12 @@ export default function Test() {
 
   console.log(questionTest);
 
-  const percent = ((progress / test360Questions.length) * 100).toFixed(0);
+  const percent = ((progress / questionTest.length) * 100).toFixed(0);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     //---------------check if the form has been answered ------------//
-    if (progress < test360Questions.length) {
+    if (progress < questionTest.length) {
       setError(true);
       setTimeout(() => {
         document.querySelector(`#error`).scrollIntoView({
@@ -106,11 +127,11 @@ export default function Test() {
       indexCount += points;
     });
 
-    const indexStrategy = calculateIndex(strategyCount, 60);
-    const indexProcess = calculateIndex(processCount, 60);
-    const indexPeople = calculateIndex(peopleCount, 90);
-    const indexCustomers = calculateIndex(customersCount, 90);
-    const indexTotal = calculateIndex(indexCount, 300);
+    const indexStrategy = calculateIndex(strategyCount, standars.strategy);
+    const indexProcess = calculateIndex(processCount, standars.process);
+    const indexPeople = calculateIndex(peopleCount, standars.people);
+    const indexCustomers = calculateIndex(customersCount, standars.customers);
+    const indexTotal = calculateIndex(indexCount, standars.indexTotal);
 
     dispatch(
       setResult({
@@ -134,18 +155,18 @@ export default function Test() {
       let inputs = questionDiv[i].children[1].children;
       for (let j = 0; j < inputs.length; j++) {
         let check = inputs[j].children[0].checked;
-        if (check && progress < test360Questions.length) {
+        if (check && progress < questionTest.length) {
           setProgess(progress + 1);
         }
       }
     }
-    if (id > 0 && id < test360Questions.length) {
+    if (id > 0 && id < questionTest.length) {
       // --------- Scroll to the next question -------------//
       document.querySelector(`#question_${id + 1}`).scrollIntoView({
         behavior: "smooth",
       });
     }
-    if (id === test360Questions.length) {
+    if (id === questionTest.length) {
       // --------- Scroll to the submit button -------------//
       document.querySelector(`#submit_btn`).scrollIntoView({
         behavior: "smooth",
@@ -161,7 +182,7 @@ export default function Test() {
           <h3>Evaluación de la madurez </h3>
           <div>
             <form onSubmit={handleSubmit} className={styles.form} ref={form}>
-              {test360Questions.map((item) => {
+              {questionTest.map((item) => {
                 const { question, options, id, dimension } = item;
                 return (
                   <Question
@@ -191,8 +212,8 @@ export default function Test() {
             <CircularProgressbar
               value={progress}
               minValue={0}
-              maxValue={30}
-              text={`${progress}/${test360Questions.length} respuestas`}
+              maxValue={questionTest.length}
+              text={`${progress}/${questionTest.length} respuestas`}
               styles={buildStyles({
                 rotation: 0.25,
                 strokeLinecap: "butt",
