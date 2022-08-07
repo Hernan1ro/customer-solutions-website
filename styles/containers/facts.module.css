@@ -17,16 +17,25 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 4rem;
 }
 @media (max-width: 768px) {
+  .facts_container h2 {
+    font-size: var(--xsl);
+  }
   .grid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
 }
 .progressbar {
-  width: 30rem;
+  width: 25rem;
+  max-width: 25rem;
+}
+@media (max-width: 768px) {
+  .progressbar {
+    width: 50%;
+  }
 }
 .box_container {
   display: flex;
@@ -42,6 +51,11 @@
   padding: 3rem 2rem;
   border-radius: 1.5rem;
   box-shadow: 5px 5px 16px var(--black);
+}
+@media (max-width: 768px) {
+  .text {
+    font-size: var(--lg);
+  }
 }
 
 .text strong {
