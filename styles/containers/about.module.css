@@ -31,6 +31,7 @@
 @media (max-width: 768px) {
   .container div {
     width: 100%;
+    margin-bottom: 3rem;
   }
   .container img {
     margin-top: -6rem;
@@ -41,8 +42,13 @@
   color: var(--primary);
 }
 
+@media (max-width: 768px) {
+  .container h2 {
+    font-size: var(--xsl);
+  }
+}
 .container p {
   font-size: var(--xl);
   font-weight: 600;
-  color: var(--black);
+  color: var(--secondary1);
 }

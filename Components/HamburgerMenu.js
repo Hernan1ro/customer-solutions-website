@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "../styles/components/hamburger_menu.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 export const HamburgerMenu = ({ handleClick }) => {
   const [close, setClose] = useState(false);
@@ -13,6 +14,7 @@ export const HamburgerMenu = ({ handleClick }) => {
   };
   return (
     <nav className={close ? `${styles.nav} ${styles.close}` : styles.nav}>
+      <Image width={50} height={50} src="/assets/icons/customer_logo.svg" />
       <Link href="/#soluciones">
         <a>Soluciones</a>
       </Link>

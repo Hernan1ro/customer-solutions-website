@@ -14,3 +14,7 @@
   text-align: center;
   margin-bottom: 5rem;
 }
+
+.facts_container img {
+  width: 100%;
+}

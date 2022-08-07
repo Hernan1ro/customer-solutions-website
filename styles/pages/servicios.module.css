@@ -18,6 +18,12 @@
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .servicios h1 {
+    font-size: var(--xsl);
+  }
+}
+
 .servicios button {
   background-color: transparent;
   border: 2px solid var(--white);

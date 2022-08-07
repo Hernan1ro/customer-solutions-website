@@ -36,6 +36,7 @@ export const Header = ({ hide }) => {
                 </Link>
               </nav>
               <Image
+                className={styles.menu_icon}
                 onClick={handleClick}
                 src="/assets/icons/menu.svg"
                 width={40}

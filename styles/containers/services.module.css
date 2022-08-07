@@ -14,6 +14,12 @@
   text-align: center;
   margin-bottom: 5rem;
 }
+@media (max-width: 768px) {
+  .facts_container h2 {
+    font-size: var(--xsl);
+    margin-bottom: 2rem;
+  }
+}
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -23,6 +29,7 @@
   .grid {
     grid-template-columns: 1fr;
     gap: 3rem;
+    place-items: center;
   }
 }
 .progressbar {
@@ -54,11 +61,25 @@
   border-radius: 1.5rem;
   max-height: 50rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
+
 .solution:hover {
   transform: scale(1.05);
   box-shadow: 1px 1px 15px var(--primary);
 }
+@media (max-width: 768px) {
+  .solution {
+    width: 100%;
+    max-height: none;
+    /* max-width: 40rem; */
+  }
+  .solution:hover {
+    transform: scale(1.01);
+  }
+}
+
 .solution img {
   width: 100%;
   border-radius: 1.5rem 1.5rem 0 0;
@@ -71,6 +92,12 @@
   flex-direction: column;
   gap: 1rem;
   align-items: center;
+}
+
+@media (max-width: 767px) {
+  .solution div {
+    padding: 1rem;
+  }
 }
 
 .solution h4 {
@@ -94,6 +121,18 @@
   cursor: pointer;
   border: none;
   margin-top: 1rem;
+}
+
+@media (max-width: 767px) {
+  .solution h4 {
+    font-size: var(--lg);
+  }
+  .solution p {
+    font-size: var(--md);
+  }
+  .solution button {
+    font-size: var(--md);
+  }
 }
 
 .solution button:hover {

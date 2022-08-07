@@ -77,3 +77,7 @@
   background-color: var(--primary-hover);
   cursor: pointer;
 }
+
+.menu_icon {
+  cursor: pointer;
+}
