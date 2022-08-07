@@ -35,7 +35,7 @@
 .container p {
   font-size: var(--xl);
   font-weight: 600;
-  color: var(--secondary);
+  color: var(--secondary1);
 }
 
 .container button {
@@ -49,6 +49,19 @@
   width: max-content;
   margin-top: 1rem;
   text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .container h2 {
+    font-size: var(--xxl);
+  }
+  .container p {
+    font-size: var(--lg);
+  }
+  .container button {
+    font-size: var(--md);
+    margin: 0 auto;
+  }
 }
 
 .container button:hover {
