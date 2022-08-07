@@ -7,6 +7,15 @@
   transform: scale(1.05);
   box-shadow: 1px 1px 15px var(--primary);
 }
+@media (max-width: 768px) {
+  .solution {
+    width: 100%;
+    max-width: 50rem;
+  }
+  .solution:hover {
+    transform: scale(1.01);
+  }
+}
 .solution img {
   width: 100%;
   border-radius: 1.5rem 1.5rem 0 0;

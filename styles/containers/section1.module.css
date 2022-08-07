@@ -31,7 +31,11 @@
   font-size: var(--large);
   color: var(--primary);
 }
-
+@media (max-width: 768px) {
+  .container img {
+    max-width: 40rem;
+  }
+}
 .container p {
   font-size: var(--xl);
   font-weight: 600;
