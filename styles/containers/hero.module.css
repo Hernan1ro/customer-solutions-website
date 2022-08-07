@@ -13,6 +13,7 @@
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 .hero div {
@@ -33,6 +34,13 @@
   text-align: center;
   color: var(--primary);
 }
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: var(--large);
+  }
+}
+
 .hero h3 {
   background-color: var(--light-blue);
   padding: 1rem;
