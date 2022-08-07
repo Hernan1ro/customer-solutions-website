@@ -34,27 +34,22 @@
   font-size: var(--large);
   color: var(--primary);
 }
-
+@media (max-width: 768px) {
+  .container img {
+    max-width: 40rem;
+  }
+}
 .container p {
   font-size: var(--xl);
   font-weight: 600;
-  color: var(--secondary);
+  color: var(--secondary1);
 }
 
-.container button {
-  background-color: var(--primary);
-  color: var(--white);
-  padding: 1rem 2rem;
-  border-radius: 1rem;
-  border: none;
-  font-size: var(--lg);
-  font-weight: bold;
-  width: max-content;
-  margin-top: 1rem;
-  text-transform: uppercase;
-}
-
-.container button:hover {
-  background-color: var(--primary-hover);
-  cursor: pointer;
+@media (max-width: 768px) {
+  .container h2 {
+    font-size: var(--xxl);
+  }
+  .container p {
+    font-size: var(--lg);
+  }
 }

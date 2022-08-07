@@ -16,7 +16,6 @@ export const Section2 = () => {
             de crecimiento en ventas, en la findelización y en la recoment DE
             TUS CLIENTES
           </p>
-          <button>Contáctanos</button>
         </div>
       </div>
     </section>
