@@ -9,6 +9,16 @@
   justify-content: center;
   flex-direction: column;
   gap: 2rem;
+  animation: show 1s ease;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .servicios h1 {
