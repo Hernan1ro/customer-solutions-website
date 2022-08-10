@@ -1,0 +1,20 @@
+.message {
+  font-size: var(--sm);
+  font-weight: bold;
+  color: var(--primary-hover);
+  background-color: #fcead0;
+  padding: 1rem;
+  width: fit-content;
+  border-radius: 1rem;
+  margin: 0 auto;
+  animation: show 1s ease;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
