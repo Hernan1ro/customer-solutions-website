@@ -11,6 +11,8 @@ export default function Contacto() {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setSuccess(false);
+    setError(false);
     const value = [
       form.current[0].value,
       form.current[1].value,
@@ -18,9 +20,7 @@ export default function Contacto() {
       form.current[3].value,
     ];
     if (value.includes("")) {
-      console.log("form vació");
       setError(true);
-      setTimeout(() => setError(false), 3000);
     } else {
       setSuccess(true);
       emailjs
@@ -39,7 +39,6 @@ export default function Contacto() {
           }
         );
       e.target.reset();
-      setTimeout(() => setSuccess(false), 3000);
     }
   };
 
@@ -71,8 +70,18 @@ export default function Contacto() {
             <button type="submit">Enviar</button>
           </form>
           {error ? (
-            <FormMessage text="Todos los campos deben ser diligenciados" />
+            <FormMessage
+              type="error"
+              text="Todos los campos deben ser diligenciados"
+            />
           ) : null}
+          {success ? (
+            <FormMessage
+              type="success"
+              text="Tu mensaje ha sido enviado exitosamente, pronto nos pondremos en contacto con tigo"
+            />
+          ) : null}
+
           <em>Política de privacidad</em>
         </div>
         <div>

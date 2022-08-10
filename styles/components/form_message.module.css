@@ -1,8 +1,21 @@
-.message {
+.error {
   font-size: var(--sm);
   font-weight: bold;
   color: var(--primary-hover);
   background-color: #fcead0;
+  padding: 1rem;
+  width: fit-content;
+  border-radius: 1rem;
+  margin: 0 auto;
+  animation: show 1s ease;
+  text-align: center;
+}
+.success {
+  text-align: center;
+  font-size: var(--sm);
+  font-weight: bold;
+  color: var(--secondary);
+  background-color: #c0f0f7;
   padding: 1rem;
   width: fit-content;
   border-radius: 1rem;
