@@ -3,11 +3,13 @@ import styles from "../styles/pages/contacto.module.css";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FormMessage } from "../Components/FormMessage";
+import { PrivacityPolicies } from "../Components/PrivacityPolicies";
 
 export default function Contacto() {
   const form = useRef(null);
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [showPolicies, setShowPolicies] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -40,6 +42,10 @@ export default function Contacto() {
         );
       e.target.reset();
     }
+  };
+
+  const handleClick = (e) => {
+    setShowPolicies(!showPolicies);
   };
 
   return (
@@ -92,6 +98,7 @@ export default function Contacto() {
             alt="headquarters image"
           />
         </div>
+        {showPolicies ? <PrivacityPolicies handleClick={handleClick} /> : null}
       </section>
     </Layout>
   );

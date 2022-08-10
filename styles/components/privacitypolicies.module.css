@@ -1,0 +1,71 @@
+.privacity_politics {
+  position: absolute;
+  top: calc(50% - 20rem);
+  left: 0;
+  right: 0;
+  animation-name: show;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.privacity_politics article {
+  box-shadow: 1px 1px 1px var(--gray);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 1px solid var(--ligt-gray);
+  max-width: 60rem;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .privacity_politics article {
+    max-width: 90%;
+  }
+}
+.privacity_politics div {
+  background-color: var(--white);
+  padding: 2rem;
+  max-width: 60rem;
+  max-height: 200rem;
+  margin: 0 auto;
+  border-radius: 1.5rem;
+  height: 40rem;
+  overflow: scroll;
+}
+.privacity_politics h3 {
+  font-size: var(--md);
+  font-weight: 600;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.privacity_politics p,
+.privacity_politics li {
+  color: var(--primary-1);
+  font-size: var(--sm);
+  margin-bottom: 1rem;
+}
+
+.privacity_politics button {
+  display: block;
+  background-color: var(--primary);
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: var(--white);
+  margin-top: 2rem;
+  font-size: var(--sm);
+  width: 40%;
+  margin-top: 1rem;
+}
+.privacity_politics button:hover {
+  background-color: var(--primary-hover);
+}
