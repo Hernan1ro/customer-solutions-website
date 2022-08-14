@@ -22,7 +22,7 @@
   border-radius: 1.5rem;
   overflow: hidden;
   border: 1px solid var(--ligt-gray);
-  max-width: 60rem;
+  max-width: 60rem !important;
   margin: 0 auto;
 }
 @media (max-width: 768px) {
@@ -50,8 +50,18 @@
 .privacity_politics p,
 .privacity_politics li {
   color: var(--primary-1);
-  font-size: var(--sm);
+  font-size: var(--sd);
   margin-bottom: 1rem;
+}
+
+.privacity_politics h4 {
+  font-size: var(--md);
+  color: var(--secondary);
+}
+
+.privacity_politics u {
+  color: var(--primary);
+  text-decoration: underline;
 }
 
 .privacity_politics button {

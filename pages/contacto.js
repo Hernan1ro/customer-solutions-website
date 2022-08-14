@@ -88,7 +88,7 @@ export default function Contacto() {
             />
           ) : null}
 
-          <em>Política de privacidad</em>
+          <em onClick={handleClick}>Política de privacidad</em>
         </div>
         <div>
           <img
