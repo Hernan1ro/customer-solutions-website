@@ -1,6 +1,13 @@
+import { useState } from "react";
 import styles from "../styles/containers/formmodal.module.css";
 
 export const FormModal = ({ handleClick, handleDownload: download }) => {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    country: "",
+    city: "",
+  });
   const handleDownload = (e) => {
     e.preventDefault();
     // Default export is a4 paper, portrait, using millimeters for units
@@ -11,7 +18,14 @@ export const FormModal = ({ handleClick, handleDownload: download }) => {
     // doc.save("a4.pdf");
     // Load a new blank workbook
     console.log("Descargando...");
-    download();
+    download(user);
+  };
+
+  const handleInput = (e) => {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value,
+    });
   };
 
   return (
@@ -33,15 +47,29 @@ export const FormModal = ({ handleClick, handleDownload: download }) => {
             name="name"
             placeholder="Nombre completo"
             required
+            onChange={handleInput}
           />
           <input
             type="email"
             name="email"
             placeholder="Correo electrónico"
             required
+            onChange={handleInput}
           />
-          <input type="country" name="country" placeholder="País" required />
-          <input type="city" name="city" placeholder="Ciudad" required />
+          <input
+            type="country"
+            name="country"
+            placeholder="País"
+            required
+            onChange={handleInput}
+          />
+          <input
+            type="city"
+            name="city"
+            placeholder="Ciudad"
+            required
+            onChange={handleInput}
+          />
           <button type="submit">Descargar informe</button>
         </form>
         <em>

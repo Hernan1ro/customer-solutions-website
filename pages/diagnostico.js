@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState, useEffect } from "react";
 import { Layout } from "../Layout/Layout";
 import styles from "../styles/pages/diagnostico.module.css";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
@@ -17,6 +17,7 @@ export default function Diagnostico() {
   const [policies, setPolicies] = useState(false);
   const {
     result: { index, strategy, process, people, customers },
+    profile: [job, employee_number, experience, position, sector],
   } = useSelector((state) => state.index360Slice);
 
   const indicators = diagnostic(index, strategy, process, people, customers);
@@ -46,6 +47,7 @@ export default function Diagnostico() {
   const color = colorHandler(value, lie, lse);
   const summary = textHandler(value, heading, lie, lse);
   const text = textHandler(value, conclusion, lie, lse);
+
   //-------------styles ---------------//
   const hoverClass = (hex) => {
     switch (hex) {
@@ -58,10 +60,23 @@ export default function Diagnostico() {
     }
   };
 
-  const handleDownload = () => {
-    console.log("Descargando informe...");
+  const handleDownload = (user) => {
+    const data = {
+      userData: {
+        result: { index, strategy, process, people, customers },
+        userProfile: {
+          job: job.answer,
+          employee_number: employee_number.answer,
+          experience: experience.answer,
+          position: position.answer,
+          sector: sector.answer,
+        },
+        user,
+      },
+    };
 
     setShow(!show);
+    console.log(data);
   };
 
   const handleClick = () => {
@@ -99,7 +114,7 @@ export default function Diagnostico() {
             <div className={styles.index_description}>
               <img src="./assets/Illustrations/results.svg" alt="Index image" />
               <p>{text}</p>
-              <button onClick={handleDownload}>
+              <button onClick={() => setShow(!show)}>
                 Descarga tu informe completo
                 <img
                   src="./assets/icons/download.svg"
