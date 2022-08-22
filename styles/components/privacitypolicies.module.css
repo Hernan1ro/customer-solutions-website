@@ -6,6 +6,15 @@
   animation-name: show;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes show {
@@ -72,9 +81,11 @@
   border-radius: 1rem;
   color: var(--white);
   margin-top: 2rem;
-  font-size: var(--sm);
+  font-size: var(--md);
   width: 40%;
   margin-top: 1rem;
+  border: none;
+  cursor: pointer;
 }
 .privacity_politics button:hover {
   background-color: var(--primary-hover);

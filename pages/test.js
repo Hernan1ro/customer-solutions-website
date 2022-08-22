@@ -103,6 +103,7 @@ export default function Test() {
                   />
                 );
               })}
+
               <button id="submit_btn" type="submit">
                 Continuar test
               </button>

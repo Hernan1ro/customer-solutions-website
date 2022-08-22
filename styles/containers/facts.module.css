@@ -29,8 +29,8 @@
   }
 }
 .progressbar {
-  width: 25rem;
-  max-width: 25rem;
+  width: 22rem;
+  max-width: 22rem;
 }
 @media (max-width: 768px) {
   .progressbar {

@@ -2,7 +2,7 @@ import styles from "../styles/containers/facts.module.css";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
-export const Fact = ({ value, text }) => {
+export const Fact = ({ value, text, maxValue = 100 }) => {
   return (
     <div className={styles.box_container}>
       <div className={styles.progressbar}>
@@ -13,6 +13,7 @@ export const Fact = ({ value, text }) => {
             rotation: 0.25,
             strokeLinecap: "butt",
             textSize: "20px",
+            maxValue: maxValue,
             pathTransitionDuration: 0.5,
             pathColor: "#e57716",
             textColor: "#e57716",

@@ -12,6 +12,7 @@
     "@emailjs/browser": "^3.6.2",
     "@reduxjs/toolkit": "^1.8.3",
     "d3-ease": "^3.0.1",
+    "jspdf": "^2.5.1",
     "next": "12.1.6",
     "next-redux-wrapper": "^7.0.5",
     "react": "18.1.0",
@@ -22,7 +23,8 @@
     "react-simple-typewriter": "^3.0.1",
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.4.1"
+    "redux-thunk": "^2.4.1",
+    "xlsx-populate": "^1.21.0"
   },
   "devDependencies": {
     "eslint": "8.16.0",

@@ -10,12 +10,10 @@ export const Facts = () => {
         <h2>¿Sabías que?</h2>
         <div className={styles.grid}>
           {factsText.map((obj) => {
-            const { value, text } = obj;
-            return <Fact key={value} value={value} text={text} />;
-          })}
-          {factsText.map((obj) => {
-            const { value, text } = obj;
-            return <Fact key={value} value={value} text={text} />;
+            const { value, text, maxValue } = obj;
+            return (
+              <Fact key={text} value={value} text={text} maxValue={maxValue} />
+            );
           })}
         </div>
       </div>

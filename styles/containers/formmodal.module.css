@@ -1,0 +1,94 @@
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  animation: show ease 0.5s;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.form_container {
+  background-color: var(--white);
+  border-radius: 1.5rem;
+  padding: 2rem 2rem 3rem 2rem;
+  text-align: center;
+  max-width: 38rem;
+  box-shadow: 5px 5px 10px var(--gray);
+}
+
+.form_container h3 {
+  font-size: var(--xsl);
+  color: var(--primary);
+  font-weight: bold;
+  margin: 1rem 0;
+}
+.form_container p {
+  font-size: var(--lg);
+  color: var(--secondary1);
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+
+.modal form {
+  display: grid;
+  gap: 1.2rem;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.modal form input {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--gray);
+  font-size: var(--md);
+  color: var(--gray);
+  outline: var(--none);
+}
+.modal form input:hover {
+  border: 1px solid var(--primary);
+}
+
+.modal button {
+  color: var(--white);
+  background-color: var(--primary);
+  font-size: var(--md);
+  padding: 1rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.modal button:hover {
+  background-color: var(--primary-hover);
+}
+.modal button:active {
+  transform: scale(1.05);
+}
+
+.modal em {
+  color: var(--gray);
+  font-size: var(--sm);
+}
+.modal strong {
+  color: var(--primary);
+  cursor: pointer;
+}
+.modal strong:hover {
+  text-decoration: underline;
+}

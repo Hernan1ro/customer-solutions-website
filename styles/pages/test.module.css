@@ -155,6 +155,7 @@
   content: "";
   width: 0.9em;
   height: 0.9em;
+  background-color: var(--primary);
   border-radius: 50%;
   transform: scale(0);
   transition: 120ms transform ease-in-out;

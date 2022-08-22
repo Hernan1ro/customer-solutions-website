@@ -7,8 +7,14 @@ import { useRouter } from "next/router";
 import { CategoryIndex } from "../Components/CategoryIndex";
 import { useSelector } from "react-redux";
 import { diagnostic } from "../pages/api/diagnostic";
+import { jsPDF } from "jspdf";
+// const XlsxPopulate = require("xlsx-populate");
+import { FormModal } from "../Components/FormModal";
+import { PrivacityPolicies } from "../Components/PrivacityPolicies";
 
 export default function Diagnostico() {
+  const [show, setShow] = useState(true);
+  const [policies, setPolicies] = useState(false);
   const {
     result: { index, strategy, process, people, customers },
   } = useSelector((state) => state.index360Slice);
@@ -52,6 +58,16 @@ export default function Diagnostico() {
     }
   };
 
+  const handleDownload = () => {
+    console.log("Descargando informe...");
+
+    setShow(!show);
+  };
+
+  const handleClick = () => {
+    setPolicies(!policies);
+  };
+
   return (
     <Layout page="Diagnóstico 360°">
       <section className={`${styles.diagnostic}`}>
@@ -83,7 +99,7 @@ export default function Diagnostico() {
             <div className={styles.index_description}>
               <img src="./assets/Illustrations/results.svg" alt="Index image" />
               <p>{text}</p>
-              <button>
+              <button onClick={handleDownload}>
                 Descarga tu informe completo
                 <img
                   src="./assets/icons/download.svg"
@@ -115,6 +131,10 @@ export default function Diagnostico() {
           })}
         </div>
       </section>
+      {show ? (
+        <FormModal handleClick={handleClick} handleDownload={handleDownload} />
+      ) : null}
+      {policies ? <PrivacityPolicies handleClick={handleClick} /> : null}
     </Layout>
   );
 }

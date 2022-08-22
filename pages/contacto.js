@@ -15,12 +15,14 @@ export default function Contacto() {
     e.preventDefault();
     setSuccess(false);
     setError(false);
+
     const value = [
       form.current[0].value,
       form.current[1].value,
       form.current[2].value,
       form.current[3].value,
     ];
+
     if (value.includes("")) {
       setError(true);
     } else {
