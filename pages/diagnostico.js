@@ -70,8 +70,8 @@ export default function Diagnostico() {
           experience: experience.answer,
           position: position.answer,
           sector: sector.answer,
+          ...user,
         },
-        user,
       },
     };
 
