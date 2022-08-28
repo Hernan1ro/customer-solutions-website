@@ -12,6 +12,6 @@ app.set("port", 4000);
 app.use(morgan("dev"));
 
 //----------- Routes -----------------//
-app.use(languageRoutes);
+app.use("/api/users", languageRoutes);
 
 module.exports = app;
