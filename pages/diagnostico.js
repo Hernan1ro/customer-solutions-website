@@ -16,11 +16,11 @@ export default function Diagnostico() {
   const [show, setShow] = useState(false);
   const [policies, setPolicies] = useState(false);
   const {
-    result: { index, strategy, process, people, customers },
+    result: { index, strategy, process: process_, people, customers },
     profile: [job, employee_number, experience, position, sector],
   } = useSelector((state) => state.index360Slice);
 
-  const indicators = diagnostic(index, strategy, process, people, customers);
+  const indicators = diagnostic(index, strategy, process_, people, customers);
 
   // --------------data for the main index-------------------//
   const { category, conclusion, heading, value, lse, lie } = indicators[0];
@@ -64,7 +64,7 @@ export default function Diagnostico() {
     const data = {
       index,
       strategy,
-      process,
+      process: process_,
       people,
       customers,
       job: job.answer,
@@ -75,13 +75,36 @@ export default function Diagnostico() {
       ...user,
     };
 
-    setShow(!show);
+    sendData(data);
+
     console.log(data);
+
+    setShow(!show);
   };
 
   const handleClick = () => {
     setPolicies(!policies);
   };
+
+  //--------------sending data to the API ---------------//
+  async function sendData(data) {
+    const URL = process.env.NEXT_PUBLIC_DB + "/api/users";
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+
+    try {
+      const res = await fetch(URL, options);
+      const data_res = await res.json();
+      console.log(data_res);
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   return (
     <Layout page="Diagnóstico 360°">

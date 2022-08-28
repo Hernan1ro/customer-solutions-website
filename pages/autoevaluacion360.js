@@ -145,6 +145,9 @@ export default function Test() {
   }
   // ------------- calculatr percent ------------- //
   function calculateIndex(points, standar) {
+    if (standar === 0) {
+      return 0;
+    }
     return Number(((points / standar) * 100).toFixed(0));
   }
 
