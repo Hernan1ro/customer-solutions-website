@@ -13,7 +13,7 @@ import { FormModal } from "../Components/FormModal";
 import { PrivacityPolicies } from "../Components/PrivacityPolicies";
 
 export default function Diagnostico() {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const [policies, setPolicies] = useState(false);
   const {
     result: { index, strategy, process, people, customers },
@@ -62,17 +62,17 @@ export default function Diagnostico() {
 
   const handleDownload = (user) => {
     const data = {
-      userData: {
-        result: { index, strategy, process, people, customers },
-        userProfile: {
-          job: job.answer,
-          employee_number: employee_number.answer,
-          experience: experience.answer,
-          position: position.answer,
-          sector: sector.answer,
-          ...user,
-        },
-      },
+      index,
+      strategy,
+      process,
+      people,
+      customers,
+      job: job.answer,
+      employee_number: employee_number.answer,
+      experience: experience.answer,
+      position: position.answer,
+      sector: sector.answer,
+      ...user,
     };
 
     setShow(!show);
