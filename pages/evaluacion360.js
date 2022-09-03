@@ -52,7 +52,7 @@ export default function Evaluacion360() {
               </span>
             </div>
           </div>
-          <Link href="/test">
+          <Link href="/test360">
             <button>Iniciar test</button>
           </Link>
           <small>Tiempo estimado en realizar el test: 5 minutos</small>
