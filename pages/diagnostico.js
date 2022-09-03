@@ -7,10 +7,9 @@ import { useRouter } from "next/router";
 import { CategoryIndex } from "../Components/CategoryIndex";
 import { useSelector } from "react-redux";
 import { diagnostic } from "../pages/api/diagnostic";
-import { jsPDF } from "jspdf";
-// const XlsxPopulate = require("xlsx-populate");
 import { FormModal } from "../Components/FormModal";
 import { PrivacityPolicies } from "../Components/PrivacityPolicies";
+const ExcelJS = require("exceljs");
 
 export default function Diagnostico() {
   const [show, setShow] = useState(false);
@@ -75,11 +74,12 @@ export default function Diagnostico() {
       ...user,
     };
 
-    sendData(data);
+    // sendData(data);
 
-    console.log(data);
-
-    setShow(!show);
+    // setTimeout(() => {
+    //   setShow(!show);
+    // }, 1000);
+    downloadSheet();
   };
 
   const handleClick = () => {
@@ -104,6 +104,10 @@ export default function Diagnostico() {
     } catch (err) {
       console.log(err);
     }
+  }
+
+  function downloadSheet() {
+    console.log("Hola k ase");
   }
 
   return (
