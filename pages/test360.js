@@ -52,6 +52,7 @@ export default function Test() {
     dispatch(setProfile(answers));
     router.push("/autoevaluacion360");
   };
+
   const handleChange = (id) => {
     //-------------- checking progress ----------------//
     const questionDiv = form.current.children;

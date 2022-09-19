@@ -10,14 +10,6 @@ export const FormModal = ({ handleClick, handleDownload: download }) => {
   });
   const handleDownload = (e) => {
     e.preventDefault();
-    // Default export is a4 paper, portrait, using millimeters for units
-    // const doc = new jsPDF();
-    // doc.circle(10, 12, 12);
-    // console.log(doc);
-    // doc.text("Hello world!", 10, 10);
-    // doc.save("a4.pdf");
-    // Load a new blank workbook
-    console.log("Descargando...");
     download(user);
   };
 

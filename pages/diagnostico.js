@@ -1,17 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Layout } from "../Layout/Layout";
 import styles from "../styles/pages/diagnostico.module.css";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { useRouter } from "next/router";
 import { CategoryIndex } from "../Components/CategoryIndex";
 import { useSelector } from "react-redux";
 import { diagnostic } from "../pages/api/diagnostic";
 import { FormModal } from "../Components/FormModal";
 import { PrivacityPolicies } from "../Components/PrivacityPolicies";
-const ExcelJS = require("exceljs");
+// const ExcelJS = require("exceljs");
+var XLSX = require("xlsx");
+import { read, utils, writeFile } from "xlsx";
 
-export default function Diagnostico() {
+export default function Diagnostico(props) {
   const [show, setShow] = useState(false);
   const [policies, setPolicies] = useState(false);
   const {
@@ -59,7 +60,9 @@ export default function Diagnostico() {
     }
   };
 
-  const handleDownload = (user) => {
+  const handleDownload = async (user) => {
+    // handleExport(data);
+    // return;
     const data = {
       index,
       strategy,
@@ -74,12 +77,7 @@ export default function Diagnostico() {
       ...user,
     };
 
-    // sendData(data);
-
-    // setTimeout(() => {
-    //   setShow(!show);
-    // }, 1000);
-    downloadSheet();
+    sendData(data);
   };
 
   const handleClick = () => {
@@ -101,13 +99,24 @@ export default function Diagnostico() {
       const res = await fetch(URL, options);
       const data_res = await res.json();
       console.log(data_res);
+      setShow(!show);
     } catch (err) {
       console.log(err);
     }
   }
 
-  function downloadSheet() {
-    console.log("Hola k ase");
+  async function handleExport() {
+    // var wb = XLSX.utils.book_new();
+    // const ws = XLSX.utils.json_to_sheet(data);
+
+    // XLSX.utils.book_append_sheet(wb, ws, "Mysheet");
+
+    // XLSX.writeFile(wb, "MyExcel.xlsx");
+
+    var f = await (await fetch("https://sheetjs.com/pres.xlsx")).arrayBuffer();
+    var wb = read(f);
+    var data = utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+    console.log(data);
   }
 
   return (
