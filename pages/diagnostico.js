@@ -8,9 +8,8 @@ import { useSelector } from "react-redux";
 import { diagnostic } from "../pages/api/diagnostic";
 import { FormModal } from "../Components/FormModal";
 import { PrivacityPolicies } from "../Components/PrivacityPolicies";
-// const ExcelJS = require("exceljs");
-var XLSX = require("xlsx");
-import { read, utils, writeFile } from "xlsx";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 
 export default function Diagnostico(props) {
   const [show, setShow] = useState(false);
@@ -61,8 +60,7 @@ export default function Diagnostico(props) {
   };
 
   const handleDownload = async (user) => {
-    // handleExport(data);
-    // return;
+    handleExport();
     const data = {
       index,
       strategy,
@@ -77,7 +75,7 @@ export default function Diagnostico(props) {
       ...user,
     };
 
-    sendData(data);
+    // sendData(data);
   };
 
   const handleClick = () => {
@@ -105,23 +103,33 @@ export default function Diagnostico(props) {
     }
   }
 
-  async function handleExport() {
-    // var wb = XLSX.utils.book_new();
-    // const ws = XLSX.utils.json_to_sheet(data);
+  function handleExport(data) {
+    let doc = new jsPDF("l", "pt", "letter");
+    let margin = 10;
+    let scale =
+      (doc.internal.pageSize.width - margin * 2) / document.body.scrollWidth;
+    let target = document.querySelector("#text-sample");
+    // let target = document.body;
 
-    // XLSX.utils.book_append_sheet(wb, ws, "Mysheet");
-
-    // XLSX.writeFile(wb, "MyExcel.xlsx");
-
-    var f = await (await fetch("https://sheetjs.com/pres.xlsx")).arrayBuffer();
-    var wb = read(f);
-    var data = utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
-    console.log(data);
+    doc.html(target, {
+      x: margin,
+      y: margin,
+      html2canvas: {
+        scale: scale,
+      },
+      callback: function (doc) {
+        // doc.save("Evaluación360.pdf"); // ----------- download inmedialy------//
+        doc.output("dataurlnewwindow", {
+          filename: "Evaluación_360-Customer_solutions.pdf",
+        });
+        doc.save("Evaluación_360-Customer_solutions.pdf");
+      },
+    });
   }
 
   return (
     <Layout page="Diagnóstico 360°">
-      <section className={`${styles.diagnostic}`}>
+      <section className={`${styles.diagnostic}`} id="diagnostic">
         <h2>Diagnóstico madurez experiencia de servicio</h2>
         <h3>Estos son tus resultados</h3>
         <div className={`${styles.index_container} `}>
@@ -180,6 +188,17 @@ export default function Diagnostico(props) {
               );
             }
           })}
+        </div>
+        <div className={styles.text_sample} id="text-sample">
+          <h2>Hola Papu</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum,
+            delectus repellendus enim aspernatur exercitationem, dicta, vitae
+            aliquid officiis obcaecati vel qui dolor fugiat maxime quos alias
+            commodi non a quia cum! Quis et ex, minus corrupti, error obcaecati
+            ea explicabo reprehenderit beatae accusamus numquam fugit est fuga
+            blanditiis, praesentium cumque!
+          </p>
         </div>
       </section>
       {show ? (

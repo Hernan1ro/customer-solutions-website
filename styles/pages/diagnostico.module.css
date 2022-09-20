@@ -220,3 +220,7 @@
   font-size: var(--md);
   color: var(--black);
 }
+
+.text_sample {
+  display: block;
+}
