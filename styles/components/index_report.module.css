@@ -1,0 +1,39 @@
+.index {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  max-width: 128rem;
+  gap: 2rem;
+}
+
+.index img {
+  border-radius: 1.5rem;
+}
+
+.index .left {
+  order: 2;
+}
+
+.index_description {
+  display: grid;
+  place-items: center;
+  gap: 3rem;
+}
+.index_description .percentaje_result_index {
+  font-size: var(--larger);
+  font-weight: bold;
+  color: var(--white);
+  background-color: var(--primary);
+  padding: 1rem;
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 5px 30px var(--primary-hover);
+  margin-top: 1rem;
+}
+.index_description p {
+  text-align: left;
+}

@@ -1,18 +1,27 @@
+import { IndexReport } from "../components/IndexReport";
 import styles from "../styles/containers/report.module.css";
 
 export const Report = () => {
   return (
-    <div className={styles.text_sample} id="text-sample">
-      <h2>Hola Papu</h2>
+    <section className={styles.report} id="text-sample">
+      <img src="/assets/brandlogo/logo.webp" alt="customer solutions logo" />
+      <h2>Diagnóstico madurez experiencia de servicio</h2>
+      <h3>Index 360°</h3>
+      <div className={styles.percentaje_result}>80%</div>
+      <span>
+        Es tu nivel de madurez en experiencia y satisfacción del cliente
+      </span>
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum,
-        delectus repellendus enim aspernatur exercitationem, dicta, vitae
-        aliquid officiis obcaecati vel qui dolor fugiat maxime quos alias
-        commodi non a quia cum! Quis et ex, minus corrupti, error obcaecati ea
-        explicabo reprehenderit beatae accusamus numquam fugit est fuga
-        blanditiis, praesentium cumque!
+        Eres un perfil maduro y consistente en tus acciones. Debes continuar en
+        ese camino de la mejora permanente siempre enfocado en brindar
+        experiencias inolvidables a tus empleados y clientes
       </p>
-      <img src="/assets/reports/strategy.jpg" alt="estrategia" />
-    </div>
+      <div className={styles.index_container}>
+        <IndexReport />
+        <IndexReport orientation="left" />
+        <IndexReport />
+        <IndexReport orientation="left" />
+      </div>
+    </section>
   );
 };

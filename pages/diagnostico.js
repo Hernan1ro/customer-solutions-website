@@ -77,6 +77,7 @@ export default function Diagnostico(props) {
     };
 
     // sendData(data);
+    setShow(!show);
   };
 
   const handleClick = () => {
@@ -104,8 +105,8 @@ export default function Diagnostico(props) {
     }
   }
 
-  function handleExport(data) {
-    let doc = new jsPDF("l", "pt", "letter");
+  function handleExport() {
+    let doc = new jsPDF("p", "pt", "a3");
     let margin = 10;
     let scale =
       (doc.internal.pageSize.width - margin * 2) / document.body.scrollWidth;
@@ -120,7 +121,6 @@ export default function Diagnostico(props) {
         scale: scale,
       },
       callback: function (doc) {
-        // doc.save("Evaluación360.pdf"); // ----------- download inmedialy------//
         doc.output("dataurlnewwindow", {
           filename: "Evaluación_360-Customer_solutions.pdf",
         });
@@ -192,8 +192,8 @@ export default function Diagnostico(props) {
           })}
         </div>
       </section>
-      {show && <Report />}
-      {show ? (
+      {true && <Report />}
+      {true ? (
         <FormModal handleClick={handleClick} handleDownload={handleDownload} />
       ) : null}
       {policies ? <PrivacityPolicies handleClick={handleClick} /> : null}

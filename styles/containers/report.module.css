@@ -1,12 +1,52 @@
-.text_sample {
-  display: block;
+.report {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+.report h2 {
+  font-size: var(--larger);
+  font-weight: bold;
+  color: var(--gray);
+  margin-bottom: 3rem;
+}
+.report h3 {
+  font-size: var(--large);
+  color: var(--primary);
+}
+
+.report .percentaje_result {
+  font-size: 5rem;
+  font-weight: bold;
+  color: var(--white);
+  background-color: var(--primary);
+  padding: 1rem;
+  border-radius: 50%;
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 5px 30px var(--primary-hover);
+  margin-top: 1rem;
+}
+
+.report span {
+  font-size: var(--lg);
+  font-weight: bold;
+  color: var(--primary);
+  margin-top: 1rem;
+}
+
+.report p {
+  font-size: var(--xxl);
+  color: var(--gray-intense);
+  max-width: 100rem;
   text-align: center;
 }
-.text_sample {
-  font-size: var(--xl);
-  font-weight: bold;
-}
-.text_sample p {
-  color: var(--primary);
-  font-size: var(--lg);
+
+.index_container {
+  margin-top: 2rem;
+  display: grid;
+  gap: 3rem;
 }
