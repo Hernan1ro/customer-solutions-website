@@ -1,15 +1,16 @@
 import { useState } from "react";
-import { Layout } from "../Layout/Layout";
 import styles from "../styles/pages/diagnostico.module.css";
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+import { Layout } from "../Layout/Layout";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import { CategoryIndex } from "../Components/CategoryIndex";
 import { useSelector } from "react-redux";
 import { diagnostic } from "../pages/api/diagnostic";
 import { FormModal } from "../Components/FormModal";
 import { PrivacityPolicies } from "../Components/PrivacityPolicies";
-import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
+import { Report } from "../containers/Report";
 
 export default function Diagnostico(props) {
   const [show, setShow] = useState(false);
@@ -108,6 +109,7 @@ export default function Diagnostico(props) {
     let margin = 10;
     let scale =
       (doc.internal.pageSize.width - margin * 2) / document.body.scrollWidth;
+
     let target = document.querySelector("#text-sample");
     // let target = document.body;
 
@@ -122,7 +124,7 @@ export default function Diagnostico(props) {
         doc.output("dataurlnewwindow", {
           filename: "Evaluación_360-Customer_solutions.pdf",
         });
-        doc.save("Evaluación_360-Customer_solutions.pdf");
+        // doc.save("Evaluación_360-Customer_solutions.pdf");
       },
     });
   }
@@ -189,18 +191,8 @@ export default function Diagnostico(props) {
             }
           })}
         </div>
-        <div className={styles.text_sample} id="text-sample">
-          <h2>Hola Papu</h2>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum,
-            delectus repellendus enim aspernatur exercitationem, dicta, vitae
-            aliquid officiis obcaecati vel qui dolor fugiat maxime quos alias
-            commodi non a quia cum! Quis et ex, minus corrupti, error obcaecati
-            ea explicabo reprehenderit beatae accusamus numquam fugit est fuga
-            blanditiis, praesentium cumque!
-          </p>
-        </div>
       </section>
+      {show && <Report />}
       {show ? (
         <FormModal handleClick={handleClick} handleDownload={handleDownload} />
       ) : null}

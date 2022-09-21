@@ -1,0 +1,12 @@
+.text_sample {
+  display: block;
+  text-align: center;
+}
+.text_sample {
+  font-size: var(--xl);
+  font-weight: bold;
+}
+.text_sample p {
+  color: var(--primary);
+  font-size: var(--lg);
+}
