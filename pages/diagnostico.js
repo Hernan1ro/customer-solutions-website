@@ -112,7 +112,7 @@ export default function Diagnostico(props) {
       (doc.internal.pageSize.width - margin * 2) / document.body.scrollWidth;
 
     let target = document.querySelector("#text-sample");
-    // let target = document.body;
+    // let target = document.querySelector("#diagnostic");
 
     doc.html(target, {
       x: margin,
