@@ -4,10 +4,13 @@
   place-items: center;
   max-width: 128rem;
   gap: 2rem;
+  padding: 0 2rem;
 }
 
 .index img {
   border-radius: 1.5rem;
+  width: 100%;
+  max-width: 45rem;
 }
 
 .index .left {

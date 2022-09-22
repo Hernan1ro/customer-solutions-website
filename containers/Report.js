@@ -22,6 +22,19 @@ export const Report = () => {
         <IndexReport />
         <IndexReport orientation="left" />
       </div>
+      <h2>Perfil SX</h2>
+      <div className={styles.chart_container}>
+        <img
+          className={styles.chart}
+          src="/assets/reports/chart.png"
+          alt="chart"
+        />
+        <img
+          className={styles.logo}
+          src="/assets/reports/logo.png"
+          alt="logo"
+        />
+      </div>
     </section>
   );
 };

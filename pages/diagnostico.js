@@ -124,7 +124,7 @@ export default function Diagnostico(props) {
         doc.output("dataurlnewwindow", {
           filename: "Evaluación_360-Customer_solutions.pdf",
         });
-        // doc.save("Evaluación_360-Customer_solutions.pdf");
+        doc.save("Evaluación_360-Customer_solutions.pdf");
       },
     });
   }
@@ -193,7 +193,7 @@ export default function Diagnostico(props) {
         </div>
       </section>
       {true && <Report />}
-      {true ? (
+      {false ? (
         <FormModal handleClick={handleClick} handleDownload={handleDownload} />
       ) : null}
       {policies ? <PrivacityPolicies handleClick={handleClick} /> : null}
