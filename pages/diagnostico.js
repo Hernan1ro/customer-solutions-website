@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../styles/pages/diagnostico.module.css";
 import "react-circular-progressbar/dist/styles.css";
 import html2canvas from "html2canvas";
@@ -121,13 +121,25 @@ export default function Diagnostico(props) {
         scale: scale,
       },
       callback: function (doc) {
-        doc.output("dataurlnewwindow", {
-          filename: "Evaluación_360-Customer_solutions.pdf",
-        });
+        // doc.output("dataurlnewwindow", {
+        //   filename: "Evaluación_360-Customer_solutions.pdf",
+        // });
+
         doc.save("Evaluación_360-Customer_solutions.pdf");
       },
     });
   }
+
+  // ------------transforms a canva element to a png image -------------- //
+  useEffect(() => {
+    let img = document.querySelector("#chart_img");
+    let canvas = document.querySelector("#radar canvas");
+    var dataURL = canvas.toDataURL();
+    img.src = dataURL;
+    // setTimeout(() => {
+    //   canvas.remove();
+    // }, 1000);
+  }, []);
 
   return (
     <Layout page="Diagnóstico 360°">

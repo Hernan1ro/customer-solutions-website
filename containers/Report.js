@@ -1,5 +1,7 @@
 import { IndexReport } from "../Components/IndexReport";
 import styles from "../styles/containers/report.module.css";
+import { RadarChart } from "../Components/RadarChart";
+import { BarChart } from "../Components/BarChart";
 
 export const Report = () => {
   return (
@@ -34,6 +36,13 @@ export const Report = () => {
           src="/assets/reports/logo.png"
           alt="logo"
         />
+      </div>
+      <div className={styles.radarChart_container}>
+        <div id="radar">
+          <RadarChart />
+          <img id="chart_img" alt="chart_png" />
+        </div>
+        <BarChart />
       </div>
     </section>
   );
