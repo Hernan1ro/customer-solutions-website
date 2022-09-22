@@ -1,4 +1,4 @@
-import { IndexReport } from "../components/IndexReport";
+import { IndexReport } from "../Components/IndexReport";
 import styles from "../styles/containers/report.module.css";
 
 export const Report = () => {
