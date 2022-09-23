@@ -20,6 +20,7 @@ export const diagnostic = (index, strategy, process, employee, customers) => [
     category: "Estrategia",
     value: strategy,
     img: "strategy",
+    imgUrl: "/assets/reports/strategy.jpg",
     heading: {
       high: `Tu estrategia esta en un ${strategy}%.`,
       middle: `Tu nivel de estrategia es de ${strategy}%`,
@@ -37,6 +38,7 @@ export const diagnostic = (index, strategy, process, employee, customers) => [
     category: "Procesos",
     value: process,
     img: "process",
+    imgUrl: "/assets/reports/process.jpg",
     heading: {
       high: `Tu nivel de procesos es  ${process}%`,
       middle: `Tus procesos de experiencia estan en un ${process}%`,
@@ -49,28 +51,13 @@ export const diagnostic = (index, strategy, process, employee, customers) => [
     },
     lse: 80,
     lie: 50,
-  },
-  {
-    category: "Empleados",
-    value: employee,
-    img: "employee",
-    heading: {
-      high: `Tienes un nivel de ${employee}%`,
-      middle: `Tu nivel de experiencia de tus empleados es ${employee}%`,
-      low: `Tienes un nivel de ${employee}%`,
-    },
-    conclusion: {
-      high: `Consolida los programas que tienes con tus empleados, se encuentran comprometidos con brindar experiencias inolvidables, ademas de que comprenden su papel en la consecusion de los logros. Asegurate de que esten permanentemente motivados.`,
-      middle: `No debes bajar la guardia con ellos, recuerda que son el activo mas valioso que tienes y quienes se relacionan directamente con tus clientes. Es posible que consideres potencializar los programas de capacitación y la comunicación en todas sus lineas`,
-      low: `Establece politicas claras con tus empleados, brindandole las herramientas para formarse, relacionarse y tomar las mejores decisiones cuando esten en contacto con tus clientes. Crear equipos motivados y empoderados te traerá ventajas palpables en una mejor experiencia con tus clientes`,
-    },
-    lse: 70,
-    lie: 40,
+    orientation: "left",
   },
   {
     category: "Clientes",
     value: customers,
     img: "users",
+    imgUrl: "/assets/reports/customers.jpg",
     heading: {
       high: `Tienes un porcentaje de ${customers}%`,
       middle: `Tu porcentaje aquí es ${customers}%`,
@@ -83,5 +70,24 @@ export const diagnostic = (index, strategy, process, employee, customers) => [
     },
     lse: 70,
     lie: 40,
+  },
+  {
+    category: "Empleados",
+    value: employee,
+    img: "employee",
+    imgUrl: "/assets/reports/people.jpg",
+    heading: {
+      high: `Tienes un nivel de ${employee}%`,
+      middle: `Tu nivel de experiencia de tus empleados es ${employee}%`,
+      low: `Tienes un nivel de ${employee}%`,
+    },
+    conclusion: {
+      high: `Consolida los programas que tienes con tus empleados, se encuentran comprometidos con brindar experiencias inolvidables, ademas de que comprenden su papel en la consecusion de los logros. Asegurate de que esten permanentemente motivados.`,
+      middle: `No debes bajar la guardia con ellos, recuerda que son el activo mas valioso que tienes y quienes se relacionan directamente con tus clientes. Es posible que consideres potencializar los programas de capacitación y la comunicación en todas sus lineas`,
+      low: `Establece politicas claras con tus empleados, brindandole las herramientas para formarse, relacionarse y tomar las mejores decisiones cuando esten en contacto con tus clientes. Crear equipos motivados y empoderados te traerá ventajas palpables en una mejor experiencia con tus clientes`,
+    },
+    lse: 70,
+    lie: 40,
+    orientation: "left",
   },
 ];

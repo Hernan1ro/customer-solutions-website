@@ -15,7 +15,6 @@ import { Report } from "../containers/Report";
 export default function Diagnostico(props) {
   const [show, setShow] = useState(false);
   const [policies, setPolicies] = useState(false);
-  const [print, setPrint] = useState(false);
   const {
     result: { index, strategy, process: process_, people, customers },
     profile: [job, employee_number, experience, position, sector],
@@ -210,7 +209,16 @@ export default function Diagnostico(props) {
           })}
         </div>
       </section>
-      {true && <Report />}
+      {true && (
+        <Report
+          index={index}
+          color={color}
+          text={text}
+          indicators={indicators}
+          textHandler={textHandler}
+          colorHandler={colorHandler}
+        />
+      )}
       {false ? (
         <FormModal handleClick={handleClick} handleDownload={handleDownload} />
       ) : null}
