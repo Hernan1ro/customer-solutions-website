@@ -26,16 +26,8 @@ export const Report = ({
       <p>{text}</p>
       <div className={styles.index_container}>
         {indicators.map((obj, index) => {
-          const {
-            category,
-            conclusion,
-            heading,
-            value,
-            lse,
-            lie,
-            imgUrl,
-            orientation,
-          } = obj;
+          const { category, conclusion, value, lse, lie, imgUrl, orientation } =
+            obj;
           if (index > 0 && value > 0) {
             console.log(obj);
             return (
