@@ -2,6 +2,7 @@ import { IndexReport } from "../Components/IndexReport";
 import styles from "../styles/containers/report.module.css";
 import { RadarChart } from "../Components/RadarChart";
 import { BarChart } from "../Components/BarChart";
+import { ChartSX } from "../Components/ChartSX";
 
 export const Report = ({
   index,
@@ -48,17 +49,32 @@ export const Report = ({
         })}
       </div>
       <h2>Perfil SX</h2>
-      <div className={styles.chart_container}>
-        <img
-          className={styles.chart}
-          src="/assets/reports/chart.png"
-          alt="chart"
-        />
-        <img
-          className={styles.logo}
-          src="/assets/reports/logo.png"
-          alt="logo"
-        />
+      <ChartSX />
+      <div className={styles.sx_conclusion}>
+        <h5>Tienes un perfil maduro</h5>
+        <p>
+          Estas en el camino correcto, tu estrategia esta definida hacia la
+          orientación de la experiencia del cliente soportada por procesos,
+          canales y tiempos que impactan positivamente. Tus empleados conocen la
+          estrategia y filosofia de la empresa y la importancia del cliente en
+          esta, adicional estan capacitados y formados para brindar experiencias
+          inolvidables y recomiendan su empresa y trabajo a familiares y amigos.
+          Conoces ademas los momentos criticos o prioritarios de tus clientes,
+          mides su satisfacción y recomendación con periodicidad, creas
+          servicios pensando en tus clientes.{" "}
+        </p>
+        <div>
+          <div>M1</div>
+          <div>
+            <span>
+              Orientar esfuerzos a empleados y clientes, estan en la fase 1 de
+              este cuadrante, son los maduros iniciales.
+            </span>
+            <span>
+              Empleados y clientes deben ser prioridad para la ruta WOW
+            </span>
+          </div>
+        </div>
       </div>
       <div className={styles.radarChart_container}>
         <div id="radar">
