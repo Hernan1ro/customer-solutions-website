@@ -40,7 +40,6 @@ export const Report = () => {
       <div className={styles.radarChart_container}>
         <div id="radar">
           <RadarChart />
-          <img id="chart_img" alt="chart_png" />
         </div>
         <BarChart />
       </div>

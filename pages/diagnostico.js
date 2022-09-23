@@ -15,6 +15,7 @@ import { Report } from "../containers/Report";
 export default function Diagnostico(props) {
   const [show, setShow] = useState(false);
   const [policies, setPolicies] = useState(false);
+  const [print, setPrint] = useState(false);
   const {
     result: { index, strategy, process: process_, people, customers },
     profile: [job, employee_number, experience, position, sector],
@@ -106,6 +107,7 @@ export default function Diagnostico(props) {
   }
 
   function handleExport() {
+    preparePdfChart();
     let doc = new jsPDF("p", "pt", "a3");
     let margin = 10;
     let scale =
@@ -131,15 +133,19 @@ export default function Diagnostico(props) {
   }
 
   // ------------transforms a canva element to a png image -------------- //
-  useEffect(() => {
-    let img = document.querySelector("#chart_img");
-    let canvas = document.querySelector("#radar canvas");
-    var dataURL = canvas.toDataURL();
+
+  function preparePdfChart() {
+    const canvas = document.querySelector("#radar canvas");
+    if (!canvas) {
+      return;
+    }
+    const container = document.querySelector("#radar");
+    const img = document.createElement("img");
+    const dataURL = canvas.toDataURL();
     img.src = dataURL;
-    // setTimeout(() => {
-    //   canvas.remove();
-    // }, 1000);
-  }, []);
+    container.appendChild(img);
+    canvas.remove();
+  }
 
   return (
     <Layout page="Diagnóstico 360°">
