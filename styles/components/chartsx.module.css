@@ -1,6 +1,7 @@
 .chart_container {
   max-width: 90rem;
   position: relative;
+  width: 95%;
 }
 
 .chart_container .chart {

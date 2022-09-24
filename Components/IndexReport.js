@@ -17,7 +17,6 @@ export const IndexReport = ({
 
   const color = colorHandler(value, lie, lse);
   const text = textHandler(value, conclusion, lie, lse);
-  console.log(orientation);
 
   return (
     <div className={styles.index}>
