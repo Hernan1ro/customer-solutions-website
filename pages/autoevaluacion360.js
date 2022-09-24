@@ -9,7 +9,7 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
-import { setResult } from "../store/slices/index360";
+import { setResult, setPoints } from "../store/slices/index360";
 import { useSelector } from "react-redux";
 
 export default function Test() {
@@ -133,6 +133,15 @@ export default function Test() {
     const indexCustomers = calculateIndex(customersCount, standars.customers);
     const indexTotal = calculateIndex(indexCount, standars.indexTotal);
 
+    dispatch(
+      setPoints({
+        index: indexCount,
+        strategy: strategyCount,
+        process: processCount,
+        people: peopleCount,
+        customers: customersCount,
+      })
+    );
     dispatch(
       setResult({
         index: indexTotal,

@@ -49,7 +49,9 @@ export const Report = ({
         })}
       </div>
       <h2>Perfil SX</h2>
-      <ChartSX />
+      <div className={styles.chart_component}>
+        <ChartSX indicators={indicators} />
+      </div>
       <div className={styles.sx_conclusion}>
         <h5>Tienes un perfil maduro</h5>
         <p>
@@ -78,7 +80,7 @@ export const Report = ({
       </div>
       <div className={styles.radarChart_container}>
         <div id="radar">
-          <RadarChart />
+          <RadarChart indicators={indicators} />
         </div>
         {/* <div id="bar">
           <BarChart />

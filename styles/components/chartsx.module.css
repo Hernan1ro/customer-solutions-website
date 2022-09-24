@@ -10,12 +10,11 @@
   bottom: 0;
   right: 0;
   left: 0;
+  z-index: 1;
 }
 
 .chart_container .logo {
-  width: 4rem;
-  height: 4rem;
+  width: 4.5rem;
   position: absolute;
-  top: 2rem;
-  right: 30rem;
+  z-index: 3;
 }
