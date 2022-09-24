@@ -52,6 +52,13 @@
   gap: 3rem;
 }
 
+.chart_component {
+  max-width: 128rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .radarChart_container {
   background-color: var(--white);
 }

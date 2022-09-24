@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styles from "../styles/components/chartsx.module.css";
 import { useSelector } from "react-redux";
 
@@ -16,12 +17,26 @@ export const ChartSX = () => {
   softDimension = indicatorsArr[2] + indicatorsArr[3];
   hardDimension = indicatorsArr[0] + indicatorsArr[1];
 
-  console.log(hardDimension, softDimension);
+  console.table(
+    "hard dimension",
+    hardDimension,
+    "softdimension",
+    softDimension
+  );
+
+  // let yaxis;
+  // let xaxis;
+
+  // useEffect(() => {
+  //   yaxis = document.getElementById("chart").height;
+  //   xaxis = document.getElementById("chart").width;
+  //   console.log(yaxis, xaxis);
+  // }, []);
 
   let xcoords = (softDimension / 180) * 100;
   let ycoords = (hardDimension / 120) * 100;
 
-  console.log(xcoords, ycoords);
+  // console.log(xcoords, ycoords);
 
   return (
     <div className={styles.chart_container}>
@@ -29,6 +44,7 @@ export const ChartSX = () => {
         className={styles.chart}
         src="/assets/reports/chart.png"
         alt="chart"
+        id="chart"
       />
       <img
         className={styles.logo}

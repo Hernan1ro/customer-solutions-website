@@ -13,8 +13,17 @@
   max-width: 45rem;
 }
 
-.index .left {
+/* .index .left {
   order: 2;
+} */
+
+@media (max-width: 767px) {
+  .index {
+    grid-template-columns: 1fr;
+  }
+  .index .left {
+    order: 1;
+  }
 }
 
 .index_description {
