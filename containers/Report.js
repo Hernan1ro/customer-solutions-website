@@ -18,7 +18,7 @@ export const Report = ({
   const {
     points: { strategy, process: process_, people, customers },
   } = useSelector((state) => state.index360Slice);
-
+  const [categoryName, setCategoryName] = useState("");
   const [category, setCategory] = useState("");
   const [quadrant, setQuadrant] = useState("");
   const [conclusion, setConclusion] = useState({});
@@ -33,26 +33,26 @@ export const Report = ({
   softDimension = indicatorsArr[2] + indicatorsArr[3];
   hardDimension = indicatorsArr[0] + indicatorsArr[1];
 
-  // console.table(
-  //   "hard dimension",
-  //   hardDimension,
-  //   "softdimension",
-  //   softDimension
-  // );
-
   useEffect(() => {
+    //--------------------get profile -------------------//
     const getProfile = (hard, soft) => {
       if (hard < 60 && soft < 90) {
-        setCategory("principiante");
+        setCategoryName("principiante");
       } else if (hard > 60 && soft < 90) {
-        setCategory("conservador");
+        setCategoryName("conservador");
       } else if (soft > 90 && hard < 60) {
-        setCategory("orientado");
+        setCategoryName("orientado");
       } else {
-        setCategory("maduro");
+        setCategoryName("maduro");
       }
     };
 
+    const categoryObj = perfilSXDiagnostic.filter(
+      (obj) => obj.name === categoryName
+    );
+    setCategory(categoryObj[0]);
+
+    // ------------------ chart coor ---------------------//
     const axisValue = [
       { quadrant: "P1", hard: [0, 60], soft: [0, 30] },
       { quadrant: "P2", hard: [0, 60], soft: [30, 60] },
@@ -68,6 +68,7 @@ export const Report = ({
       { quadrant: "M3", hard: [60, 90], soft: [150, 180] },
     ];
 
+    //----------------- getting quadrant name ------------ //
     const getQuadrant = (y, x, obj) => {
       const { hard, soft, quadrant: q } = obj;
       if (y >= hard[0] && y < hard[1] && x >= soft[0] && x < soft[1]) {
@@ -122,26 +123,14 @@ export const Report = ({
         <ChartSX hardDimension={hardDimension} softDimension={softDimension} />
       </div>
       <div className={styles.sx_conclusion}>
-        <h3>{`Tienes un perfil ${category}`}</h3>
-        <p>
-          Estas en el camino correcto, tu estrategia esta definida hacia la
-          orientación de la experiencia del cliente soportada por procesos,
-          canales y tiempos que impactan positivamente. Tus empleados conocen la
-          estrategia y filosofia de la empresa y la importancia del cliente en
-          esta, adicional estan capacitados y formados para brindar experiencias
-          inolvidables y recomiendan su empresa y trabajo a familiares y amigos.
-          Conoces ademas los momentos criticos o prioritarios de tus clientes,
-          mides su satisfacción y recomendación con periodicidad, creas
-          servicios pensando en tus clientes.{" "}
-        </p>
+        <h3>{`Tienes un perfil ${category.name}`}</h3>
+        <p>{category.conclusion}</p>
         <div className={styles.subconclusion}>
           <div>{quadrant}</div>
           <ul>
-            <li>
-              Orientar esfuerzos a empleados y clientes, estan en la fase 1 de
-              este cuadrante, son los maduros iniciales.
-            </li>
-            <li>Empleados y clientes deben ser prioridad para la ruta WOW</li>
+            {category.quadrant[quadrant].map((text) => (
+              <li key={text}>{text}</li>
+            ))}
           </ul>
         </div>
       </div>

@@ -98,15 +98,15 @@ export const perfilSXDiagnostic = [
     conclusion:
       "Estas en el camino correcto, tu estrategia esta definida hacia la orientación de la experiencia del cliente soportada por procesos, canales y tiempos que impactan positivamente. Tus empleados conocen la estrategia y filosofia de la empresa y la importancia del cliente en esta, adicional estan capacitados y formados para brindar experiencias inolvidables y recomiendan su empresa y trabajo a familiares y amigos. Conoces ademas los momentos criticos o prioritarios de tus clientes, mides su satisfacción y recomendación con periodicidad, creas servicios pensando en tus clientes. ",
     quadrant: {
-      m1: [
+      M1: [
         "Orientar esfuerzos a empleados y clientes, estan en la fase 1 de este cuadrante, son los maduros iniciales.",
         "Empleados y clientes deben ser prioridad para la ruta WOW",
       ],
-      m2: [
+      M2: [
         "Esfuerzos equilibrados en cada dimension con el proposito de consolidar las acciones actuales",
         "Puntualizar en la ruta WOW, ajustes según diagnostico secundario",
       ],
-      m3: [
+      M3: [
         "Afinamiento de acciones puntuales de Potencialización en cada una de las dimensiones",
         "Analisis fino de cada dimension para encontrar detalles que suman en el camino maduro construido",
       ],
