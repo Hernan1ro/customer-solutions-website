@@ -18,19 +18,20 @@ ChartJS.register(
   Legend
 );
 
-export const data = {
-  labels: ["Cosa 1", "Thing 2", "Thing 3", "Thing 4", "Thing 5", "Thing 6"],
-  datasets: [
-    {
-      label: "# of Votes",
-      data: [2, 9, 3, 5, 2, 3],
-      backgroundColor: "#ee8f3c",
-      borderColor: "#ee8f3c",
-      borderWidth: 1,
-    },
-  ],
-};
+export function RadarChart({ indicators }) {
+  const values = indicators.map((obj) => obj.value);
 
-export function RadarChart() {
+  const data = {
+    labels: ["Estrategia", "Procesos", "Personas", "Clientes"],
+    datasets: [
+      {
+        label: "Balance 360",
+        data: values.shift(),
+        backgroundColor: "rgba(238, 143, 60, 0.3)",
+        borderColor: "#ee8f3c",
+        borderWidth: 1,
+      },
+    ],
+  };
   return <Radar data={data} />;
 }

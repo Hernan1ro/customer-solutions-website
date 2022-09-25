@@ -65,8 +65,6 @@ export default function Test() {
     dbOptions(question.answer);
   }, []);
 
-  console.log(questionTest);
-
   const percent = ((progress / questionTest.length) * 100).toFixed(0);
 
   const handleSubmit = (e) => {

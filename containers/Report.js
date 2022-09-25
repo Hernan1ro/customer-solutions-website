@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { IndexReport } from "../Components/IndexReport";
 import styles from "../styles/containers/report.module.css";
 import { RadarChart } from "../Components/RadarChart";
-import { BarChart } from "../Components/BarChart";
+// import { BarChart } from "../Components/BarChart";
 import { ChartSX } from "../Components/ChartSX";
 import { perfilSXDiagnostic } from "../pages/api/diagnostic";
 
@@ -18,10 +18,11 @@ export const Report = ({
   const {
     points: { strategy, process: process_, people, customers },
   } = useSelector((state) => state.index360Slice);
+
   const [categoryName, setCategoryName] = useState("");
-  const [category, setCategory] = useState("");
+  const [conclusion, setConclusion] = useState("");
+  const [quadrants, setQuadrants] = useState([]);
   const [quadrant, setQuadrant] = useState("");
-  const [conclusion, setConclusion] = useState({});
 
   const indicatorsArr = [strategy, process_, people, customers];
 
@@ -33,8 +34,8 @@ export const Report = ({
   softDimension = indicatorsArr[2] + indicatorsArr[3];
   hardDimension = indicatorsArr[0] + indicatorsArr[1];
 
+  //--------------------get profile -------------------//
   useEffect(() => {
-    //--------------------get profile -------------------//
     const getProfile = (hard, soft) => {
       if (hard < 60 && soft < 90) {
         setCategoryName("principiante");
@@ -46,11 +47,7 @@ export const Report = ({
         setCategoryName("maduro");
       }
     };
-
-    const categoryObj = perfilSXDiagnostic.filter(
-      (obj) => obj.name === categoryName
-    );
-    setCategory(categoryObj[0]);
+    getProfile(hardDimension, softDimension);
 
     // ------------------ chart coor ---------------------//
     const axisValue = [
@@ -79,9 +76,17 @@ export const Report = ({
     axisValue.map((value) => {
       getQuadrant(hardDimension, softDimension, value);
     });
-
-    getProfile(hardDimension, softDimension);
   }, []);
+
+  useEffect(() => {
+    if (categoryName !== "") {
+      const categoryObj = perfilSXDiagnostic.filter(
+        (obj) => obj.name === categoryName
+      );
+      setConclusion(categoryObj[0].conclusion);
+      setQuadrants(categoryObj[0].quadrant[quadrant]);
+    }
+  }, [categoryName]);
 
   return (
     <section className={styles.report} id="text-sample">
@@ -118,29 +123,24 @@ export const Report = ({
           }
         })}
       </div>
+      <div className={styles.radarChart_container}>
+        <RadarChart indicators={indicators} />
+      </div>
       <h2>Perfil SX</h2>
       <div className={styles.chart_component}>
         <ChartSX hardDimension={hardDimension} softDimension={softDimension} />
       </div>
       <div className={styles.sx_conclusion}>
-        <h3>{`Tienes un perfil ${category.name}`}</h3>
-        <p>{category.conclusion}</p>
+        <h3>{`Tienes un perfil ${categoryName}`}</h3>
+        <p>{conclusion}</p>
         <div className={styles.subconclusion}>
           <div>{quadrant}</div>
           <ul>
-            {category.quadrant[quadrant].map((text) => (
+            {quadrants.map((text) => (
               <li key={text}>{text}</li>
             ))}
           </ul>
         </div>
-      </div>
-      <div className={styles.radarChart_container}>
-        <div id="radar">
-          <RadarChart indicators={indicators} />
-        </div>
-        {/* <div id="bar">
-          <BarChart />
-        </div> */}
       </div>
     </section>
   );
