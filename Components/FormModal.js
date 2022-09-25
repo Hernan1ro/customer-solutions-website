@@ -1,7 +1,12 @@
 import { useState } from "react";
 import styles from "../styles/containers/formmodal.module.css";
 
-export const FormModal = ({ handleClick, handleDownload: download }) => {
+export const FormModal = ({
+  handleClick,
+  handleDownload: download,
+  setShow,
+  show,
+}) => {
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -70,6 +75,12 @@ export const FormModal = ({ handleClick, handleDownload: download }) => {
             políticas de privacidad y tratamiento de datos
           </strong>
         </em>
+        <img
+          className={styles.close_btn}
+          src="/assets/icons/close.svg"
+          alt="close"
+          onClick={() => setShow(!show)}
+        />
       </div>
     </div>
   );

@@ -27,6 +27,7 @@
   text-align: center;
   max-width: 38rem;
   box-shadow: 5px 5px 10px var(--gray);
+  position: relative;
 }
 
 .form_container h3 {
@@ -91,4 +92,12 @@
 }
 .modal strong:hover {
   text-decoration: underline;
+}
+
+.modal .close_btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 3rem;
+  cursor: pointer;
 }

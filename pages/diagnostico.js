@@ -209,7 +209,7 @@ export default function Diagnostico(props) {
           })}
         </div>
       </section>
-      {true && (
+      {show && (
         <Report
           index={index}
           color={color}
@@ -219,8 +219,13 @@ export default function Diagnostico(props) {
           colorHandler={colorHandler}
         />
       )}
-      {false ? (
-        <FormModal handleClick={handleClick} handleDownload={handleDownload} />
+      {show ? (
+        <FormModal
+          handleClick={handleClick}
+          handleDownload={handleDownload}
+          setShow={setShow}
+          show={show}
+        />
       ) : null}
       {policies ? <PrivacityPolicies handleClick={handleClick} /> : null}
     </Layout>
