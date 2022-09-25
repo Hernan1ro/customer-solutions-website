@@ -35,7 +35,10 @@
   }
 
   .index_description {
-    gap: 2rem;
+    gap: 1rem;
+  }
+  .index_description p {
+    margin-top: 1rem;
   }
 }
 .index_description .percentaje_result_index {

@@ -7,10 +7,18 @@
 .report h2 {
   font-size: var(--larger);
   font-weight: bold;
+  text-align: center;
   color: var(--gray);
   margin: 3rem;
 }
+
+@media (max-width: 500px) {
+  .report h2 {
+    font-size: var(--large);
+  }
+}
 .report h3 {
+  text-align: center;
   font-size: var(--large);
   color: var(--primary);
 }
@@ -36,12 +44,13 @@
   font-weight: bold;
   color: var(--primary);
   margin-top: 1rem;
+  text-align: center;
 }
 
 .report p {
   font-size: var(--xxl);
   color: var(--gray-intense);
-  max-width: 100rem;
+  max-width: 128rem;
   text-align: center;
   width: 100%;
 }
@@ -59,7 +68,64 @@
   justify-content: center;
 }
 
-.radarChart_container {
+.sx_conclusion {
+  width: 95%;
+  margin: 0 auto;
+  max-width: 128rem;
+  display: grid;
+  place-items: center;
+}
+
+.sx_conclusion h3 {
+  margin-bottom: 2rem;
+}
+
+.sx_conclusion > p {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.subconclusion {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  width: 100%;
+}
+
+.subconclusion p {
+  text-align: left;
+}
+
+.subconclusion div {
+  font-size: var(--larger);
+  font-weight: bold;
+  color: var(--white);
+  background-color: var(--primary);
+  padding: 1rem;
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 5px 30px var(--primary-hover);
+  margin-top: 1rem;
+  flex-shrink: 0;
+}
+
+.subconclusion ul {
+  display: grid;
+  gap: 1rem;
+}
+
+.subconclusion ul li {
+  font-size: var(--xxl);
+  color: var(--gray-intense);
+  width: 100%;
+  list-style-type: disc;
+}
+
+/* .radarChart_container {
   background-color: var(--white);
 }
 
@@ -72,4 +138,4 @@
 .radarChart_container div canvas {
   border-radius: 50%;
   padding: 2rem;
-}
+} */

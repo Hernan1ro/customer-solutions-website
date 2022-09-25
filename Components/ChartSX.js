@@ -1,42 +1,8 @@
-import { useEffect } from "react";
 import styles from "../styles/components/chartsx.module.css";
-import { useSelector } from "react-redux";
 
-export const ChartSX = () => {
-  const {
-    points: { strategy, process: process_, people, customers },
-  } = useSelector((state) => state.index360Slice);
-
-  const indicatorsArr = [strategy, process_, people, customers];
-
-  // ------------- calculatr points ------------- //
-
-  let softDimension;
-  let hardDimension;
-
-  softDimension = indicatorsArr[2] + indicatorsArr[3];
-  hardDimension = indicatorsArr[0] + indicatorsArr[1];
-
-  console.table(
-    "hard dimension",
-    hardDimension,
-    "softdimension",
-    softDimension
-  );
-
-  // let yaxis;
-  // let xaxis;
-
-  // useEffect(() => {
-  //   yaxis = document.getElementById("chart").height;
-  //   xaxis = document.getElementById("chart").width;
-  //   console.log(yaxis, xaxis);
-  // }, []);
-
+export const ChartSX = ({ hardDimension, softDimension }) => {
   let xcoords = (softDimension / 180) * 100;
   let ycoords = (hardDimension / 120) * 100;
-
-  // console.log(xcoords, ycoords);
 
   return (
     <div className={styles.chart_container}>

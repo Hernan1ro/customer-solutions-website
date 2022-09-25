@@ -1,8 +1,11 @@
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { IndexReport } from "../Components/IndexReport";
 import styles from "../styles/containers/report.module.css";
 import { RadarChart } from "../Components/RadarChart";
 import { BarChart } from "../Components/BarChart";
 import { ChartSX } from "../Components/ChartSX";
+import { perfilSXDiagnostic } from "../pages/api/diagnostic";
 
 export const Report = ({
   index,
@@ -12,11 +15,78 @@ export const Report = ({
   colorHandler,
   textHandler,
 }) => {
+  const {
+    points: { strategy, process: process_, people, customers },
+  } = useSelector((state) => state.index360Slice);
+
+  const [category, setCategory] = useState("");
+  const [quadrant, setQuadrant] = useState("");
+  const [conclusion, setConclusion] = useState({});
+
+  const indicatorsArr = [strategy, process_, people, customers];
+
+  // ------------- calculatr points ------------- //
+
+  let softDimension;
+  let hardDimension;
+
+  softDimension = indicatorsArr[2] + indicatorsArr[3];
+  hardDimension = indicatorsArr[0] + indicatorsArr[1];
+
+  // console.table(
+  //   "hard dimension",
+  //   hardDimension,
+  //   "softdimension",
+  //   softDimension
+  // );
+
+  useEffect(() => {
+    const getProfile = (hard, soft) => {
+      if (hard < 60 && soft < 90) {
+        setCategory("principiante");
+      } else if (hard > 60 && soft < 90) {
+        setCategory("conservador");
+      } else if (soft > 90 && hard < 60) {
+        setCategory("orientado");
+      } else {
+        setCategory("maduro");
+      }
+    };
+
+    const axisValue = [
+      { quadrant: "P1", hard: [0, 60], soft: [0, 30] },
+      { quadrant: "P2", hard: [0, 60], soft: [30, 60] },
+      { quadrant: "P3", hard: [0, 60], soft: [60, 90] },
+      { quadrant: "O1", hard: [0, 60], soft: [90, 120] },
+      { quadrant: "O2", hard: [0, 60], soft: [120, 150] },
+      { quadrant: "03", hard: [0, 60], soft: [150, 180] },
+      { quadrant: "C1", hard: [60, 90], soft: [0, 30] },
+      { quadrant: "C2", hard: [60, 90], soft: [30, 60] },
+      { quadrant: "C3", hard: [60, 90], soft: [60, 90] },
+      { quadrant: "M1", hard: [60, 90], soft: [90, 120] },
+      { quadrant: "M2", hard: [60, 90], soft: [120, 150] },
+      { quadrant: "M3", hard: [60, 90], soft: [150, 180] },
+    ];
+
+    const getQuadrant = (y, x, obj) => {
+      const { hard, soft, quadrant: q } = obj;
+      if (y >= hard[0] && y < hard[1] && x >= soft[0] && x < soft[1]) {
+        setQuadrant(q);
+      }
+    };
+
+    axisValue.map((value) => {
+      getQuadrant(hardDimension, softDimension, value);
+    });
+
+    getProfile(hardDimension, softDimension);
+  }, []);
+
   return (
     <section className={styles.report} id="text-sample">
       <img src="/assets/brandlogo/logo.webp" alt="customer solutions logo" />
       <h2>Diagnóstico madurez experiencia de servicio</h2>
-      <h3>Index 360°</h3>
+      <h3 style={{ color }}>Index 360°</h3>
       <div
         className={styles.percentaje_result}
         style={{ backgroundColor: color, boxShadow: `5px 5px 30px ${color}` }}
@@ -30,7 +100,6 @@ export const Report = ({
           const { category, conclusion, value, lse, lie, imgUrl, orientation } =
             obj;
           if (index > 0 && value > 0) {
-            console.log(obj);
             return (
               <IndexReport
                 key={category}
@@ -50,10 +119,10 @@ export const Report = ({
       </div>
       <h2>Perfil SX</h2>
       <div className={styles.chart_component}>
-        <ChartSX indicators={indicators} />
+        <ChartSX hardDimension={hardDimension} softDimension={softDimension} />
       </div>
       <div className={styles.sx_conclusion}>
-        <h5>Tienes un perfil maduro</h5>
+        <h3>{`Tienes un perfil ${category}`}</h3>
         <p>
           Estas en el camino correcto, tu estrategia esta definida hacia la
           orientación de la experiencia del cliente soportada por procesos,
@@ -65,17 +134,15 @@ export const Report = ({
           mides su satisfacción y recomendación con periodicidad, creas
           servicios pensando en tus clientes.{" "}
         </p>
-        <div>
-          <div>M1</div>
-          <div>
-            <span>
+        <div className={styles.subconclusion}>
+          <div>{quadrant}</div>
+          <ul>
+            <li>
               Orientar esfuerzos a empleados y clientes, estan en la fase 1 de
               este cuadrante, son los maduros iniciales.
-            </span>
-            <span>
-              Empleados y clientes deben ser prioridad para la ruta WOW
-            </span>
-          </div>
+            </li>
+            <li>Empleados y clientes deben ser prioridad para la ruta WOW</li>
+          </ul>
         </div>
       </div>
       <div className={styles.radarChart_container}>
