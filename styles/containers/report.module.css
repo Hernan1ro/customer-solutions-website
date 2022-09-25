@@ -9,7 +9,8 @@
   font-weight: bold;
   text-align: center;
   color: var(--gray);
-  margin: 3rem;
+  margin: 2rem;
+  margin-top: 4rem;
 }
 
 @media (max-width: 500px) {
@@ -125,17 +126,8 @@
   list-style-type: disc;
 }
 
-/* .radarChart_container {
-  background-color: var(--white);
-}
-
-.radarChart_container div {
-  width: 100%;
-  max-width: 50rem;
+.radarChart_container {
+  width: 90%;
+  max-width: 60rem;
   margin: 0 auto;
 }
-
-.radarChart_container div canvas {
-  border-radius: 50%;
-  padding: 2rem;
-} */

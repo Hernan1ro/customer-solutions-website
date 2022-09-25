@@ -19,14 +19,19 @@ ChartJS.register(
 );
 
 export function RadarChart({ indicators }) {
-  const values = indicators.map((obj) => obj.value);
+  let values = [];
+  indicators.map((obj, index) => {
+    if (index > 0) {
+      return values.push(obj.value);
+    }
+  });
 
   const data = {
     labels: ["Estrategia", "Procesos", "Personas", "Clientes"],
     datasets: [
       {
-        label: "Balance 360",
-        data: values.shift(),
+        label: "Madurez y experiencia de servicio",
+        data: values,
         backgroundColor: "rgba(238, 143, 60, 0.3)",
         borderColor: "#ee8f3c",
         borderWidth: 1,

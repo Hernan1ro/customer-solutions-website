@@ -78,6 +78,7 @@ export const Report = ({
     });
   }, []);
 
+  // ----------------- getting the profile sx conslusions ------------//
   useEffect(() => {
     if (categoryName !== "") {
       const categoryObj = perfilSXDiagnostic.filter(
@@ -123,6 +124,7 @@ export const Report = ({
           }
         })}
       </div>
+      <h2>Balance 360°</h2>
       <div className={styles.radarChart_container}>
         <RadarChart indicators={indicators} />
       </div>
