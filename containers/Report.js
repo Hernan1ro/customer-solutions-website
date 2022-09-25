@@ -125,7 +125,7 @@ export const Report = ({
         })}
       </div>
       <h2>Balance 360°</h2>
-      <div className={styles.radarChart_container}>
+      <div className={styles.radarChart_container} id="radar">
         <RadarChart indicators={indicators} />
       </div>
       <h2>Perfil SX</h2>

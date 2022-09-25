@@ -16,6 +16,7 @@
 @media (max-width: 500px) {
   .report h2 {
     font-size: var(--large);
+    margin-top: 2rem;
   }
 }
 .report h3 {
@@ -130,4 +131,8 @@
   width: 90%;
   max-width: 60rem;
   margin: 0 auto;
+}
+
+.radarChart_container img {
+  width: 100%;
 }
