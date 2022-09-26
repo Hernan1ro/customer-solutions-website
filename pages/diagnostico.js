@@ -14,6 +14,7 @@ import { Report } from "../containers/Report";
 
 export default function Diagnostico(props) {
   const [show, setShow] = useState(false);
+  const [showReport, setShowReport] = useState(false);
   const [policies, setPolicies] = useState(false);
   const {
     result: { index, strategy, process: process_, people, customers },
@@ -122,13 +123,12 @@ export default function Diagnostico(props) {
         scale: scale,
       },
       callback: function (doc) {
-        // doc.output("dataurlnewwindow", {
-        //   filename: "Evaluación_360-Customer_solutions.pdf",
-        // });
-
         doc.save("Evaluación_360-Customer_solutions.pdf");
       },
     });
+    setTimeout(() => {
+      setShowReport(false);
+    }, 500);
   }
 
   // ------------transforms a canva element to a png image -------------- //
@@ -145,6 +145,11 @@ export default function Diagnostico(props) {
     container.appendChild(img);
     canvas.remove();
   }
+
+  const onDownload = () => {
+    setShow(!show);
+    setShowReport(true);
+  };
 
   return (
     <Layout page="Diagnóstico 360°">
@@ -177,7 +182,7 @@ export default function Diagnostico(props) {
             <div className={styles.index_description}>
               <img src="./assets/Illustrations/results.svg" alt="Index image" />
               <p>{text}</p>
-              <button onClick={() => setShow(!show)}>
+              <button onClick={onDownload}>
                 Descarga tu informe completo
                 <img
                   src="./assets/icons/download.svg"
@@ -209,7 +214,7 @@ export default function Diagnostico(props) {
           })}
         </div>
       </section>
-      {show && (
+      {showReport && (
         <Report
           index={index}
           color={color}
@@ -225,6 +230,7 @@ export default function Diagnostico(props) {
           handleDownload={handleDownload}
           setShow={setShow}
           show={show}
+          setShowReport={setShowReport}
         />
       ) : null}
       {policies ? <PrivacityPolicies handleClick={handleClick} /> : null}

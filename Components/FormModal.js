@@ -5,6 +5,7 @@ export const FormModal = ({
   handleClick,
   handleDownload: download,
   setShow,
+  setShowReport,
   show,
 }) => {
   const [user, setUser] = useState({
@@ -23,6 +24,11 @@ export const FormModal = ({
       ...user,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const onClose = () => {
+    setShow(!show);
+    setShowReport(false);
   };
 
   return (
@@ -79,7 +85,7 @@ export const FormModal = ({
           className={styles.close_btn}
           src="/assets/icons/close.svg"
           alt="close"
-          onClick={() => setShow(!show)}
+          onClick={onClose}
         />
       </div>
     </div>
