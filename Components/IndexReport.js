@@ -26,7 +26,7 @@ export const IndexReport = ({
         <div
           style={{ backgroundColor: color, boxShadow: `5px 5px 30px ${color}` }}
           className={styles.percentaje_result_index}
-        >{`%${value}`}</div>
+        >{`${value}%`}</div>
         <p>{text}</p>
       </div>
     </div>

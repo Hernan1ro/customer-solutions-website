@@ -97,7 +97,7 @@ export const Report = ({
       <div
         className={styles.percentaje_result}
         style={{ backgroundColor: color, boxShadow: `5px 5px 30px ${color}` }}
-      >{`%${index}`}</div>
+      >{`${index}%`}</div>
       <span style={{ color }}>
         Es tu nivel de madurez en experiencia y satisfacción del cliente
       </span>

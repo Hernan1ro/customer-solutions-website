@@ -214,7 +214,7 @@ export default function Diagnostico(props) {
           })}
         </div>
       </section>
-      {showReport && (
+      {true && (
         <Report
           index={index}
           color={color}
