@@ -138,7 +138,7 @@ export const Report = ({
         <div className={styles.subconclusion}>
           <div>{quadrant}</div>
           <ul>
-            {quadrants.map((text) => (
+            {quadrants?.map((text) => (
               <li key={text}>{text}</li>
             ))}
           </ul>

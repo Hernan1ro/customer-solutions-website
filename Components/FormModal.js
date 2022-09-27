@@ -16,6 +16,7 @@ export const FormModal = ({
   });
   const handleDownload = (e) => {
     e.preventDefault();
+    document.body.style.overflow = "auto";
     download(user);
   };
 
@@ -29,6 +30,7 @@ export const FormModal = ({
   const onClose = () => {
     setShow(!show);
     setShowReport(false);
+    document.body.style.overflow = "auto";
   };
 
   return (

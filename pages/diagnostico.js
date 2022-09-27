@@ -146,7 +146,13 @@ export default function Diagnostico(props) {
     canvas.remove();
   }
 
+  // ------------
   const onDownload = () => {
+    if (!show) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
     setShow(!show);
     setShowReport(true);
   };
@@ -214,7 +220,7 @@ export default function Diagnostico(props) {
           })}
         </div>
       </section>
-      {true && (
+      {showReport && (
         <Report
           index={index}
           color={color}
