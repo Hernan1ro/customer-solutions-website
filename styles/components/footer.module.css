@@ -9,13 +9,6 @@
   background-color: none;
 }
 
-.report h6,
-.report span,
-.report span,
-.report p {
-  color: var(--secondary1);
-}
-
 .footer_container {
   max-width: 128rem;
   margin: 0 auto;

@@ -129,24 +129,30 @@ export const Report = ({
       <div className={styles.radarChart_container} id="radar">
         <RadarChart indicators={indicators} />
       </div>
-      <h2>Perfil SX</h2>
-      <div className={styles.chart_component}>
-        <ChartSX hardDimension={hardDimension} softDimension={softDimension} />
-      </div>
-      <div className={styles.sx_conclusion}>
-        <h3>{`Tienes un perfil ${categoryName}`}</h3>
-        <p>{conclusion}</p>
-        <div className={styles.subconclusion}>
-          <div>{quadrant}</div>
-          <ul>
-            {quadrants?.map((text) => (
-              <li key={text}>{text}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      {indicatorsArr[2] !== 0 ? (
+        <>
+          <h2>Perfil SX</h2>
+          <div className={styles.chart_component}>
+            <ChartSX
+              hardDimension={hardDimension}
+              softDimension={softDimension}
+            />
+          </div>
+          <div className={styles.sx_conclusion}>
+            <h3>{`Tienes un perfil ${categoryName}`}</h3>
+            <p>{conclusion}</p>
+            <div className={styles.subconclusion}>
+              <div>{quadrant}</div>
+              <ul>
+                {quadrants?.map((text) => (
+                  <li key={text}>{text}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </>
+      ) : null}
       <div className={styles.footer_report}>
-        {/* <Footer report="report" /> */}
         <p>
           Copyright © 2022 CUSTOMERS SOLUTIONS <br /> Todos los derechos
           reservados.
