@@ -28,6 +28,7 @@
   max-width: 38rem;
   box-shadow: 5px 5px 10px var(--gray);
   position: relative;
+  width: 95%;
 }
 
 .form_container h3 {
