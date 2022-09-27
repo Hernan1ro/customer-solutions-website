@@ -76,6 +76,13 @@
   max-width: 128rem;
   display: grid;
   place-items: center;
+  margin-bottom: 5rem;
+}
+
+@media (max-width: 768px) {
+  .sx_conclusion {
+    margin-bottom: 3rem;
+  }
 }
 
 .sx_conclusion h3 {
@@ -135,4 +142,30 @@
 
 .radarChart_container img {
   width: 100%;
+}
+
+.footer_report {
+  width: 95%;
+  max-width: 128rem;
+}
+
+.footer_report {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5rem;
+}
+
+.footer_report p {
+  font-size: var(--md);
+  color: var(--secondary1);
+}
+
+@media (max-width: 768px) {
+  .footer_report {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
 }

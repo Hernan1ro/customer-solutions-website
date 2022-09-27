@@ -6,6 +6,7 @@ import { RadarChart } from "../Components/RadarChart";
 // import { BarChart } from "../Components/BarChart";
 import { ChartSX } from "../Components/ChartSX";
 import { perfilSXDiagnostic } from "../pages/api/diagnostic";
+import { Footer } from "../Components/Footer";
 
 export const Report = ({
   index,
@@ -143,6 +144,14 @@ export const Report = ({
             ))}
           </ul>
         </div>
+      </div>
+      <div className={styles.footer_report}>
+        {/* <Footer report="report" /> */}
+        <p>
+          Copyright © 2022 CUSTOMERS SOLUTIONS <br /> Todos los derechos
+          reservados.
+        </p>
+        <p>experienciacliente@customerssolutions.co</p>
       </div>
     </section>
   );

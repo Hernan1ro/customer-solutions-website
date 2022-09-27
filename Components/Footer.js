@@ -1,8 +1,11 @@
 import styles from "../styles/components/footer.module.css";
 
-export const Footer = () => {
+export const Footer = ({ report }) => {
+  const classReport = {
+    report: styles.report,
+  };
   return (
-    <footer className={styles.footer}>
+    <footer className={`${styles.footer} ${classReport[report]}`}>
       <div className={styles.footer_container}>
         <div className={styles.box1}>
           <img src="./assets/icons/linkedin.svg" alt="linkedin-logo" />
