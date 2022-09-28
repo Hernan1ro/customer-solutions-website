@@ -9,8 +9,8 @@ export default function Servicios() {
     <Layout page="Inicio">
       <HeroServices />
       <Services />
-      <About />
       <How />
+      <About />
     </Layout>
   );
 }
