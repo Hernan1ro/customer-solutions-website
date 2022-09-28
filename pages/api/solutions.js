@@ -35,3 +35,50 @@ export const solutions = [
     image: "encuestas",
   },
 ];
+
+export const stage = [
+  {
+    title: "Diagnosticar y analizar",
+    img: 1,
+    span: "Diagnóstico y entiendo",
+    li: [
+      "Perfil de madurez",
+      "Diagnóstico de madurez",
+      "Kickoff",
+      "Preparación",
+    ],
+  },
+  {
+    title: "Explorar y mapear",
+    img: 2,
+    span: "Entender la experiencia actual",
+    li: [
+      "Análisis cultural",
+      "Mapeo recorrido del cliente",
+      "Six sigma",
+      "Ingeniería de clientes",
+    ],
+  },
+  {
+    title: "Entender el hallazgo",
+    img: 3,
+    span: "Hallagos de valor",
+    li: [
+      "Expectativa vs realidad",
+      "Posición competitiva",
+      "Matriz de momentos de verdad",
+      "Fichas de arquetipos",
+    ],
+  },
+  {
+    title: "Priorizar e implementar",
+    img: 4,
+    span: "Plan e implementación",
+    li: [
+      "Plan de acción",
+      "Hoja de ruta",
+      "Priorización de iniciativas",
+      "Cultura CX",
+    ],
+  },
+];
