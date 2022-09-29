@@ -64,18 +64,6 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  animation: show ease 0.5s forwards;
-}
-
-@keyframes show {
-  from {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0%);
-  }
 }
 
 .solution:hover {
@@ -98,6 +86,7 @@
   border-radius: 1.5rem 1.5rem 0 0;
   height: 60%;
   object-fit: cover;
+  animation: show ease 0.5s forwards;
 }
 .solution div {
   padding: 2rem 1rem;
@@ -105,6 +94,7 @@
   flex-direction: column;
   gap: 1rem;
   align-items: center;
+  animation: show ease 0.5s forwards;
 }
 
 @media (max-width: 767px) {
@@ -150,4 +140,15 @@
 
 .solution button:hover {
   background-color: var(--primary-hover);
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
