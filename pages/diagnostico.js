@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import styles from "../styles/pages/diagnostico.module.css";
 import "react-circular-progressbar/dist/styles.css";
 import html2canvas from "html2canvas";
@@ -16,6 +16,10 @@ export default function Diagnostico(props) {
   const [show, setShow] = useState(false);
   const [showReport, setShowReport] = useState(false);
   const [policies, setPolicies] = useState(false);
+  const [count, setCount] = useState(0);
+  const element = useRef(null);
+  const [view, setView] = useState(false);
+
   const {
     result: { index, strategy, process: process_, people, customers },
     profile: [job, employee_number, experience, position, sector],
@@ -157,32 +161,67 @@ export default function Diagnostico(props) {
     setShowReport(true);
   };
 
+  //---------------- animation circle chart ---------------- //
+
+  useEffect(() => {
+    //----------------show a dinamic counter------------//
+    const sleep = (time) => {
+      return new Promise((resolve) => setTimeout(resolve, time));
+    };
+
+    const startCount = async () => {
+      for (let i = 0; i < index + 1; i++) {
+        await sleep(1);
+        setCount(i);
+      }
+    };
+    //-------------- intersection observer --------------//
+    let options = {
+      rootMargin: "0px",
+      threshold: 0,
+    };
+    const observer = new IntersectionObserver(function (entries) {
+      const { isIntersecting } = entries[0];
+      if (isIntersecting) {
+        setView(true);
+        setTimeout(() => {
+          startCount();
+        }, 500);
+      }
+    }, options);
+    observer.observe(element.current);
+  }, []);
+
   return (
     <Layout page="Diagnóstico 360°">
       <section className={`${styles.diagnostic}`} id="diagnostic">
         <h2>Diagnóstico madurez experiencia de servicio</h2>
         <h3>Estos son tus resultados</h3>
-        <div className={`${styles.index_container} `}>
+        <div ref={element} className={`${styles.index_container} `}>
           <h4>{category}</h4>
           <div className={styles.main_index}>
             <div className={styles.index_bar}>
-              <div className={styles.progressbar}>
-                <CircularProgressbar
-                  value={index}
-                  text={`${index}%`}
-                  styles={buildStyles({
-                    rotation: 0.25,
-                    strokeLinecap: "butt",
-                    textSize: "20px",
-                    fontWeight: "bold",
-                    pathTransitionDuration: 0.5,
-                    pathColor: color,
-                    textColor: color,
-                    trailColor: "#daedfc",
-                    backgroundColor: color,
-                  })}
-                />
-              </div>
+              {view && (
+                <>
+                  <div className={styles.progressbar}>
+                    <CircularProgressbar
+                      value={count}
+                      text={`${count}%`}
+                      styles={buildStyles({
+                        rotation: 0.25,
+                        strokeLinecap: "butt",
+                        textSize: "20px",
+                        fontWeight: "bold",
+                        pathTransitionDuration: 0.5,
+                        pathColor: color,
+                        textColor: color,
+                        trailColor: "#daedfc",
+                        backgroundColor: color,
+                      })}
+                    />
+                  </div>
+                </>
+              )}
               <span style={{ color }}>{summary}</span>
             </div>
             <div className={styles.index_description}>
