@@ -48,6 +48,7 @@ export const stage = [
       "Preparación",
     ],
     bottom: 0,
+    bg: 55,
   },
   {
     title: "Explorar y mapear",
@@ -59,7 +60,8 @@ export const stage = [
       "Six sigma",
       "Ingeniería de clientes",
     ],
-    bottom: 5,
+    bottom: 0,
+    bg: 55,
   },
   {
     title: "Entender el hallazgo",
@@ -71,7 +73,8 @@ export const stage = [
       "Matriz de momentos de verdad",
       "Fichas de arquetipos",
     ],
-    bottom: 20,
+    bottom: 0,
+    bg: 48,
   },
   {
     title: "Priorizar e implementar",
@@ -83,6 +86,7 @@ export const stage = [
       "Priorización de iniciativas",
       "Cultura CX",
     ],
-    bottom: 40,
+    bottom: 0,
+    bg: 40,
   },
 ];

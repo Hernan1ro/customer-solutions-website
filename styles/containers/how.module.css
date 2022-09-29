@@ -24,6 +24,12 @@
 }
 
 .stage {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.stage div {
   display: flex;
   flex-direction: column;
   align-self: flex-end;
@@ -59,7 +65,7 @@
   animation-delay: 0.3s;
 }
 
-.stage div {
+.stage div div {
   display: grid;
   gap: 2rem;
 }

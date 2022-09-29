@@ -7,7 +7,7 @@ export const How = () => {
       <h2>¿Cómo lo hacemos?</h2>
       <div className={styles.container}>
         {stage.map((obj) => {
-          const { title, img, span, li, bottom } = obj;
+          const { title, img, span, li, bottom, bg } = obj;
           return (
             <Stage
               key={title}
@@ -16,6 +16,7 @@ export const How = () => {
               span={span}
               li={li}
               bottom={bottom}
+              bg={bg}
             />
           );
         })}
