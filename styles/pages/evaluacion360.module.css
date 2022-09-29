@@ -4,8 +4,9 @@
   gap: 3rem;
   place-items: center;
   max-width: 100rem;
-  margin: 2rem auto;
+  margin: 6rem auto 8rem auto;
   animation: fadeIn 1s ease;
+  min-height: 80vh;
 }
 
 @keyframes fadeIn {

@@ -4,6 +4,7 @@ import { Facts } from "../containers/Facts";
 import { Section1 } from "../containers/section1";
 import { Solutions } from "../containers/Solutions";
 import { Section2 } from "../containers/Section2";
+import { WhatsappBtn } from "../Components/WhatBtn";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Section1 />
       <Solutions />
       <Section2 />
+      <WhatsappBtn />
     </Layout>
   );
 }
