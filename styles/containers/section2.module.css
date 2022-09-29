@@ -28,10 +28,10 @@
 }
 
 .container div {
-  animation: fadeInRight ease 0.5s;
+  animation: fadeInLeft cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
 }
 .container img {
-  animation: fadeInLeft cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+  animation: fadeInRight ease 0.5s;
 }
 
 @keyframes fadeInRight {

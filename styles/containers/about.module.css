@@ -11,6 +11,7 @@
   place-items: center;
   gap: 5rem;
   animation: show 0.4s ease;
+  margin-bottom: 5rem;
 }
 @keyframes show {
   from {
@@ -60,4 +61,32 @@
   font-size: var(--xl);
   font-weight: 600;
   color: var(--secondary1);
+}
+
+.container div {
+  animation: fadeInLeft cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+}
+.container img {
+  animation: fadeInRight ease 0.5s;
+}
+
+@keyframes fadeInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes fadeInLeft {
+  from {
+    transform: translateX(-300%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
 }

@@ -10,6 +10,7 @@ export const How = () => {
           const { title, img, span, li, bottom } = obj;
           return (
             <Stage
+              key={title}
               title={title}
               img={img}
               span={span}

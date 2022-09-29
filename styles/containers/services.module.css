@@ -25,6 +25,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
+
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
@@ -63,6 +64,18 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  animation: show ease 0.5s forwards;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
 
 .solution:hover {
