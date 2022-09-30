@@ -51,7 +51,7 @@ export default function Contacto() {
   };
 
   return (
-    <Layout page="Inicio">
+    <Layout page="Contácto">
       <section className={styles.form_section}>
         <div>
           <h1>Comunicáte con nosotros</h1>
@@ -89,8 +89,14 @@ export default function Contacto() {
               text="Tu mensaje ha sido enviado exitosamente, pronto nos pondremos en contacto con tigo"
             />
           ) : null}
-
-          <em onClick={handleClick}>Política de privacidad</em>
+          <div className={styles.politics}>
+            <span>
+              Al dar click en el botón "Enviar" confirmas que aceptas nuestras
+            </span>
+            <em onClick={handleClick}>
+              políticas de privacidad y tratamiento de información
+            </em>
+          </div>
         </div>
         <div>
           <img

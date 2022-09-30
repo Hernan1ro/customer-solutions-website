@@ -148,40 +148,16 @@
   background-color: var(--primary-hover);
 }
 
-.address_section {
+.form_section .politics {
   display: grid;
-  gap: 1rem;
+  place-items: center;
   text-align: center;
-  margin: 6rem auto;
-  color: var(--secondary);
-  max-width: 70rem;
-  height: 70vh;
 }
 
-.address_section span {
-  font-size: var(--md);
-  color: var(--primary);
-  font-weight: 600;
-  text-transform: uppercase;
-}
-.address_section h2 {
-  font-size: var(--xsl);
-  font-weight: 600;
-  color: var(--secondary);
-}
-.address_section p {
-  font-size: var(--md);
-}
-.address_section h3 {
-  font-weight: 600;
-  font-size: var(--xxl);
-  margin-top: 4rem;
-}
-.address_section h4 {
-  font-size: var(--md);
-}
-.address_section h5 {
+.politics span {
   font-size: var(--sm);
+  margin-top: 1rem;
+  color: var(--gray);
 }
 
 .privacity_politics {
