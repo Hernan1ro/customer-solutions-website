@@ -81,6 +81,12 @@
     padding: 7rem 0 0 0;
   }
 }
+
+.question_text {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .form p {
   margin-bottom: 1rem;
   color: var(--primary);

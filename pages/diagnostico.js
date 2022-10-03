@@ -8,6 +8,7 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import { CategoryIndex } from "../Components/CategoryIndex";
 import { useSelector } from "react-redux";
 import { diagnostic } from "../pages/api/diagnostic";
+import { testQuestions } from "../pages/api/questions";
 import { FormModal } from "../Components/FormModal";
 import { PrivacityPolicies } from "../Components/PrivacityPolicies";
 import { Report } from "../containers/Report";
@@ -23,6 +24,7 @@ export default function Diagnostico(props) {
   const {
     result: { index, strategy, process: process_, people, customers },
     profile: [job, employee_number, experience, position, sector],
+    questions,
   } = useSelector((state) => state.index360Slice);
 
   const indicators = diagnostic(index, strategy, process_, people, customers);
@@ -66,6 +68,25 @@ export default function Diagnostico(props) {
   };
 
   const handleDownload = async (user) => {
+    let dbQuestions = {};
+
+    questions.map((obj) => {
+      const { question } = obj;
+      testQuestions.map((item) => {
+        const testContent = /arquetipos/.test(item.question);
+
+        console.log(testContent);
+
+        // if (question === item.question) {
+        //   console.log("parecido");
+        // } else {
+        //   console.log("no parecido");
+        // }
+      });
+    });
+    // console.log(questions);
+    // console.log(testQuestions);
+    return;
     handleExport();
     const data = {
       index,
@@ -81,7 +102,7 @@ export default function Diagnostico(props) {
       ...user,
     };
 
-    // sendData(data);
+    sendData(data);
     setShow(!show);
   };
 
@@ -118,7 +139,6 @@ export default function Diagnostico(props) {
       (doc.internal.pageSize.width - margin * 2) / document.body.scrollWidth;
 
     let target = document.querySelector("#text-sample");
-    // let target = document.querySelector("#diagnostic");
 
     doc.html(target, {
       x: margin,

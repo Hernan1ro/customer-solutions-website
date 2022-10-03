@@ -37,7 +37,7 @@ export default function Test() {
     //-------------- Collect all data ----------------//
     const questionDiv = form.current.children;
     for (let i = 0; i < questionDiv.length - 1; i++) {
-      let question = questionDiv[i].children[0].innerHTML;
+      let question = questionDiv[i].children[0].children[1].innerHTML;
       let inputs = questionDiv[i].children[1].children;
 
       for (let j = 0; j < inputs.length; j++) {

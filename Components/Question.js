@@ -10,10 +10,12 @@ export const Question = ({
 }) => {
   return (
     <div className={styles.question} id={`question_${inputNumber}`}>
-      <p
-        className="question"
-        datatype={dimension}
-      >{`${inputNumber}. ${question}`}</p>
+      <div className={styles.question_text}>
+        <p>{inputNumber}.</p>
+        <p id="question_text" className="question" datatype={dimension}>
+          {question}
+        </p>
+      </div>
       <div
         className={`${styles.form_answer_container} ${
           options.length > 4 ? styles.grid : null

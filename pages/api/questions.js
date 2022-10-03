@@ -1620,3 +1620,153 @@ export const test360QuestionsEmployee = [
     dimension: "customers",
   },
 ];
+
+export const testQuestions = [
+  {
+    id: 1,
+    question:
+      "¿Existe una estrategia de experiencia y satisfaccion al cliente en la empresa?",
+  },
+  {
+    id: 2,
+    question:
+      "¿Conoces la importancia que la experiencia y satisfacción del cliente pueder tener sobre su negocio?",
+  },
+  {
+    id: 3,
+    question:
+      "¿La estrategia de experiencia y satisfacción del cliente es conocida por toda la empresa?",
+  },
+  {
+    id: 4,
+    question:
+      "¿Las decisiones de negocio se toman usando información y conocimiento del cliente?",
+  },
+  {
+    id: 5,
+    question:
+      "¿La empresa mide el impacto economico de la experiencia de cliente?",
+  },
+  {
+    id: 6,
+    question:
+      "¿Que importancia  tiene la retroalimentación de tu cliente en tu negocio?",
+  },
+  {
+    id: 7,
+    question:
+      "¿Existen suficientes canales de contacto/ interacción disponibles para que los clientes hagan preguntas, reclamos o sugerencias?",
+  },
+  {
+    id: 8,
+    question:
+      "¿Cuando la empresa promete hacer algo en cierto tiempo, lo cumple?",
+  },
+  {
+    id: 9,
+    question:
+      "¿Utilizas canales digitales para relacionarte  con sus clientes?",
+  },
+  {
+    id: 10,
+    question:
+      "¿Mides la satisfaccion y experiencia de tus clientes sistematica y frecuentemente?",
+  },
+  {
+    id: 11,
+    question:
+      "¿Tienes protocolos/procedimientos de servicio y atencion de sus clientes acordes a sus necesidades?",
+  },
+  {
+    id: 12,
+    question:
+      "¿Recolectas y utilizas la información de tu cliente para ofrecerle experiencias inovidables?",
+  },
+  {
+    id: 13,
+    question:
+      "¿Tus empleados conocen la estrategia de experiencia y satisfaccion de la empresa?",
+  },
+  {
+    id: 14,
+    question:
+      "¿Existe conciencia en todos los empleados de la importancia del cliente para la empresa?",
+  },
+  {
+    id: 15,
+    question: "¿La empresa conoce el nivel de satisfacción de sus empleados?",
+  },
+  {
+    id: 16,
+    question:
+      "¿Existen programas de capacitación y formación a los empleados  alineados con la estrategia de experiencia del cliente?",
+  },
+  {
+    id: 17,
+    question:
+      "¿En que grado los empleados ven a otros empleados como clientes?",
+  },
+  {
+    id: 18,
+    question:
+      "¿Que grado de motivación tienen los empleados en su organización frente a la satisfaccion de sus clientes?",
+  },
+  {
+    id: 19,
+    question:
+      "¿Existen programas de reconocimiento a los empleados relacionado con la experiencia y satisfacción del cliente?",
+  },
+  {
+    id: 20,
+    question:
+      "¿los empleados siempre estan enterados de nuevas promociones, lanzamientos, descuentos o novedades antes de publicarlas a los clientes?",
+  },
+  {
+    id: 21,
+    question:
+      "¿Conoces el grado de recomendación que tus empleados hacen de tu empresa?",
+  },
+  {
+    id: 22,
+    question:
+      "¿La empresa cuenta con arquetipos o perfiles de sus clientes ideales?",
+  },
+  {
+    id: 23,
+    question:
+      "¿Conoces los momentos sensibles y criticos de tus clientes en tu empresa?",
+  },
+  {
+    id: 24,
+    question:
+      "¿Los canales de contacto son de claro conocimiento para tus clientes?",
+  },
+  {
+    id: 25,
+    question: "¿Que grado de satisfaccion tienen los clientes en su empresa?",
+  },
+  {
+    id: 26,
+    question:
+      "¿Conoces el grado de recomendación que tus clientes hacen de tu empresa?",
+  },
+  {
+    id: 27,
+    question:
+      "¿Los canales de contacto estan diseñados según las necesidades de sus clientes?",
+  },
+  {
+    id: 28,
+    question:
+      "¿Cuál es el grado de claridad, sencillez y exactitud de las respuestas que se entregan a los clientes?",
+  },
+  {
+    id: 29,
+    question:
+      "¿Los clientes viven experiencias enriquecedoras y memorables en su empresa?",
+  },
+  {
+    id: 30,
+    question: "¿Prestas un servicio bien a la primera vez?",
+  },
+];

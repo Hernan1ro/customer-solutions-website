@@ -6,6 +6,7 @@ export const index360Slice = createSlice({
     result: { index: 0, strategy: 0, process: 0, people: 0, customers: 0 },
     profile: "",
     points: { index: 0, strategy: 0, process: 0, people: 0, customers: 0 },
+    questions: [],
   },
   reducers: {
     setResult: (state, action) => {
@@ -17,11 +18,13 @@ export const index360Slice = createSlice({
     setPoints: (state, action) => {
       state.points = action.payload;
     },
+    setQuestions: (state, action) => {
+      state.questions = action.payload;
+    },
   },
 });
 
-export const { setResult } = index360Slice.actions;
-export const { setProfile } = index360Slice.actions;
-export const { setPoints } = index360Slice.actions;
+export const { setResult, setProfile, setPoints, setQuestions } =
+  index360Slice.actions;
 
 export default index360Slice.reducer;

@@ -9,7 +9,7 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
-import { setResult, setPoints } from "../store/slices/index360";
+import { setResult, setPoints, setQuestions } from "../store/slices/index360";
 import { useSelector } from "react-redux";
 
 export default function Test() {
@@ -85,8 +85,9 @@ export default function Test() {
     //-------------- Collect all data ----------------//
     const questionDiv = form.current.children;
     for (let i = 0; i < questionDiv.length - 1; i++) {
-      let question = questionDiv[i].children[0].innerHTML;
-      let dimension = questionDiv[i].children[0].attributes[1].value;
+      let question = questionDiv[i].children[0].children[1].innerHTML;
+      let dimension =
+        questionDiv[i].children[0].children[1].attributes[2].value;
       let inputs = questionDiv[i].children[1].children;
 
       for (let j = 0; j < inputs.length; j++) {
@@ -99,12 +100,25 @@ export default function Test() {
       }
     }
 
+    console.log(answers);
+
     handleData(answers);
     router.push("/diagnostico");
   };
 
   // ---------- Calculate index 360 ----------------- //
   function handleData(data) {
+    console.log(data);
+
+    let questionArr = [];
+
+    data.map((obj) => {
+      const { question, answer } = obj;
+      questionArr.push({ question, answer });
+    });
+
+    // console.log(questionArr);
+
     let strategyCount = 0;
     let processCount = 0;
     let peopleCount = 0;
@@ -149,6 +163,7 @@ export default function Test() {
         customers: indexCustomers,
       })
     );
+    dispatch(setQuestions(questionArr));
   }
   // ------------- calculatr percent ------------- //
   function calculateIndex(points, standar) {
