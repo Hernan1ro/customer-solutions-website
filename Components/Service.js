@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import styles from "../styles/containers/services.module.css";
+import Link from "next/link";
 
 export const Service = ({ name, img, p }) => {
   const element = useRef(null);
@@ -28,7 +29,9 @@ export const Service = ({ name, img, p }) => {
           <div>
             <h4>{name}</h4>
             <p>{p}</p>
-            <button>Contáctanos</button>
+            <Link href="/contacto">
+              <button>Contáctanos</button>
+            </Link>
           </div>
         </>
       )}

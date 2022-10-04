@@ -1,5 +1,6 @@
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import styles from "../styles/containers/hero.module.css";
+import Link from "next/link";
 
 export const Hero = () => {
   // Typewriter configurations
@@ -30,7 +31,9 @@ export const Hero = () => {
             {text}
             <Cursor />
           </h3>
-          <button>Empieza ahora</button>
+          <Link href="/evaluacion360">
+            <button>Empieza ahora</button>
+          </Link>
         </div>
         <img src="./assets/illustrations/hero-img.svg" alt="hero landing" />
       </div>

@@ -1,5 +1,6 @@
 import styles from "../styles/components/solution.module.css";
 import { useEffect, useState, useRef } from "react";
+import Link from "next/link";
 
 export const Solution = ({ image, title, description }) => {
   const element = useRef(null);
@@ -28,7 +29,9 @@ export const Solution = ({ image, title, description }) => {
           <div>
             <h4>{title}</h4>
             <p>{description}</p>
-            <button>Saber más</button>
+            <Link href="/contacto">
+              <button>Saber más</button>
+            </Link>
           </div>
         </figure>
       )}

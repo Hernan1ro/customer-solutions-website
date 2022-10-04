@@ -91,7 +91,7 @@ export default function Contacto() {
           ) : null}
           <div className={styles.politics}>
             <span>
-              Al dar click en el botón <strong>Enviar</strong> confirmas que
+              Al dar click en el botón <strong>enviar</strong> confirmas que
               aceptas nuestras
             </span>
             <em onClick={handleClick}>

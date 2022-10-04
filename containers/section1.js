@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import styles from "../styles/containers/section1.module.css";
+import Link from "next/link";
 
 export const Section1 = () => {
   const fact = useRef(null);
@@ -42,7 +43,9 @@ export const Section1 = () => {
               resultados de crecimiento en ventas, en la findelización y en la
               recomendación de tus clientes
             </p>
-            <button>Contáctanos</button>
+            <Link href="/contacto">
+              <button>Contáctanos</button>
+            </Link>
           </div>
         )}
       </div>
