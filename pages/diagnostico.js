@@ -67,26 +67,58 @@ export default function Diagnostico(props) {
     }
   };
 
+  // ----------- adding answers to the dbQuestions ------------ //
   const handleDownload = async (user) => {
-    let dbQuestions = {};
+    let dbQuestions = {
+      pregunta_0: "0",
+      pregunta_1: "1",
+      pregunta_2: "2",
+      pregunta_3: "3",
+      pregunta_4: "4",
+      pregunta_5: "5",
+      pregunta_6: "6",
+      pregunta_7: "7",
+      pregunta_8: "8",
+      pregunta_9: "9",
+      pregunta_10: "10",
+      pregunta_11: "11",
+      pregunta_12: "12",
+      pregunta_13: "13",
+      pregunta_14: "14",
+      pregunta_15: "15",
+      pregunta_16: "16",
+      pregunta_17: "17",
+      pregunta_18: "18",
+      pregunta_19: "19",
+      pregunta_20: "20",
+      pregunta_21: "21",
+      pregunta_22: "22",
+      pregunta_23: "23",
+      pregunta_24: "24",
+      pregunta_25: "25",
+      pregunta_26: "26",
+      pregunta_27: "27",
+      pregunta_28: "28",
+      pregunta_29: "29",
+    };
 
-    questions.map((obj) => {
+    console.log(testQuestions);
+
+    testQuestions.map((obj, index) => {
       const { question } = obj;
-      testQuestions.map((item) => {
-        const testContent = /arquetipos/.test(item.question);
+      let pregunta = `pregunta_${index}`;
 
-        console.log(testContent);
-
-        // if (question === item.question) {
-        //   console.log("parecido");
-        // } else {
-        //   console.log("no parecido");
-        // }
-      });
+      if (questions.some((item) => item.question === question)) {
+        const filter = questions.filter((key) => key.question === question);
+        dbQuestions[pregunta] = filter[0].answer;
+      } else {
+        dbQuestions[pregunta] = "No aplica";
+      }
     });
-    // console.log(questions);
-    // console.log(testQuestions);
+
+    console.log(dbQuestions);
     return;
+
     handleExport();
     const data = {
       index,
@@ -100,6 +132,7 @@ export default function Diagnostico(props) {
       position: position.answer,
       sector: sector.answer,
       ...user,
+      ...dbQuestions,
     };
 
     sendData(data);

@@ -3,7 +3,7 @@
   position: fixed;
   z-index: 10;
   bottom: 3rem;
-  right: calc(14% - 3.25rem);
+  right: calc(10% - 3.25rem);
   display: grid;
   place-items: center;
   border-radius: 50%;
