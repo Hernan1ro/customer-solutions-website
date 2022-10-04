@@ -116,9 +116,6 @@ export default function Diagnostico(props) {
       }
     });
 
-    console.log(dbQuestions);
-    return;
-
     handleExport();
     const data = {
       index,
@@ -163,7 +160,7 @@ export default function Diagnostico(props) {
       console.log(err);
     }
   }
-
+  // ------------- generating a pdf file -----------------//
   function handleExport() {
     preparePdfChart();
     let doc = new jsPDF("p", "pt", "a3");
