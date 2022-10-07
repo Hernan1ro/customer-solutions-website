@@ -16,7 +16,6 @@ export const Section1 = () => {
       const { isIntersecting } = entries[0];
       if (isIntersecting) {
         setView(true);
-        console.log("Hello");
       }
     }, options);
     observer.observe(fact.current);

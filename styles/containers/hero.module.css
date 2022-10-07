@@ -33,6 +33,7 @@
   color: var(--black);
   text-align: center;
   color: var(--primary);
+  width: 75%;
 }
 
 @media (max-width: 768px) {

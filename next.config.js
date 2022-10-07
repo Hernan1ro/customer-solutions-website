@@ -8,6 +8,10 @@ const nextConfig = {
     config.resolve.fallback = { fs: false };
     return config;
   },
+  i18n: {
+    locales: ["es-ES", "en-US"], // Lista de todos los locales a soportar
+    defaultLocale: "es-ES", // Locale por defecto
+  },
 };
 
 module.exports = nextConfig;
