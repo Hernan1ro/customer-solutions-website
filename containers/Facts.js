@@ -1,9 +1,12 @@
 import styles from "../styles/containers/facts.module.css";
 import "react-circular-progressbar/dist/styles.css";
-import { factsText } from "../pages/api/facts";
+import { factsContent } from "../pages/api/facts";
 import { Fact } from "../Components/Fact";
+import {useRouter} from "next/router"
 
 export const Facts = () => {
+  const {locale} = useRouter();
+  const { factsText } = factsContent[locale];
   return (
     <section className={styles.facts_section}>
       <div className={styles.facts_container}>

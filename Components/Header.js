@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 export const Header = ({ hide }) => {
   const [show, setShow] = useState(false);
   const [openLan, setOpenLang] = useState(false);
-  const { locale, asPath, defaultLocale } = useRouter();
+  const { locale, asPath } = useRouter();
 
   const handleClick = () => {
     setShow(!show);
@@ -43,7 +43,7 @@ export const Header = ({ hide }) => {
         <div>
           <Link href="/">
             <a>
-              <img src="./assets/brandlogo/logo.webp" alt="" />
+              <img src="/assets/brandlogo/logo.webp" alt="" />
             </a>
           </Link>
           <div className={styles.nav_container}>
