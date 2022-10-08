@@ -1,10 +1,27 @@
 import { useEffect, useState, useRef } from "react";
 import styles from "../styles/containers/section1.module.css";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export const Section1 = () => {
   const fact = useRef(null);
   const [view, setView] = useState(false);
+  const { locale } = useRouter();
+
+  const sectionText = {
+    "en-US": {
+      h2: "We offer different alternatives to help your company to enhance its customer experience",
+      p: "Our solutions allow you to complement, develop and measure models of experience with your customers, providing you with results of growth in sales, in the findelization and in the recommendation of your clients",
+      button: "Contact us",
+    },
+    "es-ES": {
+      h2: "Ofrecemos diferentes alternativas para ayudar a tu empresa a potencializar su experiencia de cliente",
+      p: "Nuestras soluciones te permiten complementar, desarrollar y medir modelos de experiencia con tus clientes, proporcionándote resultados de crecimiento en ventas, en la findelización y en la recomendación de tus clientes",
+      button: "Contáctanos",
+    },
+  };
+
+  const { h2, p, button } = sectionText[locale];
 
   useEffect(() => {
     //-------------- intersection observer --------------//
@@ -32,18 +49,10 @@ export const Section1 = () => {
         )}
         {view && (
           <div>
-            <h2>
-              Ofrecemos diferentes alternativas para ayudar a tu empresa a
-              potencializar su experiencia de cliente
-            </h2>
-            <p>
-              Nuestras soluciones te permiten complementar, desarrollar y medir
-              modelos de experiencia con tus clientes, proporcionándote
-              resultados de crecimiento en ventas, en la findelización y en la
-              recomendación de tus clientes
-            </p>
+            <h2>{h2}</h2>
+            <p>{p}</p>
             <Link href="/contacto">
-              <button>Contáctanos</button>
+              <button>{button}</button>
             </Link>
           </div>
         )}
