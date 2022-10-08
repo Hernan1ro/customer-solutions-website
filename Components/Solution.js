@@ -1,10 +1,23 @@
 import styles from "../styles/components/solution.module.css";
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export const Solution = ({ image, title, description }) => {
   const element = useRef(null);
   const [view, setView] = useState(false);
+  const { locale } = useRouter();
+
+  const btnText = {
+    "en-US": {
+      btn: "Get started",
+    },
+    "es-ES": {
+      btn: "Saber más",
+    },
+  };
+
+  const { btn } = btnText[locale];
 
   useEffect(() => {
     //-------------- intersection observer --------------//
@@ -30,7 +43,7 @@ export const Solution = ({ image, title, description }) => {
             <h4>{title}</h4>
             <p>{description}</p>
             <Link href="/contacto">
-              <button>Saber más</button>
+              <button>{btn}</button>
             </Link>
           </div>
         </figure>

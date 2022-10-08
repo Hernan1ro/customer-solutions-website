@@ -1,9 +1,22 @@
 import { useEffect, useState, useRef } from "react";
 import styles from "../styles/components/footer.module.css";
+import { useRouter } from "next/router";
 
 export const Footer = ({ report }) => {
   const element = useRef(null);
   const [view, setView] = useState(false);
+  const { locale } = useRouter();
+
+  const Text = {
+    "en-US": {
+      text: "All rights reserved",
+    },
+    "es-ES": {
+      text: "Todos los derechos reservados.",
+    },
+  };
+
+  const { text } = Text[locale];
 
   useEffect(() => {
     //-------------- intersection observer --------------//
@@ -35,8 +48,7 @@ export const Footer = ({ report }) => {
           </div>
           <div className={styles.box2}>
             <p>
-              Copyright © 2022 CUSTOMERS SOLUTIONS <br /> Todos los derechos
-              reservados.
+              Copyright © 2022 CUSTOMERS SOLUTIONS <br /> {text}
             </p>
             <p>experienciacliente@customerssolutions.co</p>
           </div>

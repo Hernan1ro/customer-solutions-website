@@ -1,40 +1,84 @@
-export const solutions = [
-  {
-    title: "Evaluación de nivel de madurez en experiencia del cliente SX360°",
-    description:
-      "Esta herramienta de diagnostico te permitirá conocer el grado de madurez de la experiencia de servicio de tu empresa y el camino a seguir para mejorarlo.",
-    image: "expcliente",
+export const solutionsText = {
+  "en-US": {
+    solutions: [
+      {
+        title: "SX360° Customer Experience Maturity Assessment",
+        description:
+          "This diagnostic tool will allow you to know the degree of maturity of your company's service experience and the way forward to improve it.",
+        image: "expcliente",
+      },
+      {
+        title: "CXP And EXP Employee Experience Program",
+        description:
+          "A methodology to measure, diagnose and prepare a roadmap towards the potentiation of your employee and customer experience.",
+        image: "expcliente1",
+      },
+      {
+        title: "Customer Experience Consulting",
+        description:
+          "We support you with a group of experts in your specific needs about customer service and service experience (strategy - processes - employees - customers)",
+        image: "consultoria",
+      },
+      {
+        title: "Project Management Consulting",
+        description:
+          "We are a team prepared to support you in your needs in the management of your projects.",
+        image: "consultoria-gestion",
+      },
+      {
+        title: "Trainings and courses",
+        description:
+          "Trainings and courses, provide your employees with training and knowledge necessary according to your needs.",
+        image: "capacitaciones",
+      },
+      {
+        title: "SSX Service Experience Surveys",
+        description: "Tailor-made surveys according to identified needs.",
+        image: "encuestas",
+      },
+    ],
   },
-  {
-    title: "Programa de experiencia del cliente CXP y del empleado EXP",
-    description:
-      "Una metodología para medir, diagnosticar y preparar una hoja de ruta hacia la potencialización de tu experiencia de empleado y cliente.",
-    image: "expcliente1",
+  "es-ES": {
+    solutions: [
+      {
+        title:
+          "Evaluación de nivel de madurez en experiencia del cliente SX360°",
+        description:
+          "Esta herramienta de diagnostico te permitirá conocer el grado de madurez de la experiencia de servicio de tu empresa y el camino a seguir para mejorarlo.",
+        image: "expcliente",
+      },
+      {
+        title: "Programa de experiencia del cliente CXP y del empleado EXP",
+        description:
+          "Una metodología para medir, diagnosticar y preparar una hoja de ruta hacia la potencialización de tu experiencia de empleado y cliente.",
+        image: "expcliente1",
+      },
+      {
+        title: "Consultoría en experiencia del cliente",
+        description:
+          "Te apoyamos con un grupo de expertos en tus necesidades puntuales sobre servicio al cliente y experiencia de servicio ( estrategia - procesos- empleados - clientes)",
+        image: "consultoria",
+      },
+      {
+        title: "Consultoría en gestión de proyectos",
+        description:
+          "Somos un equipo de trabajo preparados para apoyarte en tus necesidades en la gestión de tus proyectos.",
+        image: "consultoria-gestion",
+      },
+      {
+        title: "Capacitaciones y cursos",
+        description:
+          "Capacitaciones y cursos, brinda a tus colaboradores formación y conocimientos necesarios según tus necesidades.",
+        image: "capacitaciones",
+      },
+      {
+        title: "Encuestas de experiencia de servicio SSX",
+        description: "Encuestas a la medida según necesidades identificadas.",
+        image: "encuestas",
+      },
+    ],
   },
-  {
-    title: "Consultoría en experiencia del cliente",
-    description:
-      "Te apoyamos con un grupo de expertos en tus necesidades puntuales sobre servicio al cliente y experiencia de servicio ( estrategia - procesos- empleados - clientes)",
-    image: "consultoria",
-  },
-  {
-    title: "Consultoría en gestión de proyectos",
-    description:
-      "Somos un equipo de trabajo preparados para apoyarte en tus necesidades en la gestión de tus proyectos.",
-    image: "consultoria-gestion",
-  },
-  {
-    title: "Capacitaciones y cursos",
-    description:
-      "Capacitaciones y cursos, brinda a tus colaboradores formación y conocimientos necesarios según tus necesidades.",
-    image: "capacitaciones",
-  },
-  {
-    title: "Encuestas de experiencia de servicio SSX",
-    description: "Encuestas a la medida según necesidades identificadas.",
-    image: "encuestas",
-  },
-];
+};
 
 export const stage = [
   {
