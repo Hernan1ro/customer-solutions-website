@@ -17,13 +17,21 @@ export const Header = ({ hide }) => {
   const localFlag = {
     "en-US": {
       url: "/assets/icons/en.jpg",
+      solutions: "Solutions",
+      services: "Services",
+      contact: "Contact",
+      test: "Mature test",
     },
     "es-ES": {
       url: "/assets/icons/es.jpg",
+      solutions: "Soluciones",
+      services: "Servicios",
+      contact: "Contacto",
+      test: "Evaluación de madurez",
     },
   };
 
-  const { url } = localFlag[locale];
+  const { url, solutions, services, contact, test } = localFlag[locale];
 
   const handleOpenLan = () => {
     setOpenLang(!openLan);
@@ -43,16 +51,16 @@ export const Header = ({ hide }) => {
               <>
                 <nav>
                   <Link href="/#soluciones">
-                    <a>Soluciones</a>
+                    <a>{solutions}</a>
                   </Link>
                   <Link href="/servicios">
-                    <a>Servicios</a>
+                    <a>{services}</a>
                   </Link>
                   <Link href="/contacto">
-                    <a>Contácto</a>
+                    <a>{contact}</a>
                   </Link>
                   <Link href="/evaluacion360">
-                    <button>Evaluación de madurez</button>
+                    <button>{test}</button>
                   </Link>
                 </nav>
                 <Image
