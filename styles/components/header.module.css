@@ -98,6 +98,7 @@
   gap: 0.5rem;
   place-items: center;
   cursor: pointer;
+  position: relative;
 }
 
 .language_dropdown img:nth-of-type(1) {
@@ -112,4 +113,98 @@
   height: 2rem;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.container_dropdown {
+  background-color: var(--white);
+  padding: 1rem;
+  position: absolute;
+  bottom: -5rem;
+  /* display: none; */
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 5px var(--gray);
+  cursor: pointer;
+  width: 7rem;
+  left: calc(50% - 3.9rem);
+}
+
+.flex {
+  display: flex;
+}
+
+.none {
+  animation: hideDropDown ease 0.3s forwards;
+}
+
+.lan_link {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.on_click .container_dropdown {
+  animation: showDropDown ease 0.3s forwards;
+}
+
+@keyframes showDropDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.on_close .container_dropdown {
+  animation: hideDropDown ease 0.3s forwards;
+}
+
+@keyframes hideDropDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+    display: none;
+  }
+}
+
+.on_click .arrow {
+  animation: twist ease 0.3s forwards;
+}
+
+.on_close .arrow {
+  animation: twist_back ease 0.3s forwards;
+}
+
+@keyframes twist {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+@keyframes twist_back {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.container_dropdown p {
+  font-size: var(--sm);
+  color: var(--gray-intense);
+  font-weight: bold;
 }
