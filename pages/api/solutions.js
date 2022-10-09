@@ -80,57 +80,119 @@ export const solutionsText = {
   },
 };
 
-export const stage = [
-  {
-    title: "Diagnosticar y analizar",
-    img: 1,
-    span: "Diagnóstico y entiendo",
-    li: [
-      "Perfil de madurez",
-      "Diagnóstico de madurez",
-      "Kickoff",
-      "Preparación",
+export const stageText = {
+  "en-US": {
+    h2: "How do we do it?",
+    stage: [
+      {
+        title: "Diagnose and analyze",
+        img: 1,
+        span: "Diagnosis and understanding",
+        li: [
+          "Maturity profile",
+          "Maturity diagnosis",
+          "Kickoff",
+          "Preparation",
+        ],
+        bottom: 0,
+        bg: 55,
+      },
+      {
+        title: "Explore and map",
+        img: 2,
+        span: "Understand the current experience",
+        li: [
+          "Cultural analysis",
+          "Customer Journey Mapping",
+          "Six Sigma",
+          "Customer Engineering",
+        ],
+        bottom: 0,
+        bg: 55,
+      },
+      {
+        title: "Understand the finding",
+        img: 3,
+        span: "Finds of value",
+        li: [
+          "Expectation vs reality",
+          "Competitive position",
+          "Matrix of moments of truth",
+          "Archetype tokens",
+        ],
+        bottom: 0,
+        bg: 48,
+      },
+      {
+        title: "Prioritize and implement",
+        img: 4,
+        span: "Plan and implementation",
+        li: [
+          "Action Plan",
+          "Roadmap",
+          "Prioritization of initiatives",
+          "CX Culture",
+        ],
+        bottom: 0,
+        bg: 40,
+      },
     ],
-    bottom: 0,
-    bg: 55,
   },
-  {
-    title: "Explorar y mapear",
-    img: 2,
-    span: "Entender la experiencia actual",
-    li: [
-      "Análisis cultural",
-      "Mapeo recorrido del cliente",
-      "Six sigma",
-      "Ingeniería de clientes",
+  "es-ES": {
+    h2: "¿Cómo lo hacemos?",
+    stage: [
+      {
+        title: "Diagnosticar y analizar",
+        img: 1,
+        span: "Diagnóstico y entiendo",
+        li: [
+          "Perfil de madurez",
+          "Diagnóstico de madurez",
+          "Kickoff",
+          "Preparación",
+        ],
+        bottom: 0,
+        bg: 55,
+      },
+      {
+        title: "Explorar y mapear",
+        img: 2,
+        span: "Entender la experiencia actual",
+        li: [
+          "Análisis cultural",
+          "Mapeo recorrido del cliente",
+          "Six sigma",
+          "Ingeniería de clientes",
+        ],
+        bottom: 0,
+        bg: 55,
+      },
+      {
+        title: "Entender el hallazgo",
+        img: 3,
+        span: "Hallagos de valor",
+        li: [
+          "Expectativa vs realidad",
+          "Posición competitiva",
+          "Matriz de momentos de verdad",
+          "Fichas de arquetipos",
+        ],
+        bottom: 0,
+        bg: 48,
+      },
+      {
+        title: "Priorizar e implementar",
+        img: 4,
+        span: "Plan e implementación",
+        li: [
+          "Plan de acción",
+          "Hoja de ruta",
+          "Priorización de iniciativas",
+          "Cultura CX",
+        ],
+        bottom: 0,
+        bg: 40,
+      },
     ],
-    bottom: 0,
-    bg: 55,
   },
-  {
-    title: "Entender el hallazgo",
-    img: 3,
-    span: "Hallagos de valor",
-    li: [
-      "Expectativa vs realidad",
-      "Posición competitiva",
-      "Matriz de momentos de verdad",
-      "Fichas de arquetipos",
-    ],
-    bottom: 0,
-    bg: 48,
-  },
-  {
-    title: "Priorizar e implementar",
-    img: 4,
-    span: "Plan e implementación",
-    li: [
-      "Plan de acción",
-      "Hoja de ruta",
-      "Priorización de iniciativas",
-      "Cultura CX",
-    ],
-    bottom: 0,
-    bg: 40,
-  },
-];
+};
