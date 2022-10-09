@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import styles from "../styles/containers/services.module.css";
 import Link from "next/link";
 
-export const Service = ({ name, img, p }) => {
+export const Service = ({ name, img, p, btn }) => {
   const element = useRef(null);
   const [view, setView] = useState(false);
 
@@ -25,12 +25,12 @@ export const Service = ({ name, img, p }) => {
     <figure className={styles.solution} ref={element}>
       {view && (
         <>
-          <img src={`/assets/imagenes/${img}.jpg`} alt="product image" />
+          <img src={`/assets/imagenes/${img}.jpg`} alt={name} />
           <div>
             <h4>{name}</h4>
             <p>{p}</p>
             <Link href="/contacto">
-              <button>Contáctanos</button>
+              <button>{btn}</button>
             </Link>
           </div>
         </>
