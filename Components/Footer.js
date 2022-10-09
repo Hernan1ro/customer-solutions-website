@@ -41,7 +41,7 @@ export const Footer = ({ report }) => {
       {view && (
         <div className={styles.footer_container}>
           <div className={styles.box1}>
-            <img src="./assets/icons/linkedin.svg" alt="linkedin-logo" />
+            <img src="/assets/icons/linkedin.svg" alt="linkedin-logo" />
             <h6>CUSTOMER SOLUTIONS</h6>
             <span>Calle 81 #71-29, Barranquilla, Atlántico, Colombia</span>
             <span>+57 3008586803</span>

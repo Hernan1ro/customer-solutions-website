@@ -39,7 +39,7 @@ export const About = () => {
       <div className={styles.container}>
         {view && (
           <>
-            <img src="/assets/imagenes/nosotros.webp" alt="nosotros" />
+            <img src="/assets/imagenes/nosotros.webp" alt={h2} />
             <div>
               <h2>{h2}</h2>
               <p>{p}</p>
