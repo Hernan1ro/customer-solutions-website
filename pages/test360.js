@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { Layout } from "../Layout/Layout";
 import styles from "../styles/pages/test.module.css";
-import { customerQuestion } from "./api/questions";
+import { customerQuestionText } from "./api/questions";
 import { Question } from "../Components/Question";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
@@ -16,6 +16,10 @@ export default function Test() {
   const [progress, setProgess] = useState(0);
   const router = useRouter();
   const dispatch = useDispatch();
+  const { locale } = useRouter();
+
+  const { h2, h3, customerQuestion, btn, warning, circle_text, h4 } =
+    customerQuestionText[locale];
 
   const percent = (progress / customerQuestion.length) * 100;
 
@@ -86,8 +90,8 @@ export default function Test() {
     <Layout page="Perfil corporativo" hide={true}>
       <section className={styles.container}>
         <div>
-          <h2>Perfil corporativo</h2>
-          <h3>Antes de comenzar primero cuentanos un poco sobre ti</h3>
+          <h2>{h2}</h2>
+          <h3>{h3}</h3>
           <div>
             <form onSubmit={handleSubmit} className={styles.form} ref={form}>
               {customerQuestion.map((item) => {
@@ -106,13 +110,9 @@ export default function Test() {
               })}
 
               <button id="submit_btn" type="submit">
-                Continuar test
+                {btn}
               </button>
-              {error ? (
-                <span id="error">
-                  Debes responder todas las preguntas para poder continuar
-                </span>
-              ) : null}
+              {error ? <span id="error">{warning}</span> : null}
             </form>
           </div>
         </div>
@@ -122,7 +122,7 @@ export default function Test() {
               value={progress}
               minValue={0}
               maxValue={5}
-              text={`${progress}/5 respuestas`}
+              text={`${progress}/5 ${circle_text}`}
               styles={buildStyles({
                 rotation: 0.25,
                 strokeLinecap: "butt",
@@ -144,13 +144,13 @@ export default function Test() {
       </section>
       <div className={styles.progressbar}>
         <div className={styles.progressbar_container}>
-          <h4>{`${percent}% completado`}</h4>
+          <h4>{`${percent}% ${h4}`}</h4>
           <div className={styles.bg_container}>
             <div className={styles.bg} style={{ width: `${percent}%` }}></div>
           </div>
           {percent === 100 ? (
             <img
-              src="./assets/icons/check_list.svg"
+              src="/assets/icons/check_list.svg"
               alt="Cuestionario completado"
             ></img>
           ) : null}
