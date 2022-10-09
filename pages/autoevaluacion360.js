@@ -27,6 +27,34 @@ export default function Test() {
     customers: 90,
     indexTotal: 300,
   });
+  const { locale } = useRouter();
+
+  //-------------- translations --------------- //
+  const autoTestText = {
+    "en-US": {
+      h2: "Evaluation of experience level and quality of service 360°",
+      h3: "Maturity test",
+      merchant: "Entrepreneur",
+      employee: "Employee",
+      btn: "Finish test",
+      warning: "You must answer all the questions to continue",
+      circle_text: "answers",
+      h4: "completed",
+    },
+    "es-ES": {
+      h2: "Evaluación nivel de experiencia y calidad del servicio 360°",
+      h3: "Evaluación de la madurez",
+      merchant: "Comerciante informal",
+      employee: "Empleado",
+      btn: "Finalizar test",
+      warning: "You must answer all the questions to continue",
+      circle_text: "respuestas",
+      h4: "completado",
+    },
+  };
+
+  const { h2, h3, merchant, employee, btn, warning, circle_text, h4 } =
+    autoTestText[locale];
 
   // ---------------- extracting data from global state ---------------- //
   const {
@@ -35,7 +63,7 @@ export default function Test() {
 
   const dbOptions = (profile) => {
     switch (profile) {
-      case "Comerciante informal":
+      case merchant:
         setQuestionsTest(test360QuestionsInformal);
         setStandars({
           strategy: 40,
@@ -45,7 +73,7 @@ export default function Test() {
           indexTotal: 200,
         });
         break;
-      case "Empleado":
+      case employee:
         setQuestionsTest(test360QuestionsEmployee);
         setStandars({
           strategy: 60,
@@ -62,6 +90,7 @@ export default function Test() {
   };
 
   useEffect(() => {
+    console.log(question.answer);
     dbOptions(question.answer);
   }, []);
 
@@ -206,8 +235,8 @@ export default function Test() {
     <Layout page="Auto evaluación 360" hide={true}>
       <section className={styles.container}>
         <div>
-          <h2>Evaluación nivel de experiencia y calidad del servicio 360°</h2>
-          <h3>Evaluación de la madurez </h3>
+          <h2>{h2}</h2>
+          <h3>{h3}</h3>
           <div>
             <form onSubmit={handleSubmit} className={styles.form} ref={form}>
               {questionTest.map((item) => {
@@ -225,13 +254,9 @@ export default function Test() {
                 );
               })}
               <button id="submit_btn" type="submit">
-                Finalizar test
+                {btn}
               </button>
-              {error ? (
-                <span id="error">
-                  Debes responder todas las preguntas para poder continuar
-                </span>
-              ) : null}
+              {error ? <span id="error">{warning}</span> : null}
             </form>
           </div>
         </div>
@@ -241,7 +266,7 @@ export default function Test() {
               value={progress}
               minValue={0}
               maxValue={questionTest.length}
-              text={`${progress}/${questionTest.length} respuestas`}
+              text={`${progress}/${questionTest.length} ${circle_text}`}
               styles={buildStyles({
                 rotation: 0.25,
                 strokeLinecap: "butt",
@@ -263,13 +288,13 @@ export default function Test() {
       </section>
       <div className={styles.progressbar}>
         <div className={styles.progressbar_container}>
-          <h4>{`${percent}% completado`}</h4>
+          <h4>{`${percent}% ${h4}`}</h4>
           <div className={styles.bg_container}>
             <div className={styles.bg} style={{ width: `${percent}%` }}></div>
           </div>
           {percent == 100 ? (
             <img
-              src="./assets/icons/check_list.svg"
+              src="/assets/icons/check_list.svg"
               alt="Cuestionario completado"
             ></img>
           ) : null}
