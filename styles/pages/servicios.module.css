@@ -26,11 +26,13 @@
   color: var(--white);
   font-weight: bold;
   text-align: center;
+  width: 40%;
 }
 
 @media (max-width: 768px) {
   .servicios h1 {
     font-size: var(--xsl);
+    width: 80%;
   }
 }
 
