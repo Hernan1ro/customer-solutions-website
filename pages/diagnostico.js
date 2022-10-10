@@ -150,7 +150,7 @@ export default function Diagnostico(props) {
 
     setTimeout(() => {
       setDowload(false);
-    }, 15000);
+    }, 20000);
   };
 
   const handleClick = () => {
@@ -264,7 +264,7 @@ export default function Diagnostico(props) {
   useEffect(() => {
     console.log(index);
     if (index === 0) {
-      // router.push("/");
+      window.location.href = "/";
       console.log("haciendo routing papu");
     }
   }, []);
