@@ -1,5 +1,6 @@
 export const factsContent = {
   "en-US": {
+    h2: "Did you know?",
     factsText: [
       {
         value: 93,
@@ -24,6 +25,7 @@ export const factsContent = {
     ],
   },
   "es-ES": {
+    h2: "¿Sabías que?",
     factsText: [
       {
         value: 93,
