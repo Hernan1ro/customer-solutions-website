@@ -4,7 +4,8 @@ import { IndexReport } from "../Components/IndexReport";
 import styles from "../styles/containers/report.module.css";
 import { RadarChart } from "../Components/RadarChart";
 import { ChartSX } from "../Components/ChartSX";
-import { perfilSXDiagnostic } from "../pages/api/diagnostic";
+import { diagnosticText } from "../pages/api/diagnostic";
+import { useRouter } from "next/router";
 
 export const Report = ({
   index,
@@ -17,6 +18,7 @@ export const Report = ({
   const {
     points: { strategy, process: process_, people, customers },
   } = useSelector((state) => state.index360Slice);
+  const { locale } = useRouter();
 
   const [categoryName, setCategoryName] = useState("");
   const [conclusion, setConclusion] = useState("");
@@ -24,6 +26,9 @@ export const Report = ({
   const [quadrant, setQuadrant] = useState("");
 
   const indicatorsArr = [strategy, process_, people, customers];
+
+  const { h2, h21, h31, perfilSXDiagnostic, c1, c2, c3, c4, span, p } =
+    diagnosticText[locale];
 
   // ------------- calculatr points ------------- //
 
@@ -37,13 +42,13 @@ export const Report = ({
   useEffect(() => {
     const getProfile = (hard, soft) => {
       if (hard < 60 && soft < 90) {
-        setCategoryName("principiante");
+        setCategoryName(c1);
       } else if (hard > 60 && soft < 90) {
-        setCategoryName("conservador");
+        setCategoryName(c2);
       } else if (soft > 90 && hard < 60) {
-        setCategoryName("orientado");
+        setCategoryName(c3);
       } else {
-        setCategoryName("maduro");
+        setCategoryName(c4);
       }
     };
     getProfile(hardDimension, softDimension);
@@ -91,15 +96,13 @@ export const Report = ({
   return (
     <section className={styles.report} id="text-sample">
       <img src="/assets/brandlogo/logo.webp" alt="customer solutions logo" />
-      <h2>Diagnóstico madurez experiencia de servicio</h2>
+      <h2>{h2}</h2>
       <h3 style={{ color }}>Index 360°</h3>
       <div
         className={styles.percentaje_result}
         style={{ backgroundColor: color, boxShadow: `5px 5px 30px ${color}` }}
       >{`${index}%`}</div>
-      <span style={{ color }}>
-        Es tu nivel de madurez en experiencia y satisfacción del cliente
-      </span>
+      <span style={{ color }}>{span}</span>
       <p>{text}</p>
       <div className={styles.index_container}>
         {indicators.map((obj, index) => {
@@ -129,7 +132,7 @@ export const Report = ({
       </div>
       {indicatorsArr[2] !== 0 ? (
         <>
-          <h2>Perfil SX</h2>
+          <h2>{h21}</h2>
           <div className={styles.chart_component}>
             <ChartSX
               hardDimension={hardDimension}
@@ -137,7 +140,7 @@ export const Report = ({
             />
           </div>
           <div className={styles.sx_conclusion}>
-            <h3>{`Tienes un perfil ${categoryName}`}</h3>
+            <h3>{`${h31} ${categoryName}`}</h3>
             <p>{conclusion}</p>
             <div className={styles.subconclusion}>
               <div>{quadrant}</div>
@@ -152,8 +155,7 @@ export const Report = ({
       ) : null}
       <div className={styles.footer_report}>
         <p>
-          Copyright © 2022 CUSTOMERS SOLUTIONS <br /> Todos los derechos
-          reservados.
+          Copyright © 2022 CUSTOMERS SOLUTIONS <br /> {p}
         </p>
         <p>experienciacliente@customerssolutions.co</p>
       </div>
