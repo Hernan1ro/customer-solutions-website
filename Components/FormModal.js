@@ -37,7 +37,7 @@ export const FormModal = ({
     <div className={styles.modal}>
       <div className={styles.form_container}>
         <img
-          src="./assets/icons/customer_logo.svg"
+          src="/assets/icons/customer_logo.svg"
           alt="customer solutions"
           width="50px"
           height="50px"

@@ -289,7 +289,7 @@ export default function Test() {
         </div>
         <img
           className={styles.bg_image}
-          src="./assets/icons/customer_logo.svg"
+          src="/assets/icons/customer_logo.svg"
           alt="Customer solutions"
         />
       </section>
