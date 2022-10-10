@@ -3,10 +3,8 @@ import { useSelector } from "react-redux";
 import { IndexReport } from "../Components/IndexReport";
 import styles from "../styles/containers/report.module.css";
 import { RadarChart } from "../Components/RadarChart";
-// import { BarChart } from "../Components/BarChart";
 import { ChartSX } from "../Components/ChartSX";
 import { perfilSXDiagnostic } from "../pages/api/diagnostic";
-import { Footer } from "../Components/Footer";
 
 export const Report = ({
   index,

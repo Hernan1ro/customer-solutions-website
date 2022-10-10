@@ -1875,7 +1875,7 @@ export const test360QuestionsText = {
       },
     ],
   },
-  "es-ES": {
+  "es-ES": { 
     test360Questions: [
       {
         id: 1,

@@ -1,17 +1,17 @@
 import { useEffect, useState, useRef } from "react";
 import styles from "../styles/pages/diagnostico.module.css";
 import "react-circular-progressbar/dist/styles.css";
-import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import { Layout } from "../Layout/Layout";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import { CategoryIndex } from "../Components/CategoryIndex";
 import { useSelector } from "react-redux";
-import { diagnostic } from "../pages/api/diagnostic";
-import { testQuestions } from "../pages/api/questions";
+import { diagnosticText } from "../pages/api/diagnostic";
+import { test360QuestionsText } from "../pages/api/questions";
 import { FormModal } from "../Components/FormModal";
 import { PrivacityPolicies } from "../Components/PrivacityPolicies";
 import { Report } from "../containers/Report";
+import { useRouter } from "next/router";
 
 export default function Diagnostico(props) {
   const [show, setShow] = useState(false);
@@ -20,12 +20,15 @@ export default function Diagnostico(props) {
   const [count, setCount] = useState(0);
   const element = useRef(null);
   const [view, setView] = useState(false);
+  const { locale } = useRouter();
 
   const {
     result: { index, strategy, process: process_, people, customers },
     profile: [job, employee_number, experience, position, sector],
     questions,
   } = useSelector((state) => state.index360Slice);
+
+  const { diagnostic, h2, h3, btn } = diagnosticText[locale];
 
   const indicators = diagnostic(index, strategy, process_, people, customers);
 
@@ -67,6 +70,8 @@ export default function Diagnostico(props) {
     }
   };
 
+  const { testQuestions } = test360QuestionsText[locale];
+
   // ----------- adding answers to the dbQuestions ------------ //
   const handleDownload = async (user) => {
     let dbQuestions = {
@@ -101,8 +106,6 @@ export default function Diagnostico(props) {
       pregunta_28: "28",
       pregunta_29: "29",
     };
-
-    console.log(testQuestions);
 
     testQuestions.map((obj, index) => {
       const { question } = obj;
@@ -200,7 +203,7 @@ export default function Diagnostico(props) {
     canvas.remove();
   }
 
-  // ------------
+  // ------------ freeze modal from -------------------//
   const onDownload = () => {
     if (!show) {
       document.body.style.overflow = "hidden";
@@ -245,8 +248,8 @@ export default function Diagnostico(props) {
   return (
     <Layout page="Diagnóstico 360°">
       <section className={`${styles.diagnostic}`} id="diagnostic">
-        <h2>Diagnóstico madurez experiencia de servicio</h2>
-        <h3>Estos son tus resultados</h3>
+        <h2>{h2}</h2>
+        <h3>{h3}</h3>
         <div ref={element} className={`${styles.index_container} `}>
           <h4>{category}</h4>
           <div className={styles.main_index}>
@@ -275,12 +278,12 @@ export default function Diagnostico(props) {
               <span style={{ color }}>{summary}</span>
             </div>
             <div className={styles.index_description}>
-              <img src="./assets/Illustrations/results.svg" alt="Index image" />
+              <img src="/assets/Illustrations/results.svg" alt="Index image" />
               <p>{text}</p>
               <button onClick={onDownload}>
-                Descarga tu informe completo
+                {btn}
                 <img
-                  src="./assets/icons/download.svg"
+                  src="/assets/icons/download.svg"
                   alt="download complete inform"
                 />
               </button>

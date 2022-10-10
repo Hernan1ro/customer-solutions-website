@@ -1,3 +1,202 @@
+export const diagnosticText = {
+  "en-US": {
+    h2: "Diagnosis maturity service experience",
+    h3: "These are your results",
+    btn: "Download your full report",
+    diagnostic: (index, strategy, process, employee, customers) => [
+      {
+        category: "Index 360°",
+        value: index,
+        img: "strategy",
+        heading: {
+          high: `Your level of maturity in experience and customer satisfaction is ${index}%`,
+          middle: `The level of maturity in customer experience and satisfaction is ${index}%`,
+          low: `Your level of maturity in experience and customer satisfaction is ${index}%`,
+        },
+        conclusion: {
+          high: `You are a mature profile and consistent in your actions. You must continue on that path of permanent improvement always focused on providing unforgettable experiences to your employees and customers`,
+          middle: `Providing unforgettable experiences throughout your company is already part of your purpose, you are on the right track and a few steps away from becoming a differentiating business`,
+          low: `Although you are aware of the importance of providing unforgettable experiences to your customers, you can still consider yourself a traditional company. The path of transformation begins, it is time to set goals and concrete actions`,
+        },
+        lse: 80,
+        lie: 40,
+      },
+      {
+        category: "Strategy",
+        value: strategy,
+        img: "strategy",
+        imgUrl: "/assets/reports/strategy.jpg",
+        heading: {
+          high: `Your strategy is at  ${strategy}%.`,
+          middle: `Your strategy level is ${strategy}%`,
+          low: `Your level of strategy is ${strategy}%`,
+        },
+        conclusion: {
+          high: `The strategy in experience and satisfaction of your customers and employees is consolidated. Your company works with its customers/employees in mind, remember that trends often arise that you should be aware of. You are on the right path, continue on this route`,
+          middle: `The best way to generate an advantage over your competitors is to set specific goals and establish resources for them. Additionally, you must focus on the strategy designed being what your customers are really perceiving`,
+          low: `The experience of your customers must be prioritized in the company, you must be aware of the benefits of having satisfied, frequent customers who recommend you. We recommend you pay more attention to the importance of the strategy in the final satisfaction of your client`,
+        },
+        lse: 80,
+        lie: 50,
+      },
+      {
+        category: "Processes",
+        value: process,
+        img: "process",
+        imgUrl: "/assets/reports/process.jpg",
+        heading: {
+          high: `Your level of processes is ${process}%`,
+          middle: `Your experience processes are at ${process}%`,
+          low: `Your experience processes are at ${process}%`,
+        },
+        conclusion: {
+          high: `There is a balance between what is promised and the processes and procedures that support it. Continue to consolidate actions at every critical point and keep exploring new and better ways to provide satisfaction to your customers and employees`,
+          middle: `You should look for better ways to improve the management of your channels, times and procedures related to customers. The collection and analysis of data can be an improvement action where you can know weaknesses and strengths of your operation`,
+          low: `A management of the channels, the service times and procedures will give you memory and satisfaction to the customers. You need to pay more attention to this variable to improve your final experience`,
+        },
+        lse: 80,
+        lie: 50,
+        orientation: "left",
+      },
+      {
+        category: "Clients",
+        value: customers,
+        img: "users",
+        imgUrl: "/assets/reports/customers.jpg",
+        heading: {
+          high: `You have a percentage of ${customers}%`,
+          middle: `Your percentage here is ${customers}%`,
+          low: `You have a percentage of ${customers}%`,
+        },
+        conclusion: {
+          high: `You clearly understand that a good customer experience can give greater prestige to your business and create a greater and more widespread bond with your customers. It is important that you continue to make progress in generating more and better experiences for your customers`,
+          middle: `Current actions may need a nudge. Reinforce the most critical points for your customers and promote better actions in them. Do not forget that your customers want to live memorable experiences in your company`,
+          low: `You must focus your actions on generating satisfactory experiences in your customers, you must work on knowing more and better your customers, their degree of satisfaction and of course they would recommend you so much with other people. You have a range of opportunities to achieve the path of an unforgettable service experience for your customers`,
+        },
+        lse: 70,
+        lie: 40,
+      },
+      {
+        category: "Employees",
+        value: employee,
+        img: "employee",
+        imgUrl: "/assets/reports/people.jpg",
+        heading: {
+          high: `You have a level of ${employee}%`,
+          middle: `Your level of experience of your employees is ${employee}%`,
+          low: `You have a level of ${employee}%`,
+        },
+        conclusion: {
+          high: `Consolidate the programs you have with your employees, they are committed to providing unforgettable experiences, and they understand their role in achieving achievements. Make sure they are permanently motivated`,
+          middle: `You should not let your guard down with them, remember that they are the most valuable asset you have and who relate directly to your customers. You may consider potentiating training programs and communication in all its lines`,
+          low: `Establish clear policies with your employees, giving them the tools to train, relate and make the best decisions when they are in contact with your customers. Creating motivated and empowered teams will bring you tangible advantages in a better experience with your customers`,
+        },
+        lse: 70,
+        lie: 40,
+        orientation: "left",
+      },
+    ],
+  },
+  "es-ES": {
+    h2: "Diagnóstico madurez experiencia de servicio",
+    h3: "Estos son tus resultados",
+    btn: "Descarga tu informe completo",
+    diagnostic: (index, strategy, process, employee, customers) => [
+      {
+        category: "Index 360°",
+        value: index,
+        img: "strategy",
+        heading: {
+          high: `Tu nivel de madurez en experiencia y satisfacción del cliente es de ${index}%`,
+          middle: `El nivel de madurez en experiencia y satisfacción del clientes es ${index}%`,
+          low: `Tu nivel de madurez en experiencia y satisfacción del cliente es de ${index}%`,
+        },
+        conclusion: {
+          high: `Eres un perfil maduro y consistente en tus acciones. Debes continuar en ese camino de la mejora permanente siempre enfocado en brindar experiencias inolvidables a tus empleados y clientes`,
+          middle: `Brindar experiencias inolvidables en toda tu empresa ya hace parte de tu proposito, estas en el camino correcto y a pocos pasos de convertirte en un negocio diferenciador.`,
+          low: `Aunque estas conciente de la importancia de brindar experiencias inolvidables a tus clientes aun puedes considerarte una empresa tradicional. El camino de transformación empieza, es el momento de fijarte objetivos y acciones concretas.`,
+        },
+        lse: 80,
+        lie: 40,
+      },
+      {
+        category: "Estrategia",
+        value: strategy,
+        img: "strategy",
+        imgUrl: "/assets/reports/strategy.jpg",
+        heading: {
+          high: `Tu estrategia esta en un ${strategy}%.`,
+          middle: `Tu nivel de estrategia es de ${strategy}%`,
+          low: `Tu nivel de estrategia es ${strategy}%`,
+        },
+        conclusion: {
+          high: `La estrategia en experiencia y satisfacción de tus clientes y empleados esta consolidada. Tu empresa trabaja pensando en sus clientes/empleados, recuerda que con frecuencia surgen tendencias de las cuales debes estar enterado. Vas en el camino adecuado, continua en esta ruta.`,
+          middle: `La mejor forma de generar una ventaja frente a tus competidores es fijandote objetivos concretos y estableciendo recursos para ellos. Adicional debes enfocarte en que la estrategia diseñada sea lo que realmente estan percibiendo tus clientes`,
+          low: `La experiencia de tus clientes debe ser priorizada en la empresa, debes ser conciente de los beneficios que trae tener a clientes satisfechos, frecuentes y que te recomienden. Te recomendamos poner mayor atención a la importancia que tiene la estrategia en la satisfacción final de tu cliente.`,
+        },
+        lse: 80,
+        lie: 50,
+      },
+      {
+        category: "Procesos",
+        value: process,
+        img: "process",
+        imgUrl: "/assets/reports/process.jpg",
+        heading: {
+          high: `Tu nivel de procesos es  ${process}%`,
+          middle: `Tus procesos de experiencia estan en un ${process}%`,
+          low: `Tus procesos de experiencia estan en un ${process}%`,
+        },
+        conclusion: {
+          high: `Existe un equilibrio entre lo prometido y los procesos y procedimientos que lo soportan. Continua consolidando las acciones en cada punto critico y no dejes de explorar nuevos y mejores maneras de brindar satisfación a tus clientes y empleados.`,
+          middle: `Se deben buscar mejores maneras para mejorar la gestion de tus canales, tiempos y procedimientos relacionados con los clientes. La recolección y analisis de los datos puede ser una acción de mejora donde podras conocer debilidades y fortalezas de tu operación.`,
+          low: `Una gestion de los canales, los tiempos de atención y procedimientos te dara recordación y satisfacción a los clientes. Necesitas poner mayor atención en esta variable para mejorar tu experiencia final.`,
+        },
+        lse: 80,
+        lie: 50,
+        orientation: "left",
+      },
+      {
+        category: "Clientes",
+        value: customers,
+        img: "users",
+        imgUrl: "/assets/reports/customers.jpg",
+        heading: {
+          high: `Tienes un porcentaje de ${customers}%`,
+          middle: `Tu porcentaje aquí es ${customers}%`,
+          low: `Tienes un porcentaje de ${customers}%`,
+        },
+        conclusion: {
+          high: `Comprendes claramente que una buena experiencia de cliente puede dar mayor prestigio a tu negocio y a crear un vínculo mayor y más extendido con tus clientes. Es importante que continues avanzando en generar mas y mejores experiencias a tus clientes.`,
+          middle: `Las acciones actuales posiblemente necesitan de un empujon. Refuerza los puntos mas criticos para tus clientes e impulsa en ellos mejores acciones. No olvides que tus clientes desean vivir experiencias memorables en tu empresa.`,
+          low: `Debes enfocar tus acciones en generar en tus clientes experiencias satisfactorias, debes trabajar en conocer mas y mejor a tus clientes, su grado de satisfacción y por supuesto que tanto te recomendarian con otras personas. Tienes un abanico de oportunidades para alcanzar la ruta de una experiencia de servicio inolvidable para tus clientes`,
+        },
+        lse: 70,
+        lie: 40,
+      },
+      {
+        category: "Empleados",
+        value: employee,
+        img: "employee",
+        imgUrl: "/assets/reports/people.jpg",
+        heading: {
+          high: `Tienes un nivel de ${employee}%`,
+          middle: `Tu nivel de experiencia de tus empleados es ${employee}%`,
+          low: `Tienes un nivel de ${employee}%`,
+        },
+        conclusion: {
+          high: `Consolida los programas que tienes con tus empleados, se encuentran comprometidos con brindar experiencias inolvidables, ademas de que comprenden su papel en la consecusion de los logros. Asegurate de que esten permanentemente motivados.`,
+          middle: `No debes bajar la guardia con ellos, recuerda que son el activo mas valioso que tienes y quienes se relacionan directamente con tus clientes. Es posible que consideres potencializar los programas de capacitación y la comunicación en todas sus lineas`,
+          low: `Establece politicas claras con tus empleados, brindandole las herramientas para formarse, relacionarse y tomar las mejores decisiones cuando esten en contacto con tus clientes. Crear equipos motivados y empoderados te traerá ventajas palpables en una mejor experiencia con tus clientes`,
+        },
+        lse: 70,
+        lie: 40,
+        orientation: "left",
+      },
+    ],
+  },
+};
+
 export const diagnostic = (index, strategy, process, employee, customers) => [
   {
     category: "Index 360°",
