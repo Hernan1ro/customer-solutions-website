@@ -21,6 +21,8 @@ export default function Diagnostico(props) {
   const element = useRef(null);
   const [view, setView] = useState(false);
   const [isDownloaded, setIsDownLoaded] = useState(false);
+  const [download, setDowload] = useState(false);
+  const router = useRouter();
   const { locale } = useRouter();
 
   const {
@@ -136,12 +138,19 @@ export default function Diagnostico(props) {
       ...dbQuestions,
     };
 
+    //-----------show downlad icon -----//
+    setDowload(true);
+
     // ---------- verify wheter or not send the info to the BD---------- //
     if (!isDownloaded) {
       sendData(data);
       setIsDownLoaded(true);
     }
     setShow(!show);
+
+    setTimeout(() => {
+      setDowload(false);
+    }, 15000);
   };
 
   const handleClick = () => {
@@ -163,6 +172,7 @@ export default function Diagnostico(props) {
       const res = await fetch(URL, options);
       const data_res = await res.json();
       console.log(data_res);
+      setDowload(false);
       setShow(!show);
     } catch (err) {
       console.log(err);
@@ -251,6 +261,13 @@ export default function Diagnostico(props) {
   }, []);
 
   // ------------- redirects if user refresh the diagnostic page -----------------//
+  useEffect(() => {
+    console.log(index);
+    if (index === 0) {
+      // router.push("/");
+      console.log("haciendo routing papu");
+    }
+  }, []);
 
   return (
     <Layout page="Diagnóstico 360°">
@@ -339,6 +356,13 @@ export default function Diagnostico(props) {
         />
       ) : null}
       {policies ? <PrivacityPolicies handleClick={handleClick} /> : null}
+      {download && (
+        <img
+          className={styles.download_arrow}
+          src="/assets/icons/download_arrow.svg"
+          alt="Your report is downloading"
+        />
+      )}
     </Layout>
   );
 }

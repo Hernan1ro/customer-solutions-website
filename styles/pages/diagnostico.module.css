@@ -217,3 +217,33 @@
   font-size: var(--md);
   color: var(--black);
 }
+
+.download_arrow {
+  width: 8rem;
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  filter: drop-shadow(0px 0px 20px white);
+  animation: floating ease 1.5s infinite;
+}
+
+@media (max-width: 767px) {
+  .download_arrow {
+    width: 6rem;
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(-30%);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-30%);
+    opacity: 0.2;
+  }
+}
