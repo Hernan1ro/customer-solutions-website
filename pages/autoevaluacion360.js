@@ -34,7 +34,7 @@ export default function Test() {
     "en-US": {
       h2: "Evaluation of experience level and quality of service 360°",
       h3: "Maturity test",
-      merchant: "Entrepreneur",
+      merchant: "Independent",
       employee: "Employee",
       btn: "Finish test",
       warning: "You must answer all the questions to continue",
