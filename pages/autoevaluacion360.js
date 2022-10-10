@@ -1,9 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { Layout } from "../Layout/Layout";
 import styles from "../styles/pages/test.module.css";
-import { test360Questions } from "../pages/api/questions";
-import { test360QuestionsInformal } from "../pages/api/questions";
-import { test360QuestionsEmployee } from "../pages/api/questions";
+import { test360QuestionsText } from "../pages/api/questions";
 import { Question } from "../Components/Question";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
@@ -56,6 +54,12 @@ export default function Test() {
   const { h2, h3, merchant, employee, btn, warning, circle_text, h4 } =
     autoTestText[locale];
 
+  const {
+    test360Questions,
+    test360QuestionsInformal,
+    test360QuestionsEmployee,
+  } = test360QuestionsText[locale];
+
   // ---------------- extracting data from global state ---------------- //
   const {
     profile: [question],
@@ -90,8 +94,11 @@ export default function Test() {
   };
 
   useEffect(() => {
-    console.log(question.answer);
-    dbOptions(question.answer);
+    if (question === undefined) {
+      router.push("/test360");
+    } else {
+      dbOptions(question.answer);
+    }
   }, []);
 
   const percent = ((progress / questionTest.length) * 100).toFixed(0);

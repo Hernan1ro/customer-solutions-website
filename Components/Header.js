@@ -72,48 +72,50 @@ export const Header = ({ hide }) => {
                 />
               </>
             ) : null}
-            <div
-              className={`${styles.language_dropdown} ${
-                openLan ? styles.on_click : styles.on_close
-              }`}
-              onClick={handleOpenLan}
-            >
-              <img src={url} alt={locale} />
-              <img
-                className={styles.arrow}
-                src="/assets/icons/arrow1_primary.svg"
-                alt="Arrow"
-              />
+            {!hide && (
               <div
-                className={`${styles.container_dropdown} ${
-                  openLan ? styles.flex : styles.none
+                className={`${styles.language_dropdown} ${
+                  openLan ? styles.on_click : styles.on_close
                 }`}
+                onClick={handleOpenLan}
               >
-                {locale === "en-US" ? (
-                  <Link
-                    activeClassName={locale === "es-ES"}
-                    href={asPath}
-                    locale="es-ES"
-                  >
-                    <div className={styles.lan_link}>
-                      <img src="/assets/icons/es.jpg" alt={locale} />
-                      <p>Es</p>
-                    </div>
-                  </Link>
-                ) : (
-                  <Link
-                    activeClassName={locale === "en-US"}
-                    href={asPath}
-                    locale="en-US"
-                  >
-                    <div className={styles.lan_link}>
-                      <img src="/assets/icons/en.jpg" alt={locale} />
-                      <p>En</p>
-                    </div>
-                  </Link>
-                )}
+                <img src={url} alt={locale} />
+                <img
+                  className={styles.arrow}
+                  src="/assets/icons/arrow1_primary.svg"
+                  alt="Arrow"
+                />
+                <div
+                  className={`${styles.container_dropdown} ${
+                    openLan ? styles.flex : styles.none
+                  }`}
+                >
+                  {locale === "en-US" ? (
+                    <Link
+                      activeClassName={locale === "es-ES"}
+                      href={asPath}
+                      locale="es-ES"
+                    >
+                      <div className={styles.lan_link}>
+                        <img src="/assets/icons/es.jpg" alt={locale} />
+                        <p>Es</p>
+                      </div>
+                    </Link>
+                  ) : (
+                    <Link
+                      activeClassName={locale === "en-US"}
+                      href={asPath}
+                      locale="en-US"
+                    >
+                      <div className={styles.lan_link}>
+                        <img src="/assets/icons/en.jpg" alt={locale} />
+                        <p>En</p>
+                      </div>
+                    </Link>
+                  )}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </header>
