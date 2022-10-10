@@ -20,6 +20,7 @@ export default function Diagnostico(props) {
   const [count, setCount] = useState(0);
   const element = useRef(null);
   const [view, setView] = useState(false);
+  const [isDownloaded, setIsDownLoaded] = useState(false);
   const { locale } = useRouter();
 
   const {
@@ -135,7 +136,11 @@ export default function Diagnostico(props) {
       ...dbQuestions,
     };
 
-    sendData(data);
+    // ---------- verify wheter or not send the info to the BD---------- //
+    if (!isDownloaded) {
+      sendData(data);
+      setIsDownLoaded(true);
+    }
     setShow(!show);
   };
 
@@ -244,6 +249,8 @@ export default function Diagnostico(props) {
     }, options);
     observer.observe(element.current);
   }, []);
+
+  // ------------- redirects if user refresh the diagnostic page -----------------//
 
   return (
     <Layout page="Diagnóstico 360°">
