@@ -172,7 +172,6 @@ export default function Diagnostico(props) {
       const res = await fetch(URL, options);
       const data_res = await res.json();
       console.log(data_res);
-      setDowload(false);
       setShow(!show);
     } catch (err) {
       console.log(err);
