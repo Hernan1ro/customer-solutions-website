@@ -52,6 +52,12 @@
   width: max-content;
 }
 
+@media (max-width: 425px) {
+  .hero h3 {
+    font-size: var(--sm);
+  }
+}
+
 .hero button {
   background-color: var(--primary);
   color: var(--white);

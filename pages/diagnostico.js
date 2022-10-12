@@ -110,6 +110,7 @@ export default function Diagnostico(props) {
       pregunta_29: "29",
     };
 
+    //------------ filing the dbQuestions -----------//
     testQuestions.map((obj, index) => {
       const { question } = obj;
       let pregunta = `pregunta_${index}`;
@@ -121,6 +122,8 @@ export default function Diagnostico(props) {
         dbQuestions[pregunta] = "No aplica";
       }
     });
+
+    //----------- translating the dbQuestion into spanish-----------//
 
     handleExport();
     const data = {
