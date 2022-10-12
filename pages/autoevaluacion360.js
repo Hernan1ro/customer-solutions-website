@@ -136,24 +136,18 @@ export default function Test() {
       }
     }
 
-    console.log(answers);
-
     handleData(answers);
     router.push("/diagnostico");
   };
 
   // ---------- Calculate index 360 ----------------- //
   function handleData(data) {
-    console.log(data);
-
     let questionArr = [];
 
     data.map((obj) => {
       const { question, answer } = obj;
       questionArr.push({ question, answer });
     });
-
-    // console.log(questionArr);
 
     let strategyCount = 0;
     let processCount = 0;

@@ -6,7 +6,7 @@ import { How } from "../containers/How";
 
 export default function Servicios() {
   return (
-    <Layout page="Inicio">
+    <Layout page="Servicios">
       <HeroServices />
       <Services />
       <How />
