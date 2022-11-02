@@ -81,6 +81,8 @@
   animation-fill-mode: both;
   animation-iteration-count: infinite;
   margin-top: -2rem;
+  min-width: 32rem;
+  min-height: 32rem;
 }
 
 @keyframes floating {
@@ -98,5 +100,11 @@
   .hero img {
     margin-top: -5rem;
     margin-right: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .hero img {
+    width: 51.7rem;
+    height: 51.7rem;
   }
 }

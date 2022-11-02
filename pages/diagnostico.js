@@ -12,6 +12,7 @@ import { FormModal } from "../Components/FormModal";
 import { PrivacityPolicies } from "../Components/PrivacityPolicies";
 import { Report } from "../containers/Report";
 import { useRouter } from "next/router";
+import moment from "moment";
 
 export default function Diagnostico(props) {
   const [show, setShow] = useState(false);
@@ -123,10 +124,11 @@ export default function Diagnostico(props) {
       }
     });
 
-    //----------- translating the dbQuestion into spanish-----------//
+    const date = moment().format("L");
 
     handleExport();
     const data = {
+      date,
       index,
       strategy,
       process: process_,
@@ -264,7 +266,6 @@ export default function Diagnostico(props) {
 
   // ------------- redirects if user refresh the diagnostic page -----------------//
   useEffect(() => {
-    console.log(index);
     if (index === 0) {
       window.location.href = "/";
       console.log("haciendo routing papu");
