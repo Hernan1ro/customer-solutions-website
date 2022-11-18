@@ -76,10 +76,10 @@ export default function Contacto() {
       setSuccess(true);
       emailjs
         .sendForm(
-          "service_xatg6gi",
-          "template_4x3byze",
+          "service_xwwrqej",
+          "template_3w5zgm9",
           form.current,
-          "STkwfQTM519ZxYxFL"
+          "5b5TcAMAZdpLU3I2W"
         )
         .then(
           (result) => {
