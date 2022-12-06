@@ -45,6 +45,8 @@ export const Footer = ({ report }) => {
             <h6>CUSTOMER SOLUTIONS</h6>
             <span>Calle 81 #71-29, Barranquilla, Atlántico, Colombia</span>
             <span>+57 3008586803</span>
+            <span>Provincia Ontaro, Canada</span>
+            <span>+1 3658803809</span>
           </div>
           <div className={styles.box2}>
             <p>

@@ -22,7 +22,7 @@ export default function Evaluacion360() {
     },
     "es-ES": {
       h2: "Evaluación de nivel de madurez en experiencia del cliente SX360°",
-      p: "La herramienta de diagnóstico automático que te permitirá conocer el grado de madurez de la experiencia de servicio y los recomendaciones para optimizar tus resultados",
+      p: "La herramienta de diagnóstico automático que te permitirá conocer el grado de madurez de la experiencia de servicio y recomendaciones para optimizar tus resultados",
       span1: "30 variables",
       span2:
         "4 dimensiones de la organización: estrategia + procesos + empleados + clientes",

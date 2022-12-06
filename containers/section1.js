@@ -11,12 +11,12 @@ export const Section1 = () => {
   const sectionText = {
     "en-US": {
       h2: "We offer different alternatives to help your company to enhance its customer experience",
-      p: "Our solutions allow you to complement, develop and measure models of experience with your customers, providing you with results of growth in sales, in the findelization and in the recommendation of your clients",
+      p: "Our solutions allow you to complement, develop and measure models of experience with your customers, providing you with results of growth in sales, in the loyalty and recommendation from your clients",
       button: "Contact us",
     },
     "es-ES": {
       h2: "Ofrecemos diferentes alternativas para ayudar a tu empresa a potencializar su experiencia de cliente",
-      p: "Nuestras soluciones te permiten complementar, desarrollar y medir modelos de experiencia con tus clientes, proporcionándote resultados de crecimiento en ventas, en la findelización y en la recomendación de tus clientes",
+      p: "Nuestras soluciones te permiten complementar. Desarrollar y medir modelos de experiencia con tus clientes, proporcionándote resultados de crecimiento en ventas, en la fidelización y en la recomendación de tus clientes",
       button: "Contáctanos",
     },
   };

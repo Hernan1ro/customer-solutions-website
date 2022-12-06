@@ -34,7 +34,7 @@ export const Services = () => {
         {
           name: "Experiencia del servicio y el cliente",
           image: "expcliente2",
-          p: "Brindamos una metodología cualitativay cuantitativa para potencializar tu modelo de experiencia de servicio.",
+          p: "Brindamos una metodología cualitativa y cuantitativa para potencializar tu modelo de experiencia de servicio.",
         },
       ],
     },
